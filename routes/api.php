@@ -22,3 +22,8 @@ Route::post('logout',[UserController::class,'logout']);
 /* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 }); */
+
+Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
+    Route::get('/', [PostController::class, 'index']);
+    Route::post('add', [PostController::class, 'add']);
+ });
