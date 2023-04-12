@@ -29,7 +29,7 @@
         </li>
         </ul>
             <router-link to="/login" class="nav-item nav-link mt-3 me-5"><button>Iniciar Sesión</button></router-link>
-            <router-link to="/register" class="nav-item nav-link mt-3 me-5">Registrarse</router-link>
+            <router-link to="/register" class="nav-item nav-link mt-3 me-5"><button>Registrarse</button></router-link>
         </div>
       </div>
     </nav>
