@@ -1,7 +1,49 @@
 @charset "utf-8";
 
+/* FONTS */
+
 @font-face {
     font-family: 'twitch-logo';
     src: url(../fonts/Twitch/Twitchy.TV.otf);
 }
 
+/*COLORES*/
+
+:root {
+    --color1: rgb(100, 65, 164);
+    --color2: rgb(176, 125, 252);
+    --color3: rgb(131, 90, 192);
+    --color4: rgba(143, 143, 143, 0.584);
+    --color5: rgba(95, 95, 95, 0.584);
+}
+
+.text-color1 {
+    color: var(--color1);
+}
+
+.text-color1:hover {
+    color: var(--color3);
+}
+
+.text-color2 {
+    color: var(--color2);
+}
+
+.fondo-color{
+    background-color: var(--color2);
+    border: none;
+    border-radius: 4px;
+}
+
+.fondo-color:hover{
+    background-color: var(--color3);
+    border: none;
+    border-radius: 4px;
+}
+
+/* HOME */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
