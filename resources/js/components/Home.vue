@@ -46,12 +46,30 @@
         <p class="text-center mt-2">Quevedo</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/badbunny.jpg" class="d-block  mx-auto " alt="...">
+        <img src="../../img/badbunny.png" class="d-block  mx-auto " alt="...">
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/shakira.jpg" class="d-block  mx-auto" alt="...">
-        <p class="text-center mt-2">Shakira</p>
+        <img src="../../img/rosalia.jpg" class="d-block  mx-auto" alt="...">
+        <p class="text-center mt-2">Rosalia</p>
+    </div>
+</div>
+</div>
+<div class="container mt-5">
+<h2>Merchandising más solicitado</h2>
+
+  <div class="row align-items-start">
+    <div class="col-lg-4 mt-5 mb-5">
+        <img src="../../img/1.jpg" class="d-block mx-auto " alt="...">
+        <p class="text-center mt-2">Bad Bunny</p>
+    </div>
+    <div class="col-lg-4 mt-5 mb-5">
+        <img src="../../img/2.jpg" class="d-block  mx-auto "  alt="...">
+        <p class="text-center mt-2">Eladio Carrión</p>
+    </div>
+    <div class="col-lg-4 mt-5 mb-5">
+        <img src="../../img/3.jpg" class="d-block  mx-auto" alt="...">
+        <p class="text-center mt-2">Rosalia</p>
     </div>
 </div>
 </div>

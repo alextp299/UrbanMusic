@@ -7,6 +7,7 @@
     src: url(../fonts/Twitch/Twitchy.TV.otf);
 }
 
+
 /*COLORES*/
 
 :root {
@@ -29,13 +30,13 @@
     color: var(--color2);
 }
 
-.fondo-color{
+.fondo-color {
     background-color: var(--color2);
     border: none;
     border-radius: 4px;
 }
 
-.fondo-color:hover{
+.fondo-color:hover {
     background-color: var(--color3);
     border: none;
     border-radius: 4px;
@@ -43,6 +44,7 @@
 
 
 /* FOOTER */
+
 
 /* BACKGROUND GENERAL */
 
@@ -58,38 +60,40 @@ footer .nav-link:hover {
 
 /* POLITICAS */
 
-.tamaño_politicas {
-    font-size: 16px;
+.tamaño_letra {
+    font-size: 18px;
 }
 
 .conf_priv {
     text-align: left;
-    color: #7D7D7D;
 }
 
 .conf_cookies {
-    color: #7D7D7D;
+    text-align: center;
 }
 
 .conf_avis {
     text-align: right;
-    color: #7D7D7D;
+}
+
+.redes {
+    width: 60%
 }
 
 
 /* TEXTO COPYRIGHT */
 
 .texto {
-    font-size: 9pt;
-    color: #7D7D7D;
+    font-size: 13pt;
 }
 
 
 /* /////////////////////////////// */
 
+
 /* HOME */
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(100%);
+    filter: invert(100%);
 }

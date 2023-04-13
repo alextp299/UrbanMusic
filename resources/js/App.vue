@@ -9,33 +9,33 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent" v-if="isLoggedin">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <router-link to="/dashboard" class="nav-item nav-link mt-3 ms-5 fw-bold">Categorias</router-link>
+                <router-link to="/dashboard" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Categorias</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/dashboard" class="nav-item nav-link mt-3 ms-5 fw-bold">Top Canciones</router-link>
+                <router-link to="/dashboard" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Top Canciones</router-link>
             </li>
             <li class="nav-item">
-                <router-link to="/posts" class="nav-item nav-link mt-3 ms-5 fw-bold">Merchandising Artistas</router-link>
+                <router-link to="/posts" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
             </li>
           </ul>
           <form class="d-flex">
-            <a class="nav-item nav-link" style="cursor: pointer;" @click="logout">Logout</a>
+            <a class="nav-item nav-link tamaño_letra" style="cursor: pointer;" @click="logout">Logout</a>
           </form>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent"  v-else>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <router-link to="/dashboard" class="nav-item nav-link  mt-3 ms-5 fw-bold">Categorias</router-link>
+                    <router-link to="/dashboard" class="nav-item nav-link  mt-3 ms-5 fw-bold tamaño_letra">Categorias</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/dashboard" class="nav-item nav-link  mt-3 ms-5 fw-bold">Top Canciones</router-link>
+                    <router-link to="/dashboard" class="nav-item nav-link  mt-3 ms-5 fw-bold tamaño_letra">Top Canciones</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/posts" class="nav-item nav-link  mt-3 ms-5 fw-bold">Merchandising Artistas</router-link>
+                    <router-link to="/posts" class="nav-item nav-link  mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                 </li>
             </ul>
-            <router-link to="/login" class="nav-item nav-link mt-3 me-5"><button class="fondo-color fw-bold">Iniciar Sesión</button></router-link>
-            <router-link to="/register" class="nav-item nav-link mt-3 me-5"><button class="fondo-color fw-bold">Registrarse</button></router-link>
+            <router-link to="/login" class="nav-item nav-link mt-3 me-5"><button class="btn btn-success fondo-color tamaño_letra">Iniciar Sesión</button></router-link>
+            <router-link to="/register" class="nav-item nav-link mt-3 me-5"><button class="btn btn-success fondo-color tamaño_letra">Registrarse</button></router-link>
         </div>
       </div>
     </nav> 
@@ -45,34 +45,33 @@
     <div class="container p-3 ocultar_div">
         <div class="row mb-4">
             <div class="col-lg-4 col-md-4 mb-md-0">
-                <p class="mb-0"><a class="nav-link conf_priv" aria-current="page" href="#">Política de Privacidad</a></p>
-                <router-link to="/dashboard" class="nav-item nav-link  mt-3 ms-5 fw-bold">Categorias</router-link>
+                <router-link to="/dashboard" class="nav-item nav-link  conf_priv mt-3 fw-bold tamaño_letra">Política de Privacidad</router-link>
             </div>
             <div class="col-lg-4 col-md-4 mb-md-0">
-                <p class="mb-0"><a class="nav-link conf_cookies" aria-current="page" href="#">Política de Cookies</a></p>
+                <router-link to="/dashboard" class="nav-item nav-link  conf_cookies mt-3 fw-bold tamaño_letra">Política de Cookies</router-link>
             </div>
             <div class="col-lg-4 col-md-4 mb-md-0">
-                <p class="mb-0"><a class="nav-link conf_avis" aria-current="page" href="">Aviso Legal</a></p>
+                <router-link to="/dashboard" class="nav-item nav-link  conf_avis mt-3 fw-bold tamaño_letra">Aviso Legal</router-link>
             </div>
         </div>
     </div>
     <!-- Section: Social media -->
-    <div class="container pt-4 mb-4">
+    <div class="container pt-4 mb-4 text-center">
         <!-- Instagram -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/" target="_blank">
-            <img src="../icons/instagram.svg" alt="instagram">
+        <a class="btn btn-link btn-floating btn-lg mx-2" href="https://www.instagram.com/" target="_blank">
+            <img src="../icons/insta.svg" alt="instagram">
         </a>
         <!-- Facebook -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://es-es.facebook.com/" target="_blank">
+        <a class="btn btn-link btn-floating btn-lg mx-2" href="https://es-es.facebook.com/" target="_blank">
             <img src="../icons/facebook.svg" alt="facebook">
         </a>
         <!-- Twitter -->
-        <a class="btn btn-link btn-floating btn-lg m-1" href="https://twitter.com/?lang=ES" target="_blank">
+        <a class="btn btn-link btn-floating btn-lg mx-2" href="https://twitter.com/?lang=ES" target="_blank">
             <img src="../icons/twitter.svg" alt="twitter">
         </a>
         <!-- YouTube -->
-        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.youtube.com/" target="_blank">
-            <img src="../icons/youtube.svg" alt="linkedin">
+        <a class="btn btn-link btn-floating btn-lg me-3" href="https://www.youtube.com/" target="_blank">
+            <img src="../icons/youtube.svg" alt="youtube">
         </a>
     </div>
     <!-- Copyright -->
