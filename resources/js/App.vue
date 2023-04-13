@@ -38,9 +38,47 @@
             <router-link to="/register" class="nav-item nav-link mt-3 me-5"><button class="fondo-color fw-bold">Registrarse</button></router-link>
         </div>
       </div>
-    </nav>    
+    </nav> 
     
-            <router-view></router-view>
+    <router-view></router-view>
+
+    <div class="container p-3 ocultar_div">
+        <div class="row mb-4">
+            <div class="col-lg-4 col-md-4 mb-md-0">
+                <p class="mb-0"><a class="nav-link conf_priv" aria-current="page" href="#">Política de Privacidad</a></p>
+                <router-link to="/dashboard" class="nav-item nav-link  mt-3 ms-5 fw-bold">Categorias</router-link>
+            </div>
+            <div class="col-lg-4 col-md-4 mb-md-0">
+                <p class="mb-0"><a class="nav-link conf_cookies" aria-current="page" href="#">Política de Cookies</a></p>
+            </div>
+            <div class="col-lg-4 col-md-4 mb-md-0">
+                <p class="mb-0"><a class="nav-link conf_avis" aria-current="page" href="">Aviso Legal</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Section: Social media -->
+    <div class="container pt-4 mb-4">
+        <!-- Instagram -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/" target="_blank">
+            <img src="../icons/instagram.svg" alt="instagram">
+        </a>
+        <!-- Facebook -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://es-es.facebook.com/" target="_blank">
+            <img src="../icons/facebook.svg" alt="facebook">
+        </a>
+        <!-- Twitter -->
+        <a class="btn btn-link btn-floating btn-lg m-1" href="https://twitter.com/?lang=ES" target="_blank">
+            <img src="../icons/twitter.svg" alt="twitter">
+        </a>
+        <!-- YouTube -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.youtube.com/" target="_blank">
+            <img src="../icons/youtube.svg" alt="linkedin">
+        </a>
+    </div>
+    <!-- Copyright -->
+    <div class="text-center texto p-1">
+        <p class="texto">Copyright &copy; 2022 URBAN FOOD Todos los derechos reservados</p>
+    </div>
     </div>
     </template>
  <script>

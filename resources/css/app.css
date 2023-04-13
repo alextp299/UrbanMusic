@@ -41,6 +41,52 @@
     border-radius: 4px;
 }
 
+
+/* FOOTER */
+
+/* BACKGROUND GENERAL */
+
+footer {
+    background: #241D13;
+}
+
+footer .nav-link:focus,
+footer .nav-link:hover {
+    color: white;
+}
+
+
+/* POLITICAS */
+
+.tamaño_politicas {
+    font-size: 16px;
+}
+
+.conf_priv {
+    text-align: left;
+    color: #7D7D7D;
+}
+
+.conf_cookies {
+    color: #7D7D7D;
+}
+
+.conf_avis {
+    text-align: right;
+    color: #7D7D7D;
+}
+
+
+/* TEXTO COPYRIGHT */
+
+.texto {
+    font-size: 9pt;
+    color: #7D7D7D;
+}
+
+
+/* /////////////////////////////// */
+
 /* HOME */
 
 .carousel-control-prev-icon,
