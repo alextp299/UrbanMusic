@@ -7,21 +7,21 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../../img/car1.jpg" class="d-block w-100" style="height: 550px;" alt="...">
+      <img src="../../img/car1.jpg" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Etiqueta de la primera diapositiva</h5>
         <p>Algún contenido placeholder representativo para la primera diapositiva.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="../../img/car2.jpg" class="d-block w-100" style="height: 550px;" alt="...">
+      <img src="../../img/car2.jpg" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Etiqueta de la segunda diapositiva</h5>
         <p>Algún contenido placeholder representativo para la segunda diapositiva.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="../../img/car3.jpg" class="d-block w-100" style="height: 550px;" alt="...">
+      <img src="../../img/car3.jpg" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Etiqueta de la tercera diapositiva</h5>
         <p>Algún contenido placeholder representativo para la tercera diapositiva.</p>
