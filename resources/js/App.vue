@@ -76,7 +76,7 @@
     </div>
     <!-- Copyright -->
     <div class="text-center texto p-1">
-        <p class="texto">Copyright &copy; 2022 URBAN FOOD Todos los derechos reservados</p>
+        <p class="texto">Copyright &copy; 2023 URBAN MUSIC Todos los derechos reservados</p>
     </div>
     </div>
     </template>
