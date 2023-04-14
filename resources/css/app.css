@@ -88,6 +88,16 @@ footer .nav-link:hover {
 }
 
 
+/* VERSION MOVIL FOOTER */
+
+@media (max-width: 992px) {
+    /* CONTENIDO A OCULTAR */
+    .ocultar_div {
+        display: none;
+    }
+}
+
+
 /* /////////////////////////////// */
 
 
