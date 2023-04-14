@@ -37,8 +37,8 @@
     <span class="visually-hidden">Siguiente</span>
   </button>
 </div>
-<div class="container mt-5">
-<h2>Artistas más escuchados</h2>
+<div class="container-fluid mt-5">
+<h3>Artistas más escuchados</h3>
 
   <div class="row align-items-start">
     <div class="col-lg-4 mt-5 mb-5">
@@ -55,8 +55,8 @@
     </div>
 </div>
 </div>
-<div class="container mt-5">
-<h2>Merchandising más solicitado</h2>
+<div class="container-fluid mt-5">
+<h3>Merchandising más solicitado</h3>
 
   <div class="row align-items-start">
     <div class="col-lg-4 mt-5 mb-5">
