@@ -7,6 +7,15 @@
     src: url(../fonts/Twitch/Twitchy.TV.otf);
 }
 
+@font-face {
+    font-family: 'helvetica';
+    src: url(../fonts/helvetica_neue/HelveticaNeueLTStdBd.otf);
+}
+
+* {
+    font-family: 'helvetica';
+}
+
 
 /*COLORES*/
 
@@ -14,7 +23,7 @@
     --color1: rgb(100, 65, 164);
     --color2: rgb(176, 125, 252);
     --color3: rgb(131, 90, 192);
-    --color4: rgba(143, 143, 143, 0.584);
+    --color4: rgb(226, 226, 226);
     --color5: rgba(95, 95, 95, 0.584);
 }
 
@@ -42,26 +51,18 @@
     border-radius: 4px;
 }
 
+.fondo-web {
+    background-color: var(--color4);
+}
+
 
 /* FOOTER */
-
-
-/* BACKGROUND GENERAL */
-
-footer {
-    background: #241D13;
-}
-
-footer .nav-link:focus,
-footer .nav-link:hover {
-    color: white;
-}
 
 
 /* POLITICAS */
 
 .tamaño_letra {
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .conf_priv {
@@ -77,32 +78,32 @@ footer .nav-link:hover {
 }
 
 .redes_hover1 {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: url('../icons/insta.svg');
     background-size: cover;
     transition: all 0.5s ease;
 }
 
 .redes_hover2 {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: url('../icons/facebook.svg');
     background-size: cover;
     transition: all 0.5s ease;
 }
 
 .redes_hover3 {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: url('../icons/twitter.svg');
     background-size: cover;
     transition: all 0.5s ease;
 }
 
 .redes_hover4 {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: url('../icons/youtube.svg');
     background-size: cover;
     transition: all 0.5s ease;
@@ -128,7 +129,7 @@ footer .nav-link:hover {
 /* TEXTO COPYRIGHT */
 
 .texto {
-    font-size: 13pt;
+    font-size: 10pt;
 }
 
 
