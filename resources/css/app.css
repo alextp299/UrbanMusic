@@ -29,6 +29,7 @@
 
 .text-color1 {
     color: var(--color1);
+    text-decoration: none;
 }
 
 .text-color1:hover {
@@ -37,6 +38,7 @@
 
 .text-color2 {
     color: var(--color2);
+    text-decoration: none;
 }
 
 .fondo-color {
@@ -62,6 +64,15 @@
 /* POLITICAS */
 
 .tamaño_letra {
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.tamaño_letra:hover {
+    color: rgb(75, 75, 75);
+}
+
+.tamaño_session {
     font-size: 15px;
 }
 
