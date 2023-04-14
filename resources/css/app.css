@@ -69,7 +69,7 @@
 }
 
 .tamaño_letra:hover {
-    color: rgb(75, 75, 75);
+    color: var(--color1);
 }
 
 .tamaño_session {
