@@ -59,19 +59,19 @@
     <div class="container pt-4 mb-4 text-center">
         <!-- Instagram -->
         <a class="btn btn-link btn-floating btn-lg mx-2" href="https://www.instagram.com/" target="_blank">
-            <img src="../icons/insta.svg" alt="instagram">
+            <div class="redes_hover1"></div>
         </a>
         <!-- Facebook -->
         <a class="btn btn-link btn-floating btn-lg mx-2" href="https://es-es.facebook.com/" target="_blank">
-            <img src="../icons/facebook.svg" alt="facebook">
+            <div class="redes_hover2"></div>
         </a>
         <!-- Twitter -->
         <a class="btn btn-link btn-floating btn-lg mx-2" href="https://twitter.com/?lang=ES" target="_blank">
-            <img src="../icons/twitter.svg" alt="twitter">
+            <div class="redes_hover3"></div>
         </a>
         <!-- YouTube -->
         <a class="btn btn-link btn-floating btn-lg me-3" href="https://www.youtube.com/" target="_blank">
-            <img src="../icons/youtube.svg" alt="youtube">
+            <div class="redes_hover4"></div>
         </a>
     </div>
     <!-- Copyright -->
