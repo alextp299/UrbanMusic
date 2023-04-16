@@ -9,7 +9,7 @@
     <div class="carousel-item active">
       <img src="../../img/car1.webp" class="d-block w-100 image"  alt="Eladio Carrión">
         <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 35%;">
-          <h4 class="text-dark">¡Descubre MÁS contenido de artistas <br>como Eladio Carrion AQUÍ</h4>
+          <h4 class="text-dark">¡Descubre MÁS contenido de artistas <br>como Eladio Carrión AQUÍ</h4>
           <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
         </div>
     </div>
