@@ -7,21 +7,21 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../../img/car1.jpg" class="d-block w-100"  alt="...">
+      <img src="../../img/car1.webp" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Etiqueta de la primera diapositiva</h5>
         <p>Algún contenido placeholder representativo para la primera diapositiva.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="../../img/car2.jpg" class="d-block w-100"  alt="...">
+      <img src="../../img/car2.webp" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Etiqueta de la segunda diapositiva</h5>
         <p>Algún contenido placeholder representativo para la segunda diapositiva.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="../../img/car3.jpg" class="d-block w-100"  alt="...">
+      <img src="../../img/car3.webp" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Etiqueta de la tercera diapositiva</h5>
         <p>Algún contenido placeholder representativo para la tercera diapositiva.</p>
@@ -42,15 +42,15 @@
 
   <div class="row align-items-start">
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/quevedo.jpg" class="d-block mx-auto " alt="...">
+        <img src="../../img/quevedo.webp" class="d-block mx-auto " alt="...">
         <p class="text-center mt-2">Quevedo</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/badbunny.png" class="d-block  mx-auto " alt="...">
+        <img src="../../img/badbunny.webp" class="d-block  mx-auto " alt="...">
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/rosalia.jpg" class="d-block  mx-auto" alt="...">
+        <img src="../../img/rosalia.webp" class="d-block  mx-auto" alt="...">
         <p class="text-center mt-2">Rosalia</p>
     </div>
 </div>
@@ -60,16 +60,16 @@
 
   <div class="row align-items-start">
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/1.jpg" class="d-block mx-auto " alt="...">
+        <img src="../../img/1.webp" class="d-block mx-auto " alt="...">
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/2.jpg" class="d-block  mx-auto "  alt="...">
-        <p class="text-center mt-2">Eladio Carrión</p>
+        <img src="../../img/2.webp" class="d-block  mx-auto "  alt="...">
+        <p class="text-center mt-2">Rosalia</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/3.jpg" class="d-block  mx-auto" alt="...">
-        <p class="text-center mt-2">Rosalia</p>
+        <img src="../../img/3.webp" class="d-block  mx-auto" alt="...">
+        <p class="text-center mt-2">Eladio Carrión</p>
     </div>
 </div>
 </div>
