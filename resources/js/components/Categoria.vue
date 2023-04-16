@@ -1,29 +1,29 @@
 <template>
     <div class="container-fluid mt-5">
-    <div class="row align-items-start">
-      <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/quevedo.webp" class="d-block mx-auto image" alt="Quevedo">
-          <div class="middle2">
-            <router-link to="/categoria/Quevedo"><div class="play" aria-label="play"></div></router-link>
-          </div>
-          <p class="text-center mt-2">Quevedo</p>
-      </div>
-      <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
-          <div class="middle2">
-            <router-link to="/categoria/BadBunny"><div class="play" aria-label="play"></div></router-link>
-          </div>
-          <p class="text-center mt-2">Bad Bunny</p>
-      </div>
-      <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/shakira.webp" class="d-block  mx-auto image" alt="Shakira">
-          <div class="middle2">
-            <router-link to="/categoria/Shakira"><div class="play" aria-label="play"></div></router-link>
-          </div>
-          <p class="text-center mt-2">Shakira</p>
+      <div class="row align-items-start">
+        <div class="col-lg-4 mt-5 mb-5 container">
+            <img src="../../img/quevedo.webp" class="d-block mx-auto image" alt="Quevedo">
+            <div class="middle2">
+              <router-link to="/categoria/Quevedo"><div class="play" aria-label="play"></div></router-link>
+            </div>
+            <p class="text-center mt-2">Quevedo</p>
+        </div>
+        <div class="col-lg-4 mt-5 mb-5 container">
+            <img src="../../img/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
+            <div class="middle2">
+              <router-link to="/categoria/BadBunny"><div class="play" aria-label="play"></div></router-link>
+            </div>
+            <p class="text-center mt-2">Bad Bunny</p>
+        </div>
+        <div class="col-lg-4 mt-5 mb-5 container">
+            <img src="../../img/shakira.webp" class="d-block  mx-auto image" alt="Shakira">
+            <div class="middle2">
+              <router-link to="/categoria/Shakira"><div class="play" aria-label="play"></div></router-link>
+            </div>
+            <p class="text-center mt-2">Shakira</p>
+        </div>
       </div>
     </div>
-  </div>
   <div class="container-fluid mt-5">
     <div class="row align-items-start">
       <div class="col-lg-4 mt-5 mb-5 container">

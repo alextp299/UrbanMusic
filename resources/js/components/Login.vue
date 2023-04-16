@@ -31,9 +31,7 @@
 
                             <div class="form-group row mt-1 mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-success fondo-color" @click="doLogin">
-                                        Iniciar Sesión
-                                    </button>
+                                    <router-link to="/" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" @click="doLogin">Iniciar Sesión</button></router-link>
                                 </div>
                             </div>
 
@@ -41,7 +39,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <small class="text-muted">
                                         ¿No tienes una cuenta?
-                                        <router-link to="/register" >Regístrate</router-link>
+                                        <router-link to="/register">Regístrate</router-link>
                                     </small>
                                 </div>
                             </div>

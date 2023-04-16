@@ -15,6 +15,9 @@ import Canciones_EladioCarrión from '../components/Canciones_EladioCarrión.vue
 import Canciones_KarolG from '../components/Canciones_KarolG.vue';
 import Canciones_BadBunny from '../components/Canciones_BadBunny.vue';
 import Canciones_Shakira from '../components/Canciones_Shakira.vue';
+import Merchandising_Rosalia from '../components/Merchandising_Rosalia.vue';
+import Merchandising_BadBunny from '../components/Merchandising_BadBunny.vue';
+import Merchandising_EladioCarrión from '../components/Merchandising_EladioCarrión.vue';
 
 
 export const routes = [{
@@ -95,6 +98,21 @@ export const routes = [{
         name: 'canciones_shakira',
         path: '/categoria/Shakira',
         component: Canciones_Shakira
+    },
+    {
+        name: 'merchandising_rosalia',
+        path: '/merchandising/Rosalia',
+        component: Merchandising_Rosalia
+    },
+    {
+        name: 'merchandising_badbunny',
+        path: '/merchandising/BadBunny',
+        component: Merchandising_BadBunny
+    },
+    {
+        name: 'merchandising_eladiocarrion',
+        path: '/merchandising/EladioCarrion',
+        component: Merchandising_EladioCarrión
     },
 
 ];
