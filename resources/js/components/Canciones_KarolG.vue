@@ -1,5 +1,6 @@
 <template>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-5 mb-5">
+      <h3 class="mb-4">Karol G</h3>
       
     </div>
   </template>

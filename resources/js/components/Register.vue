@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-fluid mt-5 mb-5">
         <div class="row jutify-content-center">
             <div class="col-md-8">
                 {{name}}

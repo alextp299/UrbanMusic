@@ -1,5 +1,6 @@
 <template>
-    <div class="container-fluid mt-5">
+  <div class="container-fluid mt-5 mb-5">
+    <h3 class="mb-4">Rosalia</h3>
     <div class="row align-items-start">
       <div class="col-lg-4 mt-5 mb-5 container">
           <img src="../../img/quevedo.webp" class="d-block mx-auto image" alt="Quevedo">
