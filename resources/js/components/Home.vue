@@ -6,19 +6,19 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active container2">
+    <div class="carousel-item active container-carrusel">
       <img src="../../img/car1.webp" class="d-block w-100 image"  alt="Eladio Carrión">
       <div class="middle">
         <div class="text">John Doe</div>
       </div>
     </div>
-    <div class="carousel-item container2">
+    <div class="carousel-item container-carrusel">
       <img src="../../img/car2.webp" class="d-block w-100 image"  alt="Rosalia">
       <div class="middle">
         <div class="text">John Doe</div>
       </div>
     </div>
-    <div class="carousel-item container2">
+    <div class="carousel-item container-carrusel">
       <img src="../../img/car3.webp" class="d-block w-100 image"  alt="Bad Bunny">
       <div class="middle">
         <div class="text">John Doe</div>
@@ -40,21 +40,21 @@
   <div class="row align-items-start">
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/quevedo.webp" class="d-block mx-auto image" alt="Quevedo">
-        <div class="middle">
+        <div class="middle2">
           <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Visitar Artista</button></router-link>
         </div>
         <p class="text-center mt-2">Quevedo</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
-        <div class="middle">
+        <div class="middle2">
           <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Visitar Artista</button></router-link>
         </div>
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/rosalia.webp" class="d-block  mx-auto image" alt="Rosalia">
-        <div class="middle">
+        <div class="middle2">
           <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Visitar Artista</button></router-link>
         </div>
         <p class="text-center mt-2">Rosalia</p>

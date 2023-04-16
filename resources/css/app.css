@@ -171,7 +171,7 @@
     position: relative;
 }
 
-.container2 {
+.container-carrusel {
     position: relative;
 }
 
@@ -194,6 +194,17 @@
     text-align: center;
 }
 
+.middle2 {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 80%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 .container:hover .image {
     opacity: 0.6;
 }
@@ -202,10 +213,14 @@
     opacity: 1;
 }
 
-.container2:hover .image {
+.container:hover .middle2 {
+    opacity: 1;
+}
+
+.container-carrusel:hover .image {
     opacity: 0.7;
 }
 
-.container2:hover .middle {
+.container-carrusel:hover .middle {
     opacity: 1;
 }
