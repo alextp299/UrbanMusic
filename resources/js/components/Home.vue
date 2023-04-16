@@ -6,25 +6,22 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../../img/car1.webp" class="d-block w-100"  alt="Eladio Carrión">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Etiqueta de la primera diapositiva</h5>
-        <p>Algún contenido placeholder representativo para la primera diapositiva.</p>
+    <div class="carousel-item active container2">
+      <img src="../../img/car1.webp" class="d-block w-100 image"  alt="Eladio Carrión">
+      <div class="middle">
+        <div class="text">John Doe</div>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="../../img/car2.webp" class="d-block w-100"  alt="Rosalia">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Etiqueta de la segunda diapositiva</h5>
-        <p>Algún contenido placeholder representativo para la segunda diapositiva.</p>
+    <div class="carousel-item container2">
+      <img src="../../img/car2.webp" class="d-block w-100 image"  alt="Rosalia">
+      <div class="middle">
+        <div class="text">John Doe</div>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="../../img/car3.webp" class="d-block w-100"  alt="Bad Bunny">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Etiqueta de la tercera diapositiva</h5>
-        <p>Algún contenido placeholder representativo para la tercera diapositiva.</p>
+    <div class="carousel-item container2">
+      <img src="../../img/car3.webp" class="d-block w-100 image"  alt="Bad Bunny">
+      <div class="middle">
+        <div class="text">John Doe</div>
       </div>
     </div>
   </div>
@@ -44,21 +41,21 @@
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/quevedo.webp" class="d-block mx-auto image" alt="Quevedo">
         <div class="middle">
-          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Visitar Artista</button></router-link>
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Visitar Artista</button></router-link>
         </div>
         <p class="text-center mt-2">Quevedo</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
         <div class="middle">
-          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Visitar Artista</button></router-link>
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Visitar Artista</button></router-link>
         </div>
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/rosalia.webp" class="d-block  mx-auto image" alt="Rosalia">
         <div class="middle">
-          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Visitar Artista</button></router-link>
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Visitar Artista</button></router-link>
         </div>
         <p class="text-center mt-2">Rosalia</p>
     </div>
@@ -71,21 +68,21 @@
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/1.webp" class="d-block mx-auto image" alt="Merchandising Bad Bunny">
         <div class="middle">
-          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Comprar</button></router-link>
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
         </div>
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/2.webp" class="d-block  mx-auto image"  alt="Merchandising Rosalia">
         <div class="middle">
-          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Comprar</button></router-link>
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
         </div>
         <p class="text-center mt-2">Rosalia</p>
     </div>
     <div class="col-lg-4 mt-5 mb-5 container">
         <img src="../../img/3.webp" class="d-block  mx-auto image" alt="Merchandising Eladio Carrión">
         <div class="middle">
-          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Comprar</button></router-link>
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
         </div>
         <p class="text-center mt-2">Eladio Carrión</p>
     </div>

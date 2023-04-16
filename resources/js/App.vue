@@ -36,8 +36,8 @@
                                 <router-link to="/posts" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                             </li>
                         </ul>
-                        <router-link to="/login" class="nav-item nav-link mt-3 me-5"><button class="btn btn-success fondo-color tamaño_session">Iniciar Sesión</button></router-link>
-                        <router-link to="/register" class="nav-item nav-link mt-3 me-5"><button class="btn btn-success fondo-color tamaño_session">Registrarse</button></router-link>
+                        <router-link to="/login" class="nav-item nav-link mt-3 me-5"><button class="fondo-color tamaño_session">Iniciar Sesión</button></router-link>
+                        <router-link to="/register" class="nav-item nav-link mt-3 me-5"><button class="fondo-color tamaño_session">Registrarse</button></router-link>
                     </div>
                 </div>
                 </nav>
@@ -47,7 +47,7 @@
 
             <footer>
                 <nav class="navbar-light bg-light">
-                <div class="container-fluid row mb-4">
+                <div class="container-fluid row mb-4 ocultar_div">
                     <div class="col-lg-4 col-md-4 mb-md-0">
                         <router-link to="/dashboard" class="nav-item nav-link conf_priv mt-3 fw-bold tamaño_letra">Política de Privacidad</router-link>
                     </div>
