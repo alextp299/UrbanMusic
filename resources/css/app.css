@@ -34,11 +34,8 @@
 
 .text-color1:hover {
     color: var(--color3);
-}
-
-.text-color2 {
-    color: var(--color2);
-    text-decoration: none;
+    transition: all 0.5s ease;
+    padding: 2px 4px;
 }
 
 .fondo-color {
