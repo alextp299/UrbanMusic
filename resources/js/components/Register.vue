@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
-        <div class="row jutify-content-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-md-8">
                 {{name}}
                 <div v-if="error !== null" class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -10,54 +10,40 @@
  
  
                 <div class="card card-default">
-                    <div class="card-header"><h5>Register New User</h5></div>
+                    <div class="card-header text-center"><h5>¡Registrate!</h5></div>
                     <div class="card-body">
                         <form>
  
  
                             <div class="form-group row">
-                                <label for="name" class="col-sm-4 col-form-label text-md-right">Name</label>
-                                <div class="col-md-8">
+                                <label for="name" class="col-sm-4 col-form-label text-md-right">Nombre y Apellido/s</label>
                                     <input id="name" type="text" class="form-control" v-model="name" required
-                                           autofocus autocomplete="off"  placeholder="Enter your name">
-                                </div>
+                                           autofocus autocomplete="off"  placeholder="Ingrese su Nombre">
                             </div>
  
  
                             <div class="form-group row mt-1">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
-                                <div class="col-md-8">
+                                <label for="email" class="col-sm-4 col-form-label text-md-right">Correo Electrónico</label>
                                     <input id="email" type="email" class="form-control" v-model="email" required
-                                           autofocus autocomplete="off" placeholder="Enter your email">
-                                </div>
+                                           autofocus autocomplete="off" placeholder="Ingrese su Correo">
                             </div>
- 
- 
- 
  
                             <div class="form-group row mt-1">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <div class="col-md-8">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
                                     <input id="password" type="password" class="form-control" v-model="password"
-                                           required autocomplete="off" placeholder="Enter your password">
-                                </div>
+                                           required autocomplete="off" placeholder="Ingrese su Contraseña">
                             </div>
  
  
-                            <div class="form-group row mt-1 mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" @click="register">Register</button></router-link>
-                                </div>
+                            <div class="form-group row mt-1 mb-0 text-center">
+                                    <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" @click="register">Registrarse</button></router-link>
                             </div>
  
  
-                            <div class="row mt-1">
-                                <div class="col-md-8 offset-md-4">
+                            <div class="row mt-1 text-center">
                                     <small class="text-muted">
-                                        Have an account? Please
-                                        <router-link to="/login" >login</router-link>
+                                        <router-link to="/login" style="text-decoration: none; color: var(--color1);">¿Ya tiene cuenta? ¡Inicia sesión!</router-link>
                                     </small>
-                                </div>
                             </div>
  
  

@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
-        <div class="row jutify-content-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-md-8">
                 <div v-if="error !== null" class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -8,40 +8,31 @@
                     <strong>{{error}}</strong>
                 </div>
 
-                <div class="card card-default">
-                    <div class="card-header"><h5>Iniciar Sesión</h5></div>
+                <div class="card card-default d-flex">
+                    <div class="card-header text-center"><h5>¡Inicia Sesión!</h5></div>
                     <div class="card-body">
                         <form>
                             <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">Correo electrónico</label>
-                                <div class="col-md-8">
+                                <label for="email" class="col-sm-4 col-form-label text-md-right">Correo Electrónico</label>
                                     <input id="email" type="email" class="form-control" v-model="email" required
-                                           autofocus autocomplete="off" placeholder="Enter your email">
-                                </div>
+                                           autofocus autocomplete="off" placeholder="Ingrese su Correo">
                             </div>
 
 
                             <div class="form-group row mt-1">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Constraseña</label>
-                                <div class="col-md-8">
                                     <input id="password" type="password" class="form-control" v-model="password"
-                                           required autocomplete="off" placeholder="Enter your password">
-                                </div>
+                                           required autocomplete="off" placeholder="Ingrese su Contraseña">
                             </div>
 
-                            <div class="form-group row mt-1 mb-0">
-                                <div class="col-md-8 offset-md-4">
+                            <div class="form-group row mt-1 mb-0 text-center">
                                     <router-link to="/" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" @click="doLogin">Iniciar Sesión</button></router-link>
-                                </div>
                             </div>
 
-                            <div class="row mt-1">
-                                <div class="col-md-8 offset-md-4">
+                            <div class="row mt-1 text-center">
                                     <small class="text-muted">
-                                        ¿No tienes una cuenta?
-                                        <router-link to="/register">Regístrate</router-link>
+                                        <router-link to="/register" style="text-decoration: none; color: var(--color1);">¿No tienes una cuenta? ¡Regístrate!</router-link>
                                     </small>
-                                </div>
                             </div>
 
                         </form>
