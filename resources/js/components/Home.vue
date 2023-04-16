@@ -41,16 +41,25 @@
 <h3>Artistas más escuchados</h3>
 
   <div class="row align-items-start">
-    <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/quevedo.webp" class="d-block mx-auto " alt="Quevedo">
+    <div class="col-lg-4 mt-5 mb-5 container">
+        <img src="../../img/quevedo.webp" class="d-block mx-auto image" alt="Quevedo">
+        <div class="middle">
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Visitar Artista</button></router-link>
+        </div>
         <p class="text-center mt-2">Quevedo</p>
     </div>
-    <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/badbunny.webp" class="d-block  mx-auto " alt="Bad Bunny">
+    <div class="col-lg-4 mt-5 mb-5 container">
+        <img src="../../img/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
+        <div class="middle">
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Visitar Artista</button></router-link>
+        </div>
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
-    <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/rosalia.webp" class="d-block  mx-auto" alt="Rosalia">
+    <div class="col-lg-4 mt-5 mb-5 container">
+        <img src="../../img/rosalia.webp" class="d-block  mx-auto image" alt="Rosalia">
+        <div class="middle">
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Visitar Artista</button></router-link>
+        </div>
         <p class="text-center mt-2">Rosalia</p>
     </div>
 </div>
@@ -59,16 +68,25 @@
 <h3>Merchandising más solicitado</h3>
 
   <div class="row align-items-start">
-    <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/1.webp" class="d-block mx-auto " alt="Merchandising Bad Bunny">
+    <div class="col-lg-4 mt-5 mb-5 container">
+        <img src="../../img/1.webp" class="d-block mx-auto image" alt="Merchandising Bad Bunny">
+        <div class="middle">
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Comprar</button></router-link>
+        </div>
         <p class="text-center mt-2">Bad Bunny</p>
     </div>
-    <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/2.webp" class="d-block  mx-auto "  alt="Merchandising Rosalia">
+    <div class="col-lg-4 mt-5 mb-5 container">
+        <img src="../../img/2.webp" class="d-block  mx-auto image"  alt="Merchandising Rosalia">
+        <div class="middle">
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Comprar</button></router-link>
+        </div>
         <p class="text-center mt-2">Rosalia</p>
     </div>
-    <div class="col-lg-4 mt-5 mb-5">
-        <img src="../../img/3.webp" class="d-block  mx-auto" alt="Merchandising Eladio Carrión">
+    <div class="col-lg-4 mt-5 mb-5 container">
+        <img src="../../img/3.webp" class="d-block  mx-auto image" alt="Merchandising Eladio Carrión">
+        <div class="middle">
+          <router-link to="/login" class="nav-item nav-link mt-3"><button class="btn btn-success fondo-color tamaño_session">Comprar</button></router-link>
+        </div>
         <p class="text-center mt-2">Eladio Carrión</p>
     </div>
 </div>
