@@ -46,9 +46,7 @@
  
                             <div class="form-group row mt-1 mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-success" @click="register">
-                                        Register
-                                    </button>
+                                    <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" @click="register">Register</button></router-link>
                                 </div>
                             </div>
  
