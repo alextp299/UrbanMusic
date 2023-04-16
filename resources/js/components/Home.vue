@@ -6,23 +6,26 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active container-carrusel">
+    <div class="carousel-item active">
       <img src="../../img/car1.webp" class="d-block w-100 image"  alt="Eladio Carrión">
-      <div class="middle">
-        <div class="text">John Doe</div>
-      </div>
+        <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 35%;">
+          <h4 class="text-dark">¡Descubre MÁS contenido de artistas <br>como Eladio Carrion AQUÍ</h4>
+          <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
+        </div>
     </div>
     <div class="carousel-item container-carrusel">
       <img src="../../img/car2.webp" class="d-block w-100 image"  alt="Rosalia">
-      <div class="middle">
-        <div class="text">John Doe</div>
-      </div>
+        <div class="carousel-caption d-none d-md-block" style="text-align: right; top: 33%;">
+          <h4 class="text-dark">¡Descubre MÁS contenido de artistas <br>como la Rosalia AQUÍ</h4>
+          <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
+        </div>
     </div>
     <div class="carousel-item container-carrusel">
       <img src="../../img/car3.webp" class="d-block w-100 image"  alt="Bad Bunny">
-      <div class="middle">
-        <div class="text">John Doe</div>
-      </div>
+        <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 28%;">
+          <h4 class="text-dark">¡Descubre MÁS contenido <br>de artistas como <br>Bad Bunny AQUÍ</h4>
+          <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
+        </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
