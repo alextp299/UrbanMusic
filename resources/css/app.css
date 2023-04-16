@@ -63,6 +63,12 @@
     padding: 4px 8px;
 }
 
+.tamaño_session {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
+}
+
 
 /* FOOTER */
 
@@ -124,19 +130,23 @@
 }
 
 .redes_hover1:hover {
-    background-image: url('../icons/insta2.svg')
+    background-image: url('../icons/insta2.svg');
+    transform: scale(1.2);
 }
 
 .redes_hover2:hover {
-    background-image: url('../icons/facebook2.svg')
+    background-image: url('../icons/facebook2.svg');
+    transform: scale(1.2);
 }
 
 .redes_hover3:hover {
-    background-image: url('../icons/twitter2.svg')
+    background-image: url('../icons/twitter2.svg');
+    transform: scale(1.2);
 }
 
 .redes_hover4:hover {
-    background-image: url('../icons/youtube2.svg')
+    background-image: url('../icons/youtube2.svg');
+    transform: scale(1.2);
 }
 
 
@@ -199,7 +209,7 @@
     opacity: 0;
     position: absolute;
     top: 80%;
-    left: 80%;
+    left: 76%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
@@ -234,5 +244,6 @@
 }
 
 .play:hover {
-    background-image: url('../icons/play2.svg')
+    background-image: url('../icons/play2.svg');
+    transform: scale(1.2);
 }
