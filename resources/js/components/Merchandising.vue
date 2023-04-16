@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-between pb-2 mb-2">
                 <h5 class="card-title">All Posts Data</h5>
                 <div>
-                    <button class="btn btn-success" type="button" @click="this.$router.push('/posts/add')">New Post</button>
+                    <button class="btn btn-success" type="button" @click="this.$router.push('/merchandising/admin')">New Post</button>
                 </div>
             </div>
  
