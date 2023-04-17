@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group row mt-1 mb-0 text-center">
-                                    <router-link to="/" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" @click="doLogin">Iniciar Sesión</button></router-link>
+                                    <router-link to="/" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" style="width: 100%;" @click="doLogin">Iniciar Sesión</button></router-link>
                             </div>
 
                             <div class="row mt-1 text-center">

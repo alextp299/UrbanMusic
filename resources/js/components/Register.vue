@@ -36,7 +36,7 @@
  
  
                             <div class="form-group row mt-1 mb-0 text-center">
-                                    <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" @click="register">Registrarse</button></router-link>
+                                    <router-link to="/login" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session" style="width: 100%;" @click="register">Registrarse</button></router-link>
                             </div>
  
  
