@@ -23,7 +23,7 @@
     <div class="carousel-item container-carrusel">
       <img src="../../img/car3.webp" class="d-block w-100 image"  alt="Bad Bunny">
         <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 33%;">
-          <h4 class="text-dark">¡Descubre MÁS contenido <br>de artistas como Bad Bunny <br>AQUÍ</h4>
+          <h4 class="text-dark">¡Descubre MÁS contenido <br>de artistas como <br>Bad Bunny AQUÍ</h4>
           <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
         </div>
     </div>
