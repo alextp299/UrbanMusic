@@ -8,22 +8,22 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="../../img/car1.webp" class="d-block w-100 image"  alt="Eladio Carrión">
-        <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 35%;">
-          <h4 class="text-dark">¡Descubre MÁS contenido de artistas <br>como Eladio Carrión AQUÍ</h4>
+        <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 33%;">
+          <h4 class="text-dark">¡Descubre MÁS contenido de <br>artistas como Eladio Carrión <br>AQUÍ</h4>
           <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
         </div>
     </div>
     <div class="carousel-item container-carrusel">
       <img src="../../img/car2.webp" class="d-block w-100 image"  alt="Rosalia">
         <div class="carousel-caption d-none d-md-block" style="text-align: right; top: 33%;">
-          <h4 class="text-dark">¡Descubre MÁS contenido de artistas <br>como la Rosalia AQUÍ</h4>
+          <h4 class="text-dark">¡Descubre MÁS contenido de <br>artistas como la Rosalia <br>AQUÍ</h4>
           <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
         </div>
     </div>
     <div class="carousel-item container-carrusel">
       <img src="../../img/car3.webp" class="d-block w-100 image"  alt="Bad Bunny">
-        <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 28%;">
-          <h4 class="text-dark">¡Descubre MÁS contenido <br>de artistas como <br>Bad Bunny AQUÍ</h4>
+        <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 33%;">
+          <h4 class="text-dark">¡Descubre MÁS contenido <br>de artistas como Bad Bunny <br>AQUÍ</h4>
           <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
         </div>
     </div>
