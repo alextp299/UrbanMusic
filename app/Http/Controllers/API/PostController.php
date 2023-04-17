@@ -15,17 +15,14 @@ class PostController extends Controller
 
     public function add(Request $request){
 
-
         $request->validate([
             'name'=> 'required',
             'description' => 'required',
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
      
-     
         $input = $request->all();
         $imageName = NULL;
-     
      
         if($image = $request->file('file')){
             $destinationPath = 'img/';
@@ -34,12 +31,9 @@ class PostController extends Controller
             $input['image'] = $imageName;
         }
      
-     
         Posts::create($input);
      
-     
         return response()->json(['success' => 'Post creado correctamente.']);
-     
      
      }
      
