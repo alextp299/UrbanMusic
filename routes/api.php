@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\QuevedoMusicController;
+use App\Http\Controllers\API\ProductosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,10 @@ Route::post('logout',[UserController::class,'logout'])->middleware(['auth:sanctu
 
 Route::group(['prefix' => 'canciones'], function (){
     Route::get('/', [QuevedoMusicController::class, 'index']);
+});
+
+Route::group(['prefix' => 'productos'], function (){
+    Route::get('/', [ProductosController::class, 'index']);
 });
 
 /* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
