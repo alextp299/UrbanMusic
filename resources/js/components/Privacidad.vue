@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid mt-5 mb-5">
     <h3 class="mb-4">Politica de Privacidad</h3>
+    
     <p class="mt-2" style="font-size: 15px;">En Urban Music, nos tomamos muy en serio la privacidad de nuestros usuarios. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos la información que recopilamos a través de nuestro sitio web.</p>
 
     <h5>1. Información que recopilamos</h5>

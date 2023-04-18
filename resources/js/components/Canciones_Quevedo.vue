@@ -15,7 +15,14 @@
             <tr v-for="(cancion, index) in canciones" :key="index">
                 <td class="text-center">{{ cancion.id }}</td>
                 <td>{{ cancion.name }}</td>
-                <td>{{ cancion.audio }}</td>
+                <td>
+                    <div v-if="cancion.audio">
+                        <audio controls>
+                            <source v-bind:src="'/audio/' + cancion.audio" type="audio/mp3">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                </td>
                 <td>{{ cancion.image }}</td>
             </tr>
         </tbody>
