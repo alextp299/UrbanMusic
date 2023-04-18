@@ -8,9 +8,9 @@ use App\Models\Canciones;
 
 class QuevedoMusicController extends Controller
 {
-    public function index($categoria)
-{
-    $canciones = Cancion::where('categoria', $categoria)->get();
-    return response()->json($canciones);
-}
+    public function index()
+    {
+        $canciones = Canciones::all();
+        return response()->json($canciones);
+    }
 }

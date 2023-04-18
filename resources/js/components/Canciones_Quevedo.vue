@@ -1,11 +1,25 @@
 <template>
   <div>
     <h1>Canciones</h1>
-    <ul>
-      <li v-for="cancion in canciones" :key="cancion.id">
-        {{ cancion.name }}
-      </li>
-    </ul>
+    
+    <table class="table table-hover table-sm">
+        <thead class="bg-dark text-light">
+            <tr>
+                <th width="50" class="text-center">#</th>
+                <th>Nombre</th>
+                <th>Audio</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(cancion, index) in canciones" :key="index">
+                <td class="text-center">{{ cancion.id }}</td>
+                <td>{{ cancion.name }}</td>
+                <td>{{ cancion.audio }}</td>
+                <td>{{ cancion.image }}</td>
+            </tr>
+        </tbody>
+    </table>
   </div>
 </template>
 
@@ -20,7 +34,7 @@ export default {
    },
    created() {
        this.$axios.get('/sanctum/csrf-cookie').then(response => {
-           this.$axios.get('/api/categoria/Quevedo') 
+           this.$axios.get('/api/canciones') 
                .then(response => {
                    this.canciones = response.data;
                })
