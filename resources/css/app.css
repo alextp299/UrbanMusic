@@ -142,6 +142,21 @@
     transform: scale(1.2);
 }
 
+.carrito_hover1 {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/carrito.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.carrito_hover1:hover {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/carrito2.svg');
+    transform: scale(1.2);
+}
+
 
 /* TEXTO COPYRIGHT */
 
@@ -198,7 +213,7 @@
     opacity: 0;
     position: absolute;
     top: 80%;
-    left: 72%;
+    left: 75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;

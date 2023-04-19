@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Canciones</h1>
+  <div class="container-fluid mt-5 mb-5">
+    <h3 class="mb-4">Quevedo</h3>
     
     <table class="table table-hover table-sm">
         <thead class="bg-dark text-light">
