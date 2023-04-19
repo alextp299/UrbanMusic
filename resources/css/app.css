@@ -151,8 +151,8 @@
 }
 
 .carrito_hover1:hover {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-image: url('../icons/carrito2.svg');
     transform: scale(1.2);
 }
