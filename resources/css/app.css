@@ -142,6 +142,21 @@
     transform: scale(1.2);
 }
 
+.carrito_hover1 {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/carrito.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.carrito_hover1:hover {
+    width: 30px;
+    height: 30px;
+    background-image: url('../icons/carrito2.svg');
+    transform: scale(1.2);
+}
+
 
 /* TEXTO COPYRIGHT */
 
