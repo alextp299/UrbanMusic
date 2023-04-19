@@ -13,4 +13,10 @@ class ProductosController extends Controller
         $productos = Producto::where('id_categoria', 2)->get();
         return response()->json($productos);
     }
+    public function guardarProductosSeleccionados(Request $request)
+    {
+        
+
+        return $request;
+    }
 }

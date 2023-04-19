@@ -39,4 +39,5 @@ Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
     Route::post('add', [PostController::class, 'add']);
  });
 
+ Route::post('guardar-productos-en-session', [\App\Http\Controllers\API\ProductosController::class, 'guardarProductosSeleccionados']);
  
