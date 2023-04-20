@@ -11,6 +11,7 @@
             <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
           </div>
           <p class="text-center mt-2">Bad Bunny</p>
+          <p class="text-center mt-2">€</p>
       </div>
       <div class="col-lg-4 mt-5 mb-5 container">
           <img src="../../img/2.webp" class="d-block  mx-auto image"  alt="Merchandising Rosalia">
@@ -18,6 +19,7 @@
             <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
           </div>
           <p class="text-center mt-2">Rosalia</p>
+          <p class="text-center mt-2">€</p>
       </div>
       <div class="col-lg-4 mt-5 mb-5 container">
           <img src="../../img/3.webp" class="d-block  mx-auto image" alt="Merchandising Eladio Carrión">
@@ -25,6 +27,7 @@
             <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
           </div>
           <p class="text-center mt-2">Eladio Carrión</p>
+          <p class="text-center mt-2">€</p>
       </div>
   </div>
 </div>
