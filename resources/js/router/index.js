@@ -19,6 +19,15 @@ import Merchandising_Rosalia from '../components/Merchandising_Rosalia.vue';
 import Merchandising_BadBunny from '../components/Merchandising_BadBunny.vue';
 import Merchandising_EladioCarrión from '../components/Merchandising_EladioCarrión.vue';
 import Carrito from '../components/Carrito.vue';
+import Merchandising_Rosalia1 from '../components/Merchandising_Rosalia1.vue';
+import Merchandising_Rosalia2 from '../components/Merchandising_Rosalia2.vue';
+import Merchandising_Rosalia3 from '../components/Merchandising_Rosalia3.vue';
+import Merchandising_BadBunny1 from '../components/Merchandising_BadBunny1.vue';
+import Merchandising_BadBunny2 from '../components/Merchandising_BadBunny2.vue';
+import Merchandising_BadBunny3 from '../components/Merchandising_BadBunny3.vue';
+import Merchandising_EladioCarrión1 from '../components/Merchandising_EladioCarrión1.vue';
+import Merchandising_EladioCarrión2 from '../components/Merchandising_EladioCarrión2.vue';
+import Merchandising_EladioCarrión3 from '../components/Merchandising_EladioCarrión3.vue';
 
 
 export const routes = [{
@@ -119,6 +128,51 @@ export const routes = [{
         name: 'carrito',
         path: '/carrito',
         component: Carrito
+    },
+    {
+        name: 'merchandising_rosalia1',
+        path: '/merchandising/Rosalia/prenda1',
+        component: Merchandising_Rosalia1
+    },
+    {
+        name: 'merchandising_rosalia2',
+        path: '/merchandising/Rosalia/prenda2',
+        component: Merchandising_Rosalia2
+    },
+    {
+        name: 'merchandising_rosalia3',
+        path: '/merchandising/Rosalia/prenda3',
+        component: Merchandising_Rosalia3
+    },
+    {
+        name: 'merchandising_badbunny1',
+        path: '/merchandising/BadBunny/prenda1',
+        component: Merchandising_BadBunny1
+    },
+    {
+        name: 'merchandising_badbunny2',
+        path: '/merchandising/BadBunny/prenda2',
+        component: Merchandising_BadBunny2
+    },
+    {
+        name: 'merchandising_badbunny3',
+        path: '/merchandising/BadBunny/prenda3',
+        component: Merchandising_BadBunny3
+    },
+    {
+        name: 'merchandising_eladiocarrion1',
+        path: '/merchandising/EladioCarrion/prenda1',
+        component: Merchandising_EladioCarrión1
+    },
+    {
+        name: 'merchandising_eladiocarrion2',
+        path: '/merchandising/EladioCarrion/prenda2',
+        component: Merchandising_EladioCarrión2
+    },
+    {
+        name: 'merchandising_eladiocarrion3',
+        path: '/merchandising/EladioCarrion/prenda3',
+        component: Merchandising_EladioCarrión3
     },
 
 ];
