@@ -26,6 +26,14 @@ Route::post('logout',[UserController::class,'logout'])->middleware(['auth:sanctu
 Route::get('Quevedo', [QuevedoMusicController::class, 'index']);
 
 Route::get('Bad Bunny', [QuevedoMusicController::class, 'badbunny']);
+
+Route::get('Shakira', [QuevedoMusicController::class, 'shakira']);
+
+Route::get('Rosalia', [QuevedoMusicController::class, 'rosalia']);
+
+Route::get('Eladio', [QuevedoMusicController::class, 'eladio']);
+
+Route::get('Karol', [QuevedoMusicController::class, 'karol']);
     
 Route::group(['prefix' => 'productos'], function (){
     Route::get('/', [ProductosController::class, 'index']);
