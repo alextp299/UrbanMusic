@@ -1,9 +1,11 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
       <h3 class="mb-4">Tu carrito</h3>
+      
       <div class="row justify-content-end align-items-center">
         <div class="col-md-4">
           <div class="card card-default d-flex px-3 py-3">
+            
             <div class="card-body p-1">
               <h5 class="text-start p-1">Total pedido</h5>
             </div>
@@ -32,10 +34,31 @@
   </template>
   
   <script>
-  export default{
-      name: "Carrito"
-  }
-  </script>
+export default {
+   data() {
+       return {
+           carrito: [],
+           strSuccess: '',
+           strError: ''
+       }
+   },
+   created() {
+       this.$axios.get('/sanctum/csrf-cookie').then(response => {
+           this.$axios.get('/api/carrito') 
+               .then(response => {
+                   this.productos = response.data;
+               })
+               .catch(function (error) {
+                   console.log(error);
+               });
+           }
+       );
+   },
+   methods: {
+
+   }
+}
+</script>
   
   <style scoped>
   

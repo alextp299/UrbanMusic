@@ -17,11 +17,11 @@ class ProductosController extends Controller
     {
 
         // Obtener el array de productos desde la petición
-        $productos = $request->input('productos');
+        $carrito = $request->input('productos');
 
         // Guardar el array en la sesión
-        $request->session()->put('productos_seleccionados', $productos);
+        $request->session()->put('productos_seleccionados', $carrito);
 
-        return response()->json($productos);
+        return response()->json($carrito);
     }
 }
