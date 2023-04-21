@@ -13,6 +13,19 @@ class ProductosController extends Controller
         $productos = Producto::where('id_categoria', 2)->get();
         return response()->json($productos);
     }
+
+    public function rosalia()
+    {
+        $productos = Producto::where('id_categoria', 3)->get();
+        return response()->json($productos);
+    }
+
+    public function eladio()
+    {
+        $productos = Producto::where('id_categoria', 1)->get();
+        return response()->json($productos);
+    }
+
     public function guardarProductosSeleccionados(Request $request)
     {
 

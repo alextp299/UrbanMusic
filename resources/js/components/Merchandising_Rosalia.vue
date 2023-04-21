@@ -4,40 +4,65 @@
       <div class="container-fluid mt-5">
   <h3>Merchandising más solicitado</h3>
 
-    <div class="row align-items-start">
-      <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/1.webp" class="d-block mx-auto image" alt="Merchandising Bad Bunny">
-          <div class="middle">
-            <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
-          </div>
-          <p class="text-center mt-2">Bad Bunny</p>
-          <p class="text-center mt-2">€</p>
-      </div>
-      <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/2.webp" class="d-block  mx-auto image"  alt="Merchandising Rosalia">
-          <div class="middle">
-            <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
-          </div>
-          <p class="text-center mt-2">Rosalia</p>
-          <p class="text-center mt-2">€</p>
-      </div>
-      <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/3.webp" class="d-block  mx-auto image" alt="Merchandising Eladio Carrión">
-          <div class="middle">
-            <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
-          </div>
-          <p class="text-center mt-2">Eladio Carrión</p>
-          <p class="text-center mt-2">€</p>
-      </div>
-  </div>
+  <table class="table table-hover table-sm">
+        <tbody>
+          <tr v-for="(producto, index) in productos" :key="index">
+            <td class="text-center">{{ producto.id }}</td>
+            <td>{{ producto.name }}</td>
+            <td>{{ producto.precio }}</td>
+            <td class="text-center">
+                        <div v-if="producto.image">
+                            <img alt="post-img" width="150" v-bind:src="'/img/Merchandising_Rosalia/' + producto.image">
+                        </div>
+                    </td>
+            <td><button @click="agregarProducto(producto.id)">Añadir</button></td>
+          </tr>
+        </tbody>
+      </table>
+  
 </div>
       
     </div>
   </template>
   
   <script>
-  export default{
-      name: "Merchandising_Rosalia"
+  export default {
+    data() {
+      return {
+        productos: [],
+        productosSeleccionados: [],
+        strSuccess: '',
+        strError: ''
+      }
+    },
+    created() {
+      this.$axios.get('/sanctum/csrf-cookie').then(response => {
+        this.$axios.get('/api/rosalia')
+          .then(response => {
+            this.productos = response.data;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      });
+    },
+    methods: {
+      agregarProducto(id) {
+        this.productosSeleccionados.push(id);
+        this.guardarProductosSeleccionados();
+      },
+      guardarProductosSeleccionados() {
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+        this.$axios.post('/api/guardar-productos-en-session', { productos: this.productosSeleccionados })
+          .then(response => {
+            console.log(response.data);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+        });
+      }
+    }
   }
   </script>
   
