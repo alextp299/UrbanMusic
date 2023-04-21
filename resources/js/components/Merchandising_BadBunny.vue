@@ -8,7 +8,11 @@
             <td class="text-center">{{ producto.id }}</td>
             <td>{{ producto.name }}</td>
             <td>{{ producto.precio }}</td>
-            <td>{{ producto.image }}</td>
+            <td class="text-center">
+                        <div v-if="producto.image">
+                            <img alt="post-img" width="150" v-bind:src="'/img/Merchandising_BadBunny/' + producto.image">
+                        </div>
+                    </td>
             <td><button @click="agregarProducto(producto.id)">Añadir</button></td>
           </tr>
         </tbody>

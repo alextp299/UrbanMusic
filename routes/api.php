@@ -39,7 +39,12 @@ Route::group(['prefix' => 'productos'], function (){
     Route::get('/', [ProductosController::class, 'index']);
 });
 
-Route::get('carrito', [ProductosController::class, 'obtenerProductos']);
+Route::get('rosalia', [ProductosController::class, 'rosalia']);
+
+
+Route::get('eladio', [ProductosController::class, 'eladio']);
+
+
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
     Route::get('/', [PostController::class, 'index']);

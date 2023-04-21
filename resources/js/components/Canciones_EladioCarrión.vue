@@ -18,12 +18,16 @@
                 <td>
                     <div v-if="cancion.audio">
                         <audio controls>
-                            <source v-bind:src="'/audio/Quevedo/' + cancion.audio" type="audio/mp3">
+                            <source v-bind:src="'/audio/EladioCarrion/' + cancion.audio" type="audio/mp3">
                             Tu navegador no soporta el elemento de audio.
                         </audio>
                     </div>
                 </td>
-                <td>{{ cancion.image }}</td>
+                <td class="text-center">
+                        <div v-if="cancion.image">
+                            <img alt="post-img" width="150" v-bind:src="'/img/Music_EladioCarrion/' + cancion.image">
+                        </div>
+                    </td>
             </tr>
         </tbody>
     </table>
