@@ -23,7 +23,11 @@
                         </audio>
                     </div>
                 </td>
-                <td>{{ cancion.image }}</td>
+                <td class="text-center">
+                        <div v-if="cancion.image">
+                            <img alt="post-img" width="150" v-bind:src="'/img/Music_EladioCarrion/' + cancion.image">
+                        </div>
+                    </td>
             </tr>
         </tbody>
     </table>
