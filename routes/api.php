@@ -25,7 +25,7 @@ Route::post('logout',[UserController::class,'logout'])->middleware(['auth:sanctu
 
 Route::get('Quevedo', [QuevedoMusicController::class, 'index']);
 
-Route::get('Bad Bunny', [QuevedoMusicController::class, 'ba dbunny']);
+Route::get('Bad Bunny', [QuevedoMusicController::class, 'badbunny']);
 
 Route::get('Shakira', [QuevedoMusicController::class, 'shakira']);
 
