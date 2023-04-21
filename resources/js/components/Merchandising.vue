@@ -44,21 +44,21 @@
 
         <div class="row align-items-start">
         <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/rosalia.webp" class="d-block mx-auto image" alt="Rosalia">
+          <img src="../../img/Artistas/rosalia.webp" class="d-block mx-auto image" alt="Rosalia">
           <div class="middle">
             <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
           <p class="text-center mt-2">Rosalia</p>
       </div>
         <div class="col-lg-4 mt-5 mb-5 container">
-            <img src="../../img/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
+            <img src="../../img/Artistas/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
             <div class="middle">
             <router-link to="/merchandising/BadBunny" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
             <p class="text-center mt-2">Bad Bunny</p>
         </div>
         <div class="col-lg-4 mt-5 mb-5 container">
-          <img src="../../img/eladio.webp" class="d-block  mx-auto image" alt="Eladio Carrión">
+          <img src="../../img/Artistas/eladio.webp" class="d-block  mx-auto image" alt="Eladio Carrión">
           <div class="middle">
             <router-link to="/merchandising/EladioCarrion" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
