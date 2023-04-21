@@ -25,7 +25,7 @@
                 </td>
                 <td class="text-center">
                         <div v-if="cancion.image">
-                            <img alt="post-img" width="100" v-bind:src="'/img/' + cancion.image">
+                            <img alt="post-img" width="100" v-bind:src="'/img/Music_Quevedo/' + cancion.image">
                         </div>
                     </td>
             </tr>
