@@ -18,7 +18,7 @@
                 <td>
                     <div v-if="cancion.audio">
                         <audio controls>
-                            <source v-bind:src="'/audio/Quevedo/' + cancion.audio" type="audio/mp3">
+                            <source v-bind:src="'/audio/BadBunny/' + cancion.audio" type="audio/mp3">
                             Tu navegador no soporta el elemento de audio.
                         </audio>
                     </div>
