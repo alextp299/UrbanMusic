@@ -38,65 +38,84 @@
   </button>
 </div>
 <div class="container-fluid mt-5">
-  <h3>Artistas más escuchados</h3>
-    <div class="row align-items-start">
-      <div class="col-lg-4 mt-5 mb-3 container">
-          <img src="../../img/Artistas/quevedo.webp" class="d-block mx-auto image" alt="Quevedo">
-          <div class="middle2">
-            <router-link to="/categoria/Quevedo"><div class="play" aria-label="play"></div></router-link>
-          </div>
-          <p class="text-center mt-2">Quevedo</p>
+  <h3 class="mb-4">Artistas más escuchados</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card espaciado-foto mb-5 container">
+        <img src="../../img/Artistas/quevedo.webp" class="card-img-top3 image" alt="Merchandising Quevedo">
+        <div class="middle2">
+          <router-link to="/categoria/Quevedo"><div class="play" aria-label="play"></div></router-link>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Quevedo</h5>
+        </div>
       </div>
-      <div class="col-lg-4 mt-5 mb-3 container">
-          <img src="../../img/Artistas/badbunny.webp" class="d-block  mx-auto image" alt="Bad Bunny">
-          <div class="middle2">
-            <router-link to="/categoria/BadBunny"><div class="play" aria-label="play"></div></router-link>
-          </div>
-          <p class="text-center mt-2">Bad Bunny</p>
+    </div>
+    <div class="col-md-4">
+      <div class="card espaciado-foto mb-5 container">
+        <img src="../../img/Artistas/badbunny.webp" class="card-img-top3 image" alt="Merchandising Bad Bunny">
+        <div class="middle2">
+          <router-link to="/categoria/BadBunny"><div class="play" aria-label="play"></div></router-link>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Bad Bunny</h5>
+        </div>
       </div>
-      <div class="col-lg-4 mt-5 mb-3 container">
-          <img src="../../img/Artistas/rosalia.webp" class="d-block  mx-auto image" alt="Rosalia">
-          <div class="middle2">
-            <router-link to="/categoria/Rosalia"><div class="play" aria-label="play"></div></router-link>
-          </div>
-          <p class="text-center mt-2">Rosalia</p>
-      </div>
-      <hr>
-      <div class="mb-5 justify-content-center">
-        <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
+    </div>
+    <div class="col-md-4">
+      <div class="card espaciado-foto mb-5 container">
+        <img src="../../img/Artistas/shakira.webp" class="card-img-top3 image" alt="Merchandising Shakira">
+        <div class="middle2">
+          <router-link to="/categoria/Shakira"><div class="play" aria-label="play"></div></router-link>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Shakira</h5>
+        </div>
       </div>
     </div>
   </div>
+  </div>
   <div class="container-fluid mt-5">
-  <h3>Merchandising más solicitado</h3>
-
-    <div class="row align-items-start">
-      <div class="col-lg-4 mt-5 mb-3 container">
-          <img src="../../img/Merchandising_BadBunny/1.webp" class="d-block mx-auto image" alt="Merchandising Bad Bunny">
-          <div class="middle">
-            <router-link to="/merchandising" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
+  <h3 class="mb-4">Merchandising más solicitado</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-5 container">
+          <img src="../../img/Merchandising_BadBunny/1.webp" class="card-img-top2 image" alt="Merchandising Bad Bunny">
+          <div class="middle4">
+            <router-link to="/merchandising/BadBunny" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
-          <p class="text-center mt-2">Bad Bunny</p>
+          <div class="card-body">
+            <h5 class="card-title">Bad Bunny</h5>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-4 mt-5 mb-3 container">
-          <img src="../../img/Merchandising_Rosalia/1.webp" class="d-block  mx-auto image"  alt="Merchandising Rosalia">
-          <div class="middle">
-            <router-link to="/merchandising" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
+      <div class="col-md-4">
+        <div class="card espaciado-foto mb-5 container">
+          <img src="../../img/Merchandising_Rosalia/2.webp" class="card-img-top2 image" alt="Merchandising Rosalia">
+          <div class="middle4">
+            <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
-          <p class="text-center mt-2">Rosalia</p>
+          <div class="card-body">
+            <h5 class="card-title">Rosalia</h5>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-4 mt-5 mb-3 container">
-          <img src="../../img/Merchandising_EladioCarrion/1.webp" class="d-block  mx-auto image" alt="Merchandising Eladio Carrión">
-          <div class="middle">
-            <router-link to="/merchandising" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Comprar</button></router-link>
+      <div class="col-md-4">
+        <div class="card espaciado-foto mb-5 container">
+          <img src="../../img/Merchandising_EladioCarrion/3.webp" class="card-img-top2 image" alt="Merchandising Eladio Carrión">
+          <div class="middle4">
+            <router-link to="/merchandising/EladioCarrion" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
-          <p class="text-center mt-2">Eladio Carrión</p>
+          <div class="card-body">
+            <h5 class="card-title">Eladio Carrión</h5>
+          </div>
+        </div>
       </div>
       <hr>
       <div class="mb-5 justify-content-center">
         <router-link to="/merchandising" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
       </div>
-  </div>
+    </div>
 </div>
 </template>
 

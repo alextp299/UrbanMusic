@@ -3,12 +3,14 @@
     <h3 class="mb-4">Eladio Carrión</h3>
     <div class="row">
       <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
-        <div class="card mb-5">
-          <img class="card-img-top2" v-bind:src="'/img/Merchandising_EladioCarrion/' + producto.image" alt="Imagen del producto">
+        <div class="card mb-5 container">
+          <img class="card-img-top2 image" v-bind:src="'/img/Merchandising_EladioCarrion/' + producto.image" alt="Imagen del producto">
+          <div class="middle">
+            <button @click="agregarProducto(producto.id)" class="fondo-color tamaño_session">Añadir al carrito</button>
+          </div>
           <div class="card-body">
             <h5 class="card-title">{{ producto.name }}</h5>
             <p class="card-text">{{ producto.precio }} €</p>
-            <button @click="agregarProducto(producto.id)" class="fondo-color tamaño_session">Añadir al carrito</button>
           </div>
         </div>
       </div>
