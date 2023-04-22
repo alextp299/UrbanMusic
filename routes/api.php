@@ -44,7 +44,7 @@ Route::get('rosalia', [ProductosController::class, 'rosalia']);
 
 Route::get('eladio', [ProductosController::class, 'eladio']);
 
-Route::get('carrito', [ProductosController::class, 'guardarProductosSeleccionados']);
+
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
     Route::get('/', [PostController::class, 'index']);

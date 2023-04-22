@@ -29,12 +29,22 @@ class ProductosController extends Controller
     public function guardarProductosSeleccionados(Request $request)
     {
 
-        // Obtener el array de productos desde la petición
-        $carrito = $request->input('productos');
+       // Recibe el array de productos desde la solicitud HTTP POST
+    $productos = $request->input('productos');
 
-        // Guardar el array en la sesión
-        $request->session()->put('productos_seleccionados', $carrito);
+    // Guarda el array de productos en una sesión
+    session(['productos' => $productos]);
 
-        return response()->json($carrito);
+    // Devuelve una respuesta HTTP exitosa
+    return response()->json(['mensaje' => 'Productos agregados correctamente']);
     }
+
+    public function obtenerProductos()
+{
+    // Obtiene el array de productos guardados en la sesión
+    $productos = session('productos', []);
+
+    // Devuelve el array de productos como una respuesta HTTP
+    return response()->json($productos);
+}
 }
