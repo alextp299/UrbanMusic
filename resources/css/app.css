@@ -50,14 +50,14 @@
     padding: 6px 12px;
 }
 
-.fondo-web {
-    background-color: var(--color3);
-}
-
 .tamaño_session {
     font-size: 15px;
     color: white;
     padding: 4px 8px;
+}
+
+.fondo-web {
+    background-color: var(--color3);
 }
 
 
@@ -201,7 +201,7 @@
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 50%;
+    bottom: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);

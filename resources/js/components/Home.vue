@@ -88,6 +88,10 @@
           </div>
           <p class="text-center mt-2">Eladio Carrión</p>
       </div>
+      <hr>
+      <div class="mb-5 d-flex justify-content-center">
+        <router-link to="/merchandising" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
+      </div>
   </div>
 </div>
 </template>
