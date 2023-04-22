@@ -54,6 +54,13 @@
     font-size: 15px;
     color: white;
     padding: 4px 8px;
+    width: 100%;
+}
+
+.tamaño_session2 {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
 }
 
 .fondo-web {
