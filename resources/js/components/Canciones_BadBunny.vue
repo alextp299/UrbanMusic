@@ -11,9 +11,6 @@
                 <source v-bind:src="'/audio/BadBunny/' + cancion.audio" type="audio/mp3">
                 Tu navegador no soporta el elemento de audio.
                 </audio>
-                <button class="btn btn-primary"><i class="fa fa-play"></i></button>
-                <button class="btn btn-primary"><i class="fa fa-pause"></i></button>
-                <button class="btn btn-primary"><i class="fa fa-plus"></i> Agregar a lista</button>
             </div>
             </div>
         </div>
