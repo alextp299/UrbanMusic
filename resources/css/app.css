@@ -292,13 +292,47 @@
 
 audio {
     width: 100%;
+    height: 40px;
     background-color: white;
     border-radius: 10px;
     padding: 10px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 audio::-webkit-media-controls-panel {
     background-color: white;
     border-radius: 10px;
     padding: 10px;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    height: 5px;
+    width: 50px;
+    margin-right: 3px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 1.5rem;
+    margin-right: 10px;
 }
