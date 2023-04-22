@@ -2,10 +2,10 @@
     <div class="container-fluid mt-5 mb-5">
       <h3 class="mb-4">Tu carrito</h3>
       <ul>
-      <li v-for="(producto, index) in productos" :key="index">
-        {{ producto}}
-      </li>
-    </ul>
+        <li v-for="(producto, index) in productos" :key="index">
+  {{ producto }}
+</li>
+        </ul>
       <div class="row justify-content-end align-items-center">
         <div class="col-md-4">
           <div class="card card-default d-flex px-3 py-3">
@@ -51,8 +51,8 @@ export default {
         axios.get('/api/carrito')
     .then(response => {
         // Maneja la respuesta de la API
-        let productos = response.data;
-        console.log(productos);
+        this.productos = Array.from(response.data);
+        console.log(this.productos);
     })
     .catch(error => {
         // Maneja los errores de la solicitud HTTP
