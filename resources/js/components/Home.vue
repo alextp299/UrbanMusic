@@ -73,6 +73,10 @@
         </div>
       </div>
     </div>
+    <hr>
+    <div class="mb-5 justify-content-center">
+      <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
+    </div>
   </div>
   </div>
   <div class="container-fluid mt-5">
