@@ -245,6 +245,8 @@
     background-image: url('../icons/play.svg');
     background-size: cover;
     transition: all 0.5s ease;
+    border-radius: 50%;
+    background-color: white;
 }
 
 .play:hover {
