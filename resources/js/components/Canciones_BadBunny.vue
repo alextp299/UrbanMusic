@@ -1,36 +1,23 @@
 <template>
   <div class="container-fluid mt-5 mb-5">
     <h3 class="mb-4">Bad Bunny</h3>
-    
-    <table class="table table-hover table-sm">
-        <thead class="bg-dark text-light">
-            <tr>
-                <th width="50" class="text-center">#</th>
-                <th>Nombre</th>
-                <th>Audio</th>
-                <th>Imagen</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="(cancion, index) in canciones" :key="index">
-                <td class="text-center">{{ cancion.id }}</td>
-                <td>{{ cancion.name }}</td>
-                <td>
-                    <div v-if="cancion.audio">
-                        <audio controls>
-                            <source v-bind:src="'/audio/BadBunny/' + cancion.audio" type="audio/mp3">
-                            Tu navegador no soporta el elemento de audio.
-                        </audio>
-                    </div>
-                </td>
-                <td class="text-center">
-                        <div v-if="cancion.image">
-                            <img alt="post-img" width="150" v-bind:src="'/img/Music_BadBunny/' + cancion.image">
-                        </div>
-                    </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-4" v-for="(cancion, index) in canciones" :key="index">
+            <div class="card mb-5">
+            <img class="card-img-top" v-bind:src="'/img/Music_BadBunny/' + cancion.image"  alt="Portada de la canción">
+            <div class="card-body">
+                <h5 class="card-title">{{ cancion.name }}</h5>
+                <audio controls class="mb-3">
+                <source v-bind:src="'/audio/BadBunny/' + cancion.audio" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+                </audio>
+                <button class="btn btn-primary"><i class="fa fa-play"></i></button>
+                <button class="btn btn-primary"><i class="fa fa-pause"></i></button>
+                <button class="btn btn-primary"><i class="fa fa-plus"></i> Agregar a lista</button>
+            </div>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 
