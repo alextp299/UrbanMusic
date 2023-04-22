@@ -10,21 +10,21 @@
       <img src="../../img/Carrusel/car1.webp" class="d-block w-100 image"  alt="Eladio Carrión">
         <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 33%;">
           <h4 class="text-dark">¡Descubre MÁS contenido de <br>artistas como Eladio Carrión <br>AQUÍ</h4>
-          <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
+          <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">¡Dale!</button></router-link>
         </div>
     </div>
     <div class="carousel-item container-carrusel">
       <img src="../../img/Carrusel/car2.webp" class="d-block w-100 image"  alt="Rosalia">
         <div class="carousel-caption d-none d-md-block" style="text-align: right; top: 33%;">
           <h4 class="text-dark">¡Descubre MÁS contenido de <br>artistas como la Rosalia <br>AQUÍ</h4>
-          <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
+          <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">¡Dale!</button></router-link>
         </div>
     </div>
     <div class="carousel-item container-carrusel">
       <img src="../../img/Carrusel/car3.webp" class="d-block w-100 image"  alt="Bad Bunny">
         <div class="carousel-caption d-none d-md-block" style="text-align: left; top: 33%;">
           <h4 class="text-dark">¡Descubre MÁS contenido <br>de artistas como <br>Bad Bunny AQUÍ</h4>
-          <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">¡Dale!</button></router-link>
+          <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">¡Dale!</button></router-link>
         </div>
     </div>
   </div>
@@ -61,6 +61,9 @@
           </div>
           <p class="text-center mt-2">Rosalia</p>
       </div>
+      <div class="mb-5 justify-content-center">
+        <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
+      </div>
     </div>
   </div>
   <div class="container-fluid mt-5">
@@ -89,7 +92,7 @@
           <p class="text-center mt-2">Eladio Carrión</p>
       </div>
       <hr>
-      <div class="mb-5 d-flex justify-content-center">
+      <div class="mb-5 justify-content-center">
         <router-link to="/merchandising" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
       </div>
   </div>
