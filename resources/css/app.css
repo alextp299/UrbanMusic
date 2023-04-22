@@ -266,3 +266,39 @@
         text-align: center;
     }
 }
+
+
+/* /////////////////////////////// */
+
+
+/* CANCIONES */
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    max-height: 350px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+audio {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
