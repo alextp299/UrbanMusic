@@ -1,24 +1,21 @@
 <template>
-    <div>
-      <h1>Productos</h1>
-  
-      <table class="table table-hover table-sm">
-        <tbody>
-          <tr v-for="(producto, index) in productos" :key="index">
-            <td class="text-center">{{ producto.id }}</td>
-            <td>{{ producto.name }}</td>
-            <td>{{ producto.precio }}</td>
-            <td class="text-center">
-                        <div v-if="producto.image">
-                            <img alt="post-img" width="150" v-bind:src="'/img/Merchandising_BadBunny/' + producto.image">
-                        </div>
-                    </td>
-            <td><button @click="agregarProducto(producto.id)">Añadir</button></td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="container-fluid mt-5 mb-5">
+    <h3 class="mb-4">Bad Bunny</h3>
+    <div class="row">
+      <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
+        <div class="card mb-5">
+          <img class="card-img-top2" v-bind:src="'/img/Merchandising_BadBunny/' + producto.image" alt="Imagen del producto">
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.name }}</h5>
+            <p class="card-text">{{ producto.precio }} €</p>
+            <button @click="agregarProducto(producto.id)" class="fondo-color tamaño_session">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </template>
+  </div>
+</template>
+
   
   <script>
   export default {

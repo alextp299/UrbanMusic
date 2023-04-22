@@ -336,3 +336,18 @@ audio::-webkit-media-controls-mute-button {
     font-size: 1.5rem;
     margin-right: 10px;
 }
+
+
+/* /////////////////////////////// */
+
+
+/* PRODUCTOS */
+
+.card-img-top2 {
+    max-height: 350px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 100%;
+    width: 100%;
+}

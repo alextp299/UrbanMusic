@@ -43,4 +43,10 @@ class QuevedoMusicController extends Controller
         $canciones = Canciones::where('id_categoria_cancion', 6)->get();
         return response()->json($canciones);
     }
+    
+/*     public function top()
+    {
+        $canciones = Canciones::where('id')->get();
+        return response()->json($canciones);
+    } */
 }
