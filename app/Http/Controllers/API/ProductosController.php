@@ -47,4 +47,22 @@ class ProductosController extends Controller
     // Devuelve el array de productos como una respuesta HTTP
     return response()->json($productos);
 }
+
+public function obtenerPrecioTotal()
+{
+    // Obtiene el array de productos guardados en la sesión
+    $productos = session('productos', []);
+
+    // Inicializa la variable de precio total
+    $precioTotal = 0;
+
+    // Recorre los productos y suma sus precios
+    foreach ($productos as $producto) {
+        $precioTotal += $producto['precio'];
+    }
+
+    // Devuelve el precio total como una respuesta HTTP
+    return response()->json($precioTotal);
+}
+
 }

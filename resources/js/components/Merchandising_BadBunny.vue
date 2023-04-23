@@ -24,6 +24,7 @@
       return {
         productos: [],
         productosSeleccionados: [],
+        
         strSuccess: '',
         strError: ''
       }
@@ -54,7 +55,7 @@
             console.log(error);
           });
         });
-      }
+      },
     }
   }
   </script>

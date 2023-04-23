@@ -46,6 +46,8 @@ Route::get('eladio', [ProductosController::class, 'eladio']);
 
 Route::get('carrito', [ProductosController::class, 'obtenerProductos']);
 
+Route::get('precioTotal', [ProductosController::class, 'obtenerPrecioTotal']);
+
 
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
