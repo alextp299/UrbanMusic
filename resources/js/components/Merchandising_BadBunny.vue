@@ -6,7 +6,7 @@
         <div class="card mb-5 container">
           <img class="card-img-top2 image" v-bind:src="'/img/Merchandising_BadBunny/' + producto.image" alt="Imagen del producto">
           <div class="middle">
-            <button @click="agregarProducto(producto.id)" class="fondo-color tamaño_session">Añadir al carrito</button>
+            <button @click="agregarProducto(producto)" class="fondo-color tamaño_session">Añadir al carrito</button>
           </div>
           <div class="card-body">
             <h5 class="card-title">{{ producto.name }}</h5>
