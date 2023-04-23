@@ -63,6 +63,13 @@
     padding: 4px 8px;
 }
 
+.tamaño_session3 {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
+    width: 50%;
+}
+
 .fondo-web {
     background-color: var(--color3);
 }
@@ -338,6 +345,17 @@ audio::-webkit-media-controls-mute-button {
     color: #444;
     font-size: 1.5rem;
     margin-right: 10px;
+}
+
+
+/* VERSION MOVIL FOOTER */
+
+@media (max-width: 992px) {
+    audio::-webkit-media-controls-volume-slider {
+        height: 0px;
+        width: 0px;
+        margin-right: 5px;
+    }
 }
 
 

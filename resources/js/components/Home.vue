@@ -75,7 +75,7 @@
     </div>
     <hr>
     <div class="mb-5 justify-content-center">
-      <router-link to="/categoria" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
+      <router-link to="/categoria" class="nav-item nav-link mt-2 text-center"><button class="fondo-color tamaño_session3">Ver más</button></router-link>
     </div>
   </div>
   </div>
@@ -117,7 +117,7 @@
       </div>
       <hr>
       <div class="mb-5 justify-content-center">
-        <router-link to="/merchandising" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session">Ver más</button></router-link>
+        <router-link to="/merchandising" class="nav-item nav-link mt-2 text-center"><button class="fondo-color tamaño_session3">Ver más</button></router-link>
       </div>
     </div>
 </div>
