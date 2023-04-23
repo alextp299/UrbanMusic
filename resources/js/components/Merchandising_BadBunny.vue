@@ -24,7 +24,6 @@
       return {
         productos: [],
         productosSeleccionados: [],
-        
         strSuccess: '',
         strError: ''
       }
@@ -56,6 +55,19 @@
           });
         });
       },
+      obtenerPrecioTotal() {
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+        this.$axios.post('/api/precioTotal') 
+          .then(response => {
+            console.log(response.data);
+            
+          })
+          .catch(error => {
+            console.log(error);
+          });
+        });
+      },
+      
     }
   }
   </script>

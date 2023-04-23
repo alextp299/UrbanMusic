@@ -18,6 +18,7 @@
     </div>
   </div>
 </div>
+
         </div>
       </div>
     </div>
@@ -99,7 +100,6 @@ export default {
       console.log(error);
     });
 },
-
   
   methods: {
 
@@ -120,7 +120,7 @@ export default {
       producto.cantidad--;
       this.actualizarPrecioTotal();
     }
-  }
+  }, 
     
     },
 };
