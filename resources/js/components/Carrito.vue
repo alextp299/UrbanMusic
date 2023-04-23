@@ -1,11 +1,18 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
       <h3 class="mb-4">Tu carrito</h3>
-      <ul>
-        <li v-for="(producto, index) in productos" :key="index">
-  {{ producto }}
-</li>
-        </ul>
+
+      
+      
+      <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
+        <div class="card mb-5 container">
+          <img class="card-img-top2 image" v-bind:src="'/img/Merchandising_Rosalia/' + producto.image" alt="Imagen del producto">
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.name }}</h5>
+            <p class="card-text">{{ producto.precio }} €</p>
+          </div>
+        </div>
+      </div>
       <div class="row justify-content-end align-items-center">
         <div class="col-md-4">
           <div class="card card-default d-flex px-3 py-3">

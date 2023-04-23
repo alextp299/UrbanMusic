@@ -37,6 +37,7 @@
                         </ul>
                         <router-link to="/login" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session">Iniciar Sesión</button></router-link>
                         <router-link to="/register" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session">Registrarse</button></router-link>
+                        <p class="mt-4 mx-3">Productos en el carrito: {{ productos.length }}</p>
                         <router-link to="/carrito" class="nav-item nav-link mt-3 me-2"><div class="carrito_hover1" aria-label="Carrito"></div></router-link>
                     </div>
                 </div>
@@ -92,13 +93,30 @@
     data() {
         return {
             isLoggedin: false,
+            productos: [],
+           strSuccess: '',
+           strError: ''
         }
     },
     created() {
         if(window.Laravel.isLoggedin){
             this.isLoggedin =true;
         }
-    },
+    },created() {
+       this.$axios.get('/sanctum/csrf-cookie').then(response => {
+        axios.get('/api/carrito')
+    .then(response => {
+        // Maneja la respuesta de la API
+        this.productos = Array.from(response.data);
+        console.log(this.productos);
+    })
+    .catch(error => {
+        // Maneja los errores de la solicitud HTTP
+        console.log(error);
+    });
+           }
+       );
+   },
     methods: {
         logout(e) {
             e.preventDefault()
