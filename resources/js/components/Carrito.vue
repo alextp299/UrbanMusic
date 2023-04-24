@@ -4,7 +4,7 @@
 
     <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
       <div class="card mb-5 container">
-        <img class="card-img-top2 image" v-bind:src="'/img/Merchandising_Rosalia/' + producto.image" alt="Imagen del producto">
+        <img class="card-img-top2 image" v-bind:src="'/img/Merchandising/' + producto.image" alt="Imagen del producto">
         <div class="card-body">
           <h5 class="card-title">{{ producto.name }}</h5>
           <p class="card-text">{{ producto.precio }} €</p>

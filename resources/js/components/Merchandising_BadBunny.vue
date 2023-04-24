@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
         <div class="card mb-5 container">
-          <img class="card-img-top2 image" v-bind:src="'/img/Merchandising_BadBunny/' + producto.image" alt="Imagen del producto">
+          <img class="card-img-top2 image" v-bind:src="'/img/Merchandising/' + producto.image" alt="Imagen del producto">
           <div class="middle">
             <button @click="agregarProducto(producto)" class="fondo-color tamaño_session">Añadir al carrito</button>
           </div>
@@ -30,7 +30,7 @@
     },
     created() {
       this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        this.$axios.get('/api/productos')
+        this.$axios.get('/api/badbunny')
           .then(response => {
             this.productos = response.data;
           })
@@ -41,7 +41,8 @@
     },
     methods: {
       agregarProducto(id) {
-       
+        this.productosSeleccionados.push(id);
+        this.guardarProductosSeleccionados();
       },
       guardarProductosSeleccionados() {
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
