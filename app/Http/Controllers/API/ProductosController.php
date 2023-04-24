@@ -27,17 +27,27 @@ class ProductosController extends Controller
     }
 
     public function guardarProductosSeleccionados(Request $request)
-    {
-
-       // Recibe el array de productos desde la solicitud HTTP POST
+{
+    // Recibe el array de productos desde la solicitud HTTP POST
     $productos = $request->input('productos');
 
-    // Guarda el array de productos en una sesión
-    session(['productos' => $productos]);
+    // Obtiene el array de productos guardados en la sesión
+    $productosEnSesion = session('productos', []);
+
+    // Verifica si cada producto ya se encuentra en la sesión
+    foreach ($productos as $producto) {
+        if (!in_array($producto, $productosEnSesion)) {
+            // Si el producto no está en la sesión, lo agrega
+            $productosEnSesion[] = $producto;
+        }
+    }
+
+    // Guarda el array de productos actualizado en la sesión
+    session(['productos' => $productosEnSesion]);
 
     // Devuelve una respuesta HTTP exitosa
     return response()->json(['mensaje' => 'Productos agregados correctamente']);
-    }
+}
 
     public function obtenerProductos()
 {
