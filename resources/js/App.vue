@@ -37,7 +37,6 @@
                         </ul>
                         <router-link to="/login" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session">Iniciar Sesión</button></router-link>
                         <router-link to="/register" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session">Registrarse</button></router-link>
-                        <p class="mt-4 mx-3">Productos en el carrito: {{ productos.length }}</p>
                         <router-link to="/carrito" class="nav-item nav-link mt-3 me-2"><div class="carrito_hover1" aria-label="Carrito"></div></router-link>
                     </div>
                 </div>
