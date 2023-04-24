@@ -1,7 +1,7 @@
 <template>
-  <div class="container-fluid mt-5 mb-5">
+  <div class="container-fluid mt-5 mb-5" style="min-height: 400px;">
     <h3 class="mb-4">Tu carrito</h3>
-
+    <div class="row">
     <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
       <div class="card mb-5 container">
         <img class="card-img-top2 image" v-bind:src="'/img/Merchandising/' + producto.image" alt="Imagen del producto">
@@ -17,15 +17,18 @@
       <button class="btn btn-outline-secondary" type="button" @click="incrementarCantidad(producto)">+</button>
     </div>
   </div>
+  </div>
+  <button class="btn btn-danger" @click="eliminarProducto(producto.id)">Eliminar</button>
 </div>
 
+        </div>
         </div>
       </div>
     </div>
 
     <div class="row justify-content-end align-items-center">
       <div class="col-md-4">
-        <div class="card card-default d-flex px-3 py-3">
+        <div class="card posicion-card card-default d-flex px-3 py-3">
           <div class="card-body p-1">
             <h5 class="text-start p-1">Total pedido</h5>
           </div>
@@ -51,7 +54,7 @@
         </div>
       </div>
     </div>
-  </div>
+ 
 </template>
 
 <script>
@@ -120,7 +123,23 @@ export default {
       producto.cantidad--;
       this.actualizarPrecioTotal();
     }
-  }, 
+  }, eliminarProducto(id) {
+      axios.post('/api/eliminar/' + id, {
+          _method: 'DELETE'
+        })
+        .then(response => {
+          // Maneja la respuesta de la API
+          console.log(response.data);
+          // Elimina el producto del array
+          this.productos = this.productos.filter(producto => producto.id !== id);
+          // Actualiza el precio total
+          this.actualizarPrecioTotal();
+        })
+        .catch(error => {
+          // Maneja los errores de la solicitud HTTP
+          console.log(error);
+        });
+    },
     
     },
 };

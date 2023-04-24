@@ -49,7 +49,32 @@ class ProductosController extends Controller
     return response()->json(['mensaje' => 'Productos agregados correctamente']);
 }
 
-    public function obtenerProductos()
+    
+
+public function eliminarProductos(Request $request)
+{
+    // Obtiene el id del producto que se va a eliminar de la solicitud HTTP
+    $id = $request->input('id');
+
+    // Obtiene el array de productos guardados en la sesión
+    $productos = session('productos', []);
+
+    // Busca el índice del producto con el id dado en el array de productos
+    $indice = array_search($id, array_column($productos, 'id'));
+
+    // Si el índice existe, elimina el producto del array
+    if ($indice !== false) {
+        unset($productos[$indice]);
+    }
+
+    // Actualiza la sesión con el array de productos actualizado
+    session(['productos' => array_values($productos)]);
+
+    // Devuelve el array de productos actualizado como una respuesta HTTP
+    return response()->json($productos);
+}
+
+public function obtenerProductos(Request $request)
 {
     // Obtiene el array de productos guardados en la sesión
     $productos = session('productos', []);

@@ -420,3 +420,12 @@ audio::-webkit-media-controls-mute-button {
 .espaciado-foto {
     padding: 0;
 }
+
+.posicion-card{
+
+    position: fixed;
+    top: 200px;
+    right: 100px;
+    z-index: 5;
+    width: 300px;
+}
