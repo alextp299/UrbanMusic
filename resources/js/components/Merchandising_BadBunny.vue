@@ -41,8 +41,7 @@
     },
     methods: {
       agregarProducto(id) {
-        this.productosSeleccionados.push(id);
-        this.guardarProductosSeleccionados();
+       
       },
       guardarProductosSeleccionados() {
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
