@@ -19,6 +19,7 @@ import Merchandising_Rosalia from '../components/Merchandising_Rosalia.vue';
 import Merchandising_BadBunny from '../components/Merchandising_BadBunny.vue';
 import Merchandising_EladioCarrión from '../components/Merchandising_EladioCarrión.vue';
 import Carrito from '../components/Carrito.vue';
+import ConfirmaciónCompra from '../components/ConfirmaciónCompra.vue';
 
 
 export const routes = [{
@@ -119,6 +120,11 @@ export const routes = [{
         name: 'carrito',
         path: '/carrito',
         component: Carrito
+    },
+    {
+        name: 'confirmacioncompra',
+        path: '/finalizacioncompra',
+        component: ConfirmaciónCompra
     },
 
 ];

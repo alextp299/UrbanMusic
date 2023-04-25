@@ -20,6 +20,7 @@
                                 <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                             </li>
                         </ul>
+                        <p class="mt-4 mx-3">Productos en el carrito: {{ productos.length }}</p>
                         <router-link to="/carrito" class="nav-item nav-link mt-3 me-2"><div class="carrito_hover1" aria-label="Carrito"></div></router-link>
                         <router-link to="/" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session" @click="logout">Logout</button></router-link>
                     </div> 

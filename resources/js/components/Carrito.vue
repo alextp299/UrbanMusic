@@ -45,7 +45,7 @@
                   <p class="text-end">{{ precioTotal }} €</p>
               </div>
               <div class="form-group row mt-1 mb-0 text-center">
-                <router-link to="/" class="nav-item nav-link mt-2">
+                <router-link to="/finalizacioncompra" class="nav-item nav-link mt-2">
                   <button class="fondo-color tamaño_session" style="width: 100%;">Finalizar Pedido</button>
                 </router-link>
               </div>
