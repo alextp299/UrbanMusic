@@ -3,17 +3,17 @@
     <h3 class="mb-4">Tu carrito</h3>
     <div class="row">
     <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
-      <div class="card mb-5 container">
+      <div class="card mb-5 container" id="tamaño-card">
         <img class="card-img-top2 image" v-bind:src="'/img/Merchandising/' + producto.image" alt="Imagen del producto">
         <div class="card-body">
           <h5 class="card-title">{{ producto.name }}</h5>
           <p class="card-text">{{ producto.precio }} €</p>
           <div class="form-group row">
   <label for="cantidad" class="col-sm-4 col-form-label">Cantidad:</label>
-  <div class="col-sm-8">
+  <div class="col-sm-5">
     <div class="input-group">
       <button class="btn btn-outline-secondary" type="button" @click="decrementarCantidad(producto)">-</button>
-      <input type="number" class="form-control" id="cantidad" v-model.number="producto.cantidad" min="1">
+      <input type="number" class="form-control text-center" id="cantidad" v-model.number="producto.cantidad" min="1">
       <button class="btn btn-outline-secondary" type="button" @click="incrementarCantidad(producto)">+</button>
     </div>
   </div>
