@@ -102,21 +102,7 @@
         if(window.Laravel.isLoggedin){
             this.isLoggedin =true;
         }
-    },created() {
-       this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        axios.get('/api/carrito')
-    .then(response => {
-        // Maneja la respuesta de la API
-        this.productos = Array.from(response.data);
-        console.log(this.productos);
-    })
-    .catch(error => {
-        // Maneja los errores de la solicitud HTTP
-        console.log(error);
-    });
-           }
-       );
-   },
+    },
     methods: {
         logout(e) {
             e.preventDefault()

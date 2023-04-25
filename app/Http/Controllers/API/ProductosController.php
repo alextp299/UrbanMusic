@@ -70,18 +70,14 @@ public function eliminarProductos(Request $request)
     // Actualiza la sesión con el array de productos actualizado
     session(['productos' => array_values($productos)]);
 
-    // Devuelve el array de productos actualizado como una respuesta HTTP
+    // Guarda la sesión actualizada
+    session()->save();
+
+    // Llama a la función obtenerProductos para obtener el nuevo array de productos
     return response()->json($productos);
 }
 
-public function obtenerProductos(Request $request)
-{
-    // Obtiene el array de productos guardados en la sesión
-    $productos = session('productos', []);
 
-    // Devuelve el array de productos como una respuesta HTTP
-    return response()->json($productos);
-}
 
 public function obtenerPrecioTotal()
 {

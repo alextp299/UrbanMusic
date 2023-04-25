@@ -71,7 +71,7 @@ export default {
   created() {
   // Obtiene los productos del carrito y establece su cantidad inicial en 1
   this.$axios.get('/sanctum/csrf-cookie').then(response => {
-    axios.get('/api/carrito')
+    axios.get('/api/mostrar')
       .then(response => {
         // Maneja la respuesta de la API
         this.productos = Array.from(response.data);
