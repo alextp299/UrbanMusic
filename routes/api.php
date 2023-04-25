@@ -35,9 +35,7 @@ Route::get('Eladio', [QuevedoMusicController::class, 'eladio']);
 
 Route::get('Karol', [QuevedoMusicController::class, 'karol']);
     
-
 Route::get('badbunny', [ProductosController::class, 'index']);
-
 
 Route::get('rosalia', [ProductosController::class, 'rosalia']);
 
