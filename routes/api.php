@@ -22,6 +22,7 @@ Route::post('login',[UserController::class,'login']);
 Route::post('register',[UserController::class,'register']);
 Route::post('logout',[UserController::class,'logout'])->middleware(['auth:sanctum']);
 
+Route::post('pedidos',[ProductosController::class,'pedidos']);
 
 Route::get('Quevedo', [QuevedoMusicController::class, 'index']);
 

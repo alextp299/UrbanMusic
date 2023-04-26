@@ -11,4 +11,10 @@ class Producto extends Model
 
     protected $table = 'productos';
 
+    function pedido() {
+
+        return $this->belongsToMany(Pedido::class,'pedido_productos');
+
+    }
+
 }

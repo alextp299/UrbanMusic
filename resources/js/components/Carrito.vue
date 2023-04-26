@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid mt-5 mb-5" style="min-height: 400px;">
     <h3 class="mb-4">Tu carrito</h3>
+    <p class="text-end" v-if="isLoggedin">{{ user.id }}</p>
     <div class="row">
     <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
       <div class="card mb-5 container" id="tamaño-card">
@@ -46,7 +47,7 @@
               </div>
               <div class="form-group row mt-1 mb-0 text-center">
                 <router-link to="/finalizacioncompra" class="nav-item nav-link mt-2">
-                  <button class="fondo-color tamaño_session" style="width: 100%;">Finalizar Pedido</button>
+                  <button class="fondo-color tamaño_session" style="width: 100%;" @click="pedidos">Finalizar Pedido</button>
                 </router-link>
               </div>
             </form>
@@ -63,12 +64,17 @@ export default {
     return {
       productos: [],
       productosSeleccionados: [],
-      
+      isLoggedin: false,
+      user: null,
       strSuccess: '',
       strError: ''
     }
   },
   created() {
+    if(window.Laravel.isLoggedin){
+            this.isLoggedin =true;
+            this.user =window.Laravel.user;
+        }
   // Obtiene los productos del carrito y establece su cantidad inicial en 1
   this.$axios.get('/sanctum/csrf-cookie').then(response => {
     axios.get('/api/carrito')
@@ -105,6 +111,28 @@ export default {
 },
   
   methods: {
+
+    pedidos(e){
+            e.preventDefault()
+                this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                    this.$axios.post('api/pedidos', {
+
+                        precio: this.precioTotal,
+                        id_usuario: this.user.id
+                        
+                    })
+                        .then(response => {
+                            if (response.data.success) {
+                                window.location.href = "/login"
+                            } else {
+                                this.error = response.data.message
+                            }
+                        })
+                        .catch(function (error) {
+                            console.error(error);
+                        });
+                })
+        },
 
     actualizarPrecioTotal() {
   let total = 0;
