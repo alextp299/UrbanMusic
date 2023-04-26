@@ -427,6 +427,10 @@ audio::-webkit-media-controls-mute-button {
 
 /* CARRITO */
 
+.card#tamaño-card {
+    width: 400px;
+}
+
 .posicion-card {
     position: fixed;
     top: 200px;
