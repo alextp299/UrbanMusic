@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('pedido_productos', function (Blueprint $table) {
             $table->id();
-            $table->integer('cantidad');
-            $table->decimal('precio', 8, 2);
             $table->unsignedBigInteger('id_pedido');
             $table->unsignedBigInteger('id_producto');
             $table->timestamps();
