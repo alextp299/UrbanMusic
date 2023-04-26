@@ -11,7 +11,7 @@ class Roles extends Model
 
     function user() {
 
-        return $this->belongsToMany(User::class,'usuario_roles')->timestamps();
+        return $this->belongsToMany(User::class,'usuario_roles');
 
     }
 }

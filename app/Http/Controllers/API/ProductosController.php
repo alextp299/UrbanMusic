@@ -99,6 +99,31 @@ public function obtenerPrecioTotal()
     return response()->json($precioTotal);
 }
 
+public function pedido(Request $request){
+
+    try{
+        $pedido = new Pedido();
+        $pedido->precio = $request->precio;
+        $pedido->fecha = $request->fecha;
+        $user->id_usuario = $request->id_usuario;;
+        $user->save();
+        $success = true;
+        $message = "Usuario registrado correctamente";
+    }catch(\Illuminate\Database\QueryException $ex){
+        $success = false;
+        $message = $ex->getMessage();
+    }
+
+
+    $response=[
+        'success' => $success,
+        'message' => $message,
+    ];
+
+    return response()->json($response);
+
+}
+
 
 
 }
