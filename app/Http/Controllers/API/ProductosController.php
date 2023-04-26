@@ -5,6 +5,8 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Pedido;
+use Illuminate\Support\Carbon;
 
 class ProductosController extends Controller
 {
@@ -99,21 +101,20 @@ public function obtenerPrecioTotal()
     return response()->json($precioTotal);
 }
 
-public function pedido(Request $request){
-
-    try{
-        $pedido = new Pedido();
-        $pedido->precio = $request->precio;
-        $pedido->fecha = $request->fecha;
-        $user->id_usuario = $request->id_usuario;;
-        $user->save();
-        $success = true;
-        $message = "Usuario registrado correctamente";
-    }catch(\Illuminate\Database\QueryException $ex){
-        $success = false;
-        $message = $ex->getMessage();
-    }
-
+public function pedidos(Request $request){
+    
+try{
+    $pedido = new Pedido();
+    $pedido->precio = $request->precio;
+    $pedido->id_usuario = $request->id_usuario;
+    $pedido->fecha = now();
+    $pedido->save();
+    $success = true;
+    $message = "Usuario registrado correctamente";
+}catch(\Illuminate\Database\QueryException $ex){
+    $success = false;
+    $message = $ex->getMessage();
+}
 
     $response=[
         'success' => $success,
@@ -123,7 +124,5 @@ public function pedido(Request $request){
     return response()->json($response);
 
 }
-
-
 
 }
