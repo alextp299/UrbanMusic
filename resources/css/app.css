@@ -104,6 +104,21 @@
     padding: 2px;
 }
 
+.carrito_hover1 {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/carrito.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.carrito_hover1:hover {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/carrito2.svg');
+    transform: scale(1.2);
+}
+
 
 /* FOOTER */
 
@@ -183,21 +198,6 @@
 
 .redes_hover4:hover {
     background-image: url('../icons/youtube2.svg');
-    transform: scale(1.2);
-}
-
-.carrito_hover1 {
-    width: 40px;
-    height: 40px;
-    background-image: url('../icons/carrito.svg');
-    background-size: cover;
-    transition: all 0.5s ease;
-}
-
-.carrito_hover1:hover {
-    width: 40px;
-    height: 40px;
-    background-image: url('../icons/carrito2.svg');
     transform: scale(1.2);
 }
 

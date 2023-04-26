@@ -21,12 +21,31 @@
                             </li>
                         </ul>
                         <p class="mt-4 mx-3">{{ user.name }}</p>
-                        <router-link to="/carrito" class="nav-item nav-link mt-3 me-2" style="position: relative;">
-                            <div class="carrito_hover1" aria-label="Carrito">
+                        <div class="dropdown mt-3 me-2">
+                            <button class="fondo-color tamaño_session dropdtoggleown-" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Mi Perfil
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px;">
+                                <li class="nav-item">
+                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Ver Mi Perfil</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Canciones</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Productos</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link to="/" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra" @click="logout">Logout</router-link>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <router-link to="/" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session" @click="logout">Logout</button></router-link> -->
+                        <router-link to="/carrito" class="nav-item nav-link mt-3 me-2">
+                            <div class="carrito_hover1" aria-label="Carrito" style="position: relative;">
                                 <span class="badge rounded-circle" id="cart_menu_num" >{{ productos.length }}</span>
                             </div>
                         </router-link>
-                        <router-link to="/" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session" @click="logout">Logout</button></router-link>
                     </div> 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent"  v-else>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
