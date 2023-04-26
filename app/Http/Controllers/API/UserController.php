@@ -42,7 +42,7 @@ class UserController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();
-
+            $user->roles()->attach(3);
             $success = true;
             $message = "Usuario registrado correctamente";
         }catch(\Illuminate\Database\QueryException $ex){

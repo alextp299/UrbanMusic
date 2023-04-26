@@ -57,7 +57,7 @@ public function eliminarProductos(Request $request)
     $id = $request->input('id');
 
     // Obtiene el array de productos guardados en la sesión
-    $productos = session('productos', []);
+    $productos = session('productos');
 
     // Busca el índice del producto con el id dado en el array de productos
     $indice = array_search($id, array_column($productos, 'id'));
@@ -67,8 +67,7 @@ public function eliminarProductos(Request $request)
         unset($productos[$indice]);
     }
 
-    // Actualiza la sesión con el array de productos actualizado
-    session(['productos' => array_values($productos)]);
+    
 
     // Devuelve el array de productos actualizado como una respuesta HTTP
     return response()->json($productos);
