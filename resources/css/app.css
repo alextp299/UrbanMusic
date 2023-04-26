@@ -17,7 +17,7 @@
 }
 
 
-/*COLORES*/
+/* COLORES */
 
 :root {
     --color1: rgb(176, 125, 252);
@@ -72,6 +72,36 @@
 
 .fondo-web {
     background-color: var(--color3);
+}
+
+
+/* HEADER */
+
+#cart_menu_num {
+    position: absolute;
+    background: var(--color1);
+    right: 1px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+}
+
+#cart_menu_num:hover {
+    position: absolute;
+    right: 1px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
 }
 
 
@@ -189,9 +219,6 @@
 }
 
 
-/* /////////////////////////////// */
-
-
 /* HOME */
 
 .carousel-control-prev-icon,
@@ -278,9 +305,6 @@
 }
 
 
-/* /////////////////////////////// */
-
-
 /* CANCIONES */
 
 .card {
@@ -359,9 +383,6 @@ audio::-webkit-media-controls-mute-button {
 }
 
 
-/* /////////////////////////////// */
-
-
 /* PRODUCTOS */
 
 .card-img-top2 {
@@ -370,9 +391,6 @@ audio::-webkit-media-controls-mute-button {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-
-
-/* /////////////////////////////// */
 
 
 /* MERCHANDISING ARTISTAS */
@@ -420,9 +438,6 @@ audio::-webkit-media-controls-mute-button {
 .espaciado-foto {
     padding: 0;
 }
-
-
-/* /////////////////////////////// */
 
 
 /* CARRITO */

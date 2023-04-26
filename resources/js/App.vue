@@ -20,8 +20,12 @@
                                 <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                             </li>
                         </ul>
-                        <p class="mt-4 mx-3">Productos en el carrito: {{ productos.length }}</p>
-                        <router-link to="/carrito" class="nav-item nav-link mt-3 me-2"><div class="carrito_hover1" aria-label="Carrito"></div></router-link>
+                        <p class="mt-4 mx-3">{{ user.name }}</p>
+                        <router-link to="/carrito" class="nav-item nav-link mt-3 me-2" style="position: relative;">
+                            <div class="carrito_hover1" aria-label="Carrito">
+                                <span class="badge rounded-circle" id="cart_menu_num" >{{ productos.length }}</span>
+                            </div>
+                        </router-link>
                         <router-link to="/" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session" @click="logout">Logout</button></router-link>
                     </div> 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent"  v-else>
@@ -94,6 +98,7 @@
     data() {
         return {
             isLoggedin: false,
+            user: null,
             productos: [],
            strSuccess: '',
            strError: ''
@@ -102,6 +107,7 @@
     created() {
         if(window.Laravel.isLoggedin){
             this.isLoggedin =true;
+            this.user =window.Laravel.user;
         }
     },
     methods: {
