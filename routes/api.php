@@ -39,14 +39,13 @@ Route::get('badbunny', [ProductosController::class, 'index']);
 
 Route::get('rosalia', [ProductosController::class, 'rosalia']);
 
-
 Route::get('eladio', [ProductosController::class, 'eladio']);
+
+Route::get('carrito', [ProductosController::class, 'obtenerProductos']);
 
 Route::get('precioTotal', [ProductosController::class, 'obtenerPrecioTotal']);
 
 Route::delete('eliminar/{id}', [ProductosController::class, 'eliminarProductos']);
-
-Route::get('mostrar', [ProductosController::class, 'eliminarProductos']);
 
 Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
     Route::get('/', [PostController::class, 'index']);

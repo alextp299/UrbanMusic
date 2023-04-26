@@ -5,7 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pedidos extends Model
+class Roles extends Model
 {
     use HasFactory;
+
+    function user() {
+
+        return $this->belongsToMany(User::class,'usuario_roles');
+
+    }
 }
+
+
