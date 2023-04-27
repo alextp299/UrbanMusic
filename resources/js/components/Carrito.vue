@@ -1,7 +1,6 @@
 <template>
   <div class="container-fluid mt-5 mb-5" style="min-height: 400px;">
     <h3 class="mb-4">Tu carrito</h3>
-    <p class="text-end" v-if="isLoggedin">{{ user.id }}</p>
     <div class="row">
     <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
       <div class="card mb-5 container" id="tamaño-card">
