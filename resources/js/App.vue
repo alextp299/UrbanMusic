@@ -21,11 +21,11 @@
                             </li>
                         </ul>
                         <!-- <p class="mt-4 mx-3">{{ user.name }}</p> -->
-                        <div class="dropdown mt-3 me-2">
+                        <div class="dropdown mt-3 me-1">
                             <button class="fondo-color-perfil tamaño_session dropdtoggleown-" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative;">
                                 Mi Perfil
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 158px;">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 158px; @media (max-width: 992px) {visibility: hidden;}">
                                 <li>
                                     <p class="mt-1 ms-3">¡Hola {{ user.name }}!</p>
                                 </li>
@@ -45,10 +45,30 @@
                                     <router-link to="/" class="nav-item nav-link mt-1 ms-3 tamaño_session4" @click="logout">Logout</router-link>
                                 </li>
                             </ul>
+                            <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="visibility: hidden; @media (max-width: 992px) {position: absolute; width: 100% ; right: 0px; height: 158px;}">
+                                <li>
+                                    <p class="mt-1 ms-3">¡Hola {{ user.name }}!</p>
+                                </li>
+                                <li class="divider">
+                                    <hr>    
+                                </li>
+                                <li class="nav-item">
+                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Ver Mi Perfil</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Canciones</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Productos</router-link>
+                                </li>
+                                <li class="nav-item fondo-color-logout">
+                                    <router-link to="/" class="nav-item nav-link mt-1 ms-3 tamaño_session4" @click="logout">Logout</router-link>
+                                </li>
+                            </ul> -->
                         </div>
                         <!-- <router-link to="/" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session" @click="logout">Logout</button></router-link> -->
                         <router-link to="/carrito" class="nav-item nav-link mt-3 me-2">
-                            <div class="carrito_hover1" aria-label="Carrito" style="position: relative;">
+                            <div class="carrito_hover1 ms-2" aria-label="Carrito" style="position: relative;">
                                 <span class="badge rounded-circle" id="cart_menu_num" >{{ productos.length }}</span>
                             </div>
                         </router-link>
