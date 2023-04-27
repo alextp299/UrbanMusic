@@ -20,7 +20,9 @@ import Merchandising_BadBunny from '../components/Merchandising_BadBunny.vue';
 import Merchandising_EladioCarrión from '../components/Merchandising_EladioCarrión.vue';
 import Carrito from '../components/Carrito.vue';
 import ConfirmaciónCompra from '../components/ConfirmaciónCompra.vue';
-
+import AdminCanciones from '../components/AdminCanciones.vue';
+import AdminProductos from '../components/AdminProductos.vue';
+import MiPerfil from '../components/MiPerfil.vue';
 
 export const routes = [{
         name: 'home',
@@ -125,6 +127,23 @@ export const routes = [{
         name: 'confirmacioncompra',
         path: '/finalizacioncompra',
         component: ConfirmaciónCompra
+    },
+    {
+        name: 'admincanciones',
+        path: '/admincanciones',
+        component: AdminCanciones
+    },
+    {
+
+        name: 'adminproductos',
+        path: '/adminproductos',
+        component: AdminProductos
+    },
+    {
+
+        name: 'miperfil',
+        path: '/miperfil',
+        component: MiPerfil
     },
 
 ];

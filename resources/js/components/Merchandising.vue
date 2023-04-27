@@ -42,29 +42,7 @@
  
  <script>
  export default {
-    data() {
-        return {
-            posts: [],
-            strSuccess: '',
-            strError: ''
-        }
-    },
-    created() {
-        this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            this.$axios.get('/api/posts')
-                .then(response => {
-                    this.posts = response.data;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-            }
-        );
-    },
-    methods: {
- 
- 
-    }
+    name: "Merchandising"
  }
  
  

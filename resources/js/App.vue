@@ -57,13 +57,13 @@
                                     <hr>    
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Ver Mi Perfil</router-link>
+                                    <router-link to="/miperfil" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Ver Mi Perfil</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Canciones</router-link>
+                                    <router-link to="/admincanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Canciones</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Productos</router-link>
+                                    <router-link to="/adminproductos" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Productos</router-link>
                                 </li>
                                 <li class="nav-item fondo-color-logout">
                                     <router-link to="/" class="nav-item nav-link mt-1 ms-3 tamaño_session4" @click="logout">Logout</router-link>
