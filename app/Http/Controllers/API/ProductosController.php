@@ -55,21 +55,26 @@ class ProductosController extends Controller
 
 public function eliminarProductos(Request $request)
 {
-    // Obtiene el id del producto que se va a eliminar de la solicitud HTTP
-    $id = $request->input('id');
+    // Obtiene el id del producto que se va a eliminar desde la ruta
+    $id = $request->route('id');
 
     // Obtiene el array de productos guardados en la sesión
     $productos = session('productos');
 
     // Busca el índice del producto con el id dado en el array de productos
-    $indice = array_search($id, array_column($productos, 'id'));
-
-    // Si el índice existe, elimina el producto del array
-    if ($indice !== false) {
-        unset($productos[$indice]);
+    $indice = null;
+    foreach ($productos as $key => $producto) {
+        if ($producto['id'] == $id) {
+            $indice = $key;
+            break;
+        }
     }
 
-    
+    // Si el índice existe, elimina el producto del array
+    if ($indice !== null) {
+        unset($productos[$indice]);
+        session(['productos' => array_values($productos)]); // Reindexa el array
+    }
 
     // Devuelve el array de productos actualizado como una respuesta HTTP
     return response()->json($productos);
