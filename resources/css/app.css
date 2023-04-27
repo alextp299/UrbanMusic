@@ -158,6 +158,28 @@
     transform: scale(1.2);
 }
 
+.despegable {
+    visibility: hidden;
+}
+
+.despegable2 {
+    visibility: visible;
+}
+
+@media (max-width: 992px) {
+    .despegable {
+        visibility: visible;
+    }
+    .despegable2 {
+        visibility: hidden;
+    }
+}
+
+
+/* width: 100%;
+        left: 0px;
+        height: 158px; */
+
 
 /* FOOTER */
 

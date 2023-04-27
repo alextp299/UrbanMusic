@@ -22,10 +22,10 @@
                         </ul>
                         <!-- <p class="mt-4 mx-3">{{ user.name }}</p> -->
                         <div class="dropdown mt-3 me-1">
-                            <button class="fondo-color-perfil tamaño_session dropdtoggleown-" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative;">
+                            <button class="fondo-color-perfil tamaño_session dropdtoggleown despegable" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative;">
                                 Mi Perfil
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 158px; @media (max-width: 992px) {visibility: hidden;}">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 100%; height: 158px;">
                                 <li>
                                     <p class="mt-1 ms-3">¡Hola {{ user.name }}!</p>
                                 </li>
@@ -45,7 +45,12 @@
                                     <router-link to="/" class="nav-item nav-link mt-1 ms-3 tamaño_session4" @click="logout">Logout</router-link>
                                 </li>
                             </ul>
-                            <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="visibility: hidden; @media (max-width: 992px) {position: absolute; width: 100% ; right: 0px; height: 158px;}">
+                        </div>
+                        <div class="dropdown mt-3 me-1">
+                            <button class="fondo-color-perfil tamaño_session dropdtoggleown despegable2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative;">
+                                Mi Perfil
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 158px;">
                                 <li>
                                     <p class="mt-1 ms-3">¡Hola {{ user.name }}!</p>
                                 </li>
@@ -64,7 +69,7 @@
                                 <li class="nav-item fondo-color-logout">
                                     <router-link to="/" class="nav-item nav-link mt-1 ms-3 tamaño_session4" @click="logout">Logout</router-link>
                                 </li>
-                            </ul> -->
+                            </ul>
                         </div>
                         <!-- <router-link to="/" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session" @click="logout">Logout</button></router-link> -->
                         <router-link to="/carrito" class="nav-item nav-link mt-3 me-2">
