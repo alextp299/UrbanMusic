@@ -9,22 +9,22 @@
           <h5 class="card-title">{{ producto.name }}</h5>
           <p class="card-text">{{ producto.precio }} €</p>
           <div class="form-group row">
-  <label for="cantidad" class="col-sm-4 col-form-label">Cantidad:</label>
-  <div class="col-sm-5">
-    <div class="input-group">
-      <button class="btn btn-outline-secondary" type="button" @click="decrementarCantidad(producto)">-</button>
-      <input type="number" class="form-control text-center" id="cantidad" v-model.number="producto.cantidad" min="1">
-      <button class="btn btn-outline-secondary" type="button" @click="incrementarCantidad(producto)">+</button>
-    </div>
-  </div>
-  </div>
-  <button class="btn btn-danger" @click="eliminarProducto(producto.id)">Eliminar</button>
-</div>
+            <label for="cantidad" class="col-sm-4 col-form-label">Cantidad:</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <button class="btn btn-outline-secondary" type="button" @click="decrementarCantidad(producto)">-</button>
+                <input type="number" class="form-control text-center" id="cantidad" v-model.number="producto.cantidad" min="1">
+                <button class="btn btn-outline-secondary" type="button" @click="incrementarCantidad(producto)">+</button>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-danger" @click="eliminarProducto(producto.id)">Eliminar</button>
+        </div>
 
-        </div>
-        </div>
       </div>
     </div>
+  </div>
+  </div>
 
     <div class="row justify-content-end align-items-center">
       <div class="col-md-4">
