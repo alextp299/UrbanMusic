@@ -20,7 +20,6 @@
                                 <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                             </li>
                         </ul>
-                        <!-- <p class="mt-4 mx-3">{{ user.name }}</p> -->
                         <div class="dropdown mt-3 me-1">
                             <button class="fondo-color-perfil tamaño_session dropdtoggleown despegable" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative;">
                                 Mi Perfil
@@ -93,7 +92,6 @@
                         <router-link to="/login" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session">Iniciar Sesión</button></router-link>
                         <router-link to="/register" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session">Registrarse</button></router-link>
                         
-                        <router-link to="/carrito" class="nav-item nav-link mt-3 me-2"><div class="carrito_hover1" aria-label="Carrito"></div></router-link>
                     </div>
                 </div>
                 </nav>
