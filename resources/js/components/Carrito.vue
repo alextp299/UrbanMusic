@@ -1,8 +1,9 @@
 <template>
   <div class="container-fluid mt-5 mb-5" style="min-height: 400px;">
     <h3 class="mb-4">Tu carrito</h3>
+    <div class="compra-ver">
     <div class="row">
-    <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
+    <div class="col-md-5 me-4" v-for="(producto, index) in productos" :key="index">
       <div class="card mb-5 container" id="tamaño-card">
         <img class="card-img-top2 image" v-bind:src="'/img/Merchandising/' + producto.image" alt="Imagen del producto">
         <div class="card-body">
@@ -18,11 +19,12 @@
               </div>
             </div>
           </div>
-          <button class="btn btn-danger" @click="eliminarProducto(producto.id)">Eliminar</button>
+          <button class="btn btn-danger posicion-movil" @click="eliminarProducto(producto.id)">Eliminar</button>
         </div>
 
       </div>
     </div>
+  </div>
   </div>
   </div>
 

@@ -514,3 +514,29 @@ audio::-webkit-media-controls-mute-button {
     z-index: 5;
     width: 300px;
 }
+
+.compra-ver {
+    width: 80%;
+}
+
+
+/* VERSION MOVIL CARRITO */
+
+@media (max-width: 992px) {
+    .card#tamaño-card {
+        width: 350px;
+    }
+    .posicion-movil {
+        margin-top: 5%;
+    }
+    .compra-ver {
+        width: 100%;
+    }
+    .posicion-card {
+        position: static;
+        margin-bottom: 40px;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+}
