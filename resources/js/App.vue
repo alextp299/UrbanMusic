@@ -20,12 +20,18 @@
                                 <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                             </li>
                         </ul>
-                        <p class="mt-4 mx-3">{{ user.name }}</p>
+                        <!-- <p class="mt-4 mx-3">{{ user.name }}</p> -->
                         <div class="dropdown mt-3 me-2">
-                            <button class="fondo-color tamaño_session dropdtoggleown-" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="fondo-color-perfil tamaño_session dropdtoggleown-" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative;">
                                 Mi Perfil
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px;">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 158px;">
+                                <li>
+                                    <p class="mt-1 ms-3">¡Hola {{ user.name }}!</p>
+                                </li>
+                                <li class="divider">
+                                    <hr>    
+                                </li>
                                 <li class="nav-item">
                                     <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Ver Mi Perfil</router-link>
                                 </li>
@@ -35,8 +41,8 @@
                                 <li class="nav-item">
                                     <router-link to="/topcanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Productos</router-link>
                                 </li>
-                                <li class="nav-item">
-                                    <router-link to="/" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra" @click="logout">Logout</router-link>
+                                <li class="nav-item fondo-color-logout">
+                                    <router-link to="/" class="nav-item nav-link mt-1 ms-3 tamaño_session4" @click="logout">Logout</router-link>
                                 </li>
                             </ul>
                         </div>
