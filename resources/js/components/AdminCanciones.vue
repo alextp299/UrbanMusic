@@ -4,7 +4,7 @@
     <div class="card card-default d-flex px-5 py-5">
           <div class="card-body p-1">
               <div class="d-flex justify-content-between pb-2 mb-2">
-                  <h5 class="card-title">Añadir </h5>
+                  <h5 class="card-title">Añadir Canciones </h5>
                   <div>
                       <router-link :to="{name: 'categoria'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                   </div>
@@ -26,15 +26,17 @@
   
   
               <form @submit.prevent="addPost" enctype="multipart/form-data">
-                  <div class="form-group mb-2">
+                  <div class="form-group mb-2 mt-4">
                       <label class="mb-2">Nombre</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control mb-2" v-model="name" placeholder="Introduce el nombre de la canción">
                   </div>
 
-                  <div class="form-group mb-2">
+                  <div class="form-group mb-2 mt-4">
                     <label class="mb-2" for="id_categoria_cancion" name="id_categoria_cancion">Categoria</label><span class="text-danger"> *</span>
                     <br>
                     <select class="form-control mb-2" name="id_categoria_cancion" v-model="id_categoria">
+                        <option value="" selected> Seleccionar categoria</option>
+                        <option></option>
                         <option value="1">Quevedo</option>
                         <option value="2">Bad Bunny</option>
                         <option value="3">Shakira</option>
@@ -45,13 +47,13 @@
                   </div>
   
   
-                  <div class="form-gorup mb-2">
+                  <div class="form-gorup mb-2 mt-4">
                       <label class="mb-2">Audio</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeAudio">
                   </div>
   
   
-                  <div class="form-gorup mb-2">
+                  <div class="form-gorup mb-2 mt-4">
                       <label class="mb-2">Image</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
                   </div>
