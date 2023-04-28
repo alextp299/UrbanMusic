@@ -55,5 +55,8 @@ Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
 
  Route::post('guardar-productos-en-session', [\App\Http\Controllers\API\ProductosController::class, 'guardarProductosSeleccionados']);
 
+ Route::post('addProducto', [ProductosController::class, 'agregarProductos']);
+
+ Route::post('addCanciones', [QuevedoMusicController::class, 'agregarCanciones']);
 
  

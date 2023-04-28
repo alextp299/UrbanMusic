@@ -9,6 +9,14 @@ class Canciones extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'audio',
+        'image',
+        'id_categoria_cancion',
+    ];
+
+
     protected $table = 'canciones';
 
 }

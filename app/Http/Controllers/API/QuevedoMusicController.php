@@ -44,9 +44,39 @@ class QuevedoMusicController extends Controller
         return response()->json($canciones);
     }
     
-/*     public function top()
-    {
-        $canciones = Canciones::where('id')->get();
-        return response()->json($canciones);
-    } */
+    public function agregarCanciones(Request $request){
+
+        $request->validate([
+            'name'=> 'required',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'audio' => 'required',
+            'id_categoria_cancion' => 'required',
+        ]);
+    
+        $input = $request->all();
+        $imageName = NULL;
+        $audioName = NULL;
+
+    
+        if($image = $request->file('file')){
+            $destinationPath = 'img/Music_BadBunny/';
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $imageName);
+            $input['image'] = $imageName;
+        }
+
+        if($audio = $request->file('audio')){
+            $destinationPath = 'audio/BadBunny/';
+            $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
+            $audio->move($destinationPath, $audioName);
+            $input['audio'] = $audioName;
+        }
+    
+        Canciones::create($input);
+    
+        return response()->json(['success' => 'Producto creado correctamente.']);
+    
+    }
+
+    
 }

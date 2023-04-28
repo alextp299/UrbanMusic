@@ -9,6 +9,13 @@ class Producto extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'precio',
+        'image',
+        'id_categoria',
+    ];
+
     protected $table = 'productos';
 
     function pedido() {
@@ -16,5 +23,7 @@ class Producto extends Model
         return $this->belongsToMany(Pedido::class,'pedido_productos');
 
     }
+
+    
 
 }

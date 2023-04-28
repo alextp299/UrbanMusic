@@ -27,23 +27,31 @@
   
               <form @submit.prevent="addPost" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Name</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="name" placeholder="Enter post name">
+                      <label>Nombre</label><span class="text-danger"> *</span>
+                      <input type="text" class="form-control" v-model="name" placeholder="Nombre de la canción">
                   </div>
   
   
                   <div class="form-group mb-2">
-                      <label>Name</label><span class="text-danger"> *</span>
-                      <textarea class="form-control" rows="3" v-model="description" placeholder="Enter post description"></textarea>
+                      <label>Precio</label><span class="text-danger"> *</span>
+                      <textarea class="form-control" rows="3" v-model="precio" placeholder="Introducir precio"></textarea>
                   </div>
+
+                  <label for="id_categoria" name="id_categoria"></label>
+                  <select name="id_cateogira" v-model="id_categoria">
+                    <option value="1">Eladio Carrión</option>
+                    <option value="2">Bad Bunny</option>
+                    <option value="3">Rosalía</option>
+                  </select>
+
   
   
                   <div class="form-gorup mb-2">
-                      <label>Image</label><span class="text-danger"> *</span>
+                      <label>Imagen</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
   
   
-                      <div v-if="img">
+                      <div v-if="image">
                           <img v-bind:src="imgPreview" width="100" height="100"/>
                       </div>
                   </div>
@@ -57,118 +65,7 @@
   
           </div>
       </div>
-      <div class="card mt-5">
-          <div class="card-body">
-              <div class="d-flex justify-content-between pb-2 mb-2">
-                  <h5 class="card-title">Add New Post Data</h5>
-                  <div>
-                      <router-link :to="{name: 'merchandising'}" class="btn btn-success">Go Back</router-link>
-                  </div>
-              </div>
-  
-  
-              <div v-if="strSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  <strong>{{strSuccess}}</strong>
-              </div>
-  
-  
-              <div v-if="strError" class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  <strong>{{strError}}</strong>
-              </div>
-  
-  
-  
-  
-              <form @submit.prevent="addPost" enctype="multipart/form-data">
-                  <div class="form-group mb-2">
-                      <label>Name</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="name" placeholder="Enter post name">
-                  </div>
-  
-  
-                  <div class="form-group mb-2">
-                      <label>Name</label><span class="text-danger"> *</span>
-                      <textarea class="form-control" rows="3" v-model="description" placeholder="Enter post description"></textarea>
-                  </div>
-  
-  
-                  <div class="form-gorup mb-2">
-                      <label>Image</label><span class="text-danger"> *</span>
-                      <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
-  
-  
-                      <div v-if="img">
-                          <img v-bind:src="imgPreview" width="100" height="100"/>
-                      </div>
-                  </div>
-  
-  
-                  <button type="submit" class="btn btn-primary mt-4 mb-4"> Add Post</button>
-  
-  
-              </form>
-  
-  
-          </div>
-      </div>
-      <div class="card mt-5">
-          <div class="card-body">
-              <div class="d-flex justify-content-between pb-2 mb-2">
-                  <h5 class="card-title">Add New Post Data</h5>
-                  <div>
-                      <router-link :to="{name: 'merchandising'}" class="btn btn-success">Go Back</router-link>
-                  </div>
-              </div>
-  
-  
-              <div v-if="strSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  <strong>{{strSuccess}}</strong>
-              </div>
-  
-  
-              <div v-if="strError" class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  <strong>{{strError}}</strong>
-              </div>
-  
-  
-  
-  
-              <form @submit.prevent="addPost" enctype="multipart/form-data">
-                  <div class="form-group mb-2">
-                      <label>Name</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="name" placeholder="Enter post name">
-                  </div>
-  
-  
-                  <div class="form-group mb-2">
-                      <label>Name</label><span class="text-danger"> *</span>
-                      <textarea class="form-control" rows="3" v-model="description" placeholder="Enter post description"></textarea>
-                  </div>
-  
-  
-                  <div class="form-gorup mb-2">
-                      <label>Image</label><span class="text-danger"> *</span>
-                      <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
-  
-  
-                      <div v-if="img">
-                          <img v-bind:src="imgPreview" width="100" height="100"/>
-                      </div>
-                  </div>
-  
-  
-                  <button type="submit" class="btn btn-primary mt-4 mb-4"> Add Post</button>
-  
-  
-              </form>
-  
-  
-          </div>
-      </div>
+      
   </div>
 </template>
 
@@ -178,8 +75,9 @@ export default {
   data() {
       return {
           name: '',
-          description: '',
-          img: '',
+          precio: '',
+          id_categoria: '',
+          image: '',
           strSuccess: '',
           strError: '',
           imgPreview: null
@@ -187,16 +85,16 @@ export default {
   },
   methods: {
       onChangeImg(e) {
-          this.img = e.target.files[0];
+          this.image = e.target.files[0];
           let reader = new FileReader();
           reader.addEventListener("load", function () {
               this.imgPreview = reader.result;
           }.bind(this), false);
 
 
-          if (this.img) {
-              if ( /\.(jpe?g|png|gif)$/i.test( this.img.name ) ) {
-                  reader.readAsDataURL( this.img );
+          if (this.image) {
+              if ( /\.(jpe?g|png|gif)$/i.test( this.image.name ) ) {
+                  reader.readAsDataURL( this.image );
               }
           }
       },
@@ -217,11 +115,12 @@ export default {
 
               const formData = new FormData();
               formData.append('name', this.name);
-              formData.append('description', this.description);
-              formData.append('file', this.img);
+              formData.append('precio', this.precio);
+              formData.append('id_categoria', this.id_categoria);
+              formData.append('file', this.image);
 
 
-              this.$axios.post('/api/posts/add', formData, config)
+              this.$axios.post('/api/addProducto', formData, config)
                   .then(response => {
                       existObj.strError = "";
                       existObj.strSuccess = response.data.success;
