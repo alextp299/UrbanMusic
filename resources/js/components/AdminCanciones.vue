@@ -45,22 +45,12 @@
                   <div class="form-gorup mb-2">
                       <label>Audio</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeAudio">
-  
-  
-                      <div v-if="audio">
-                          <img v-bind:src="audioPreview" width="100" height="100"/>
-                      </div>
                   </div>
   
   
                   <div class="form-gorup mb-2">
                       <label>Image</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
-  
-  
-                      <div v-if="audio">
-                          <img v-bind:src="imgPreview" width="100" height="100"/>
-                      </div>
                   </div>
   
   
