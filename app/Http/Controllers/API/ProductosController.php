@@ -107,26 +107,32 @@ public function obtenerPrecioTotal()
 }
 
 public function pedidos(Request $request){
-    
-try{
+
+$productos = session()->get('productos');
+
+$ids_productos= collect($productos)->pluck('id')->toArray(); // Extraer solo los IDs de los productos
+
+try {
     $pedido = new Pedido();
     $pedido->precio = $request->precio;
     $pedido->id_usuario = $request->id_usuario;
     $pedido->fecha = now();
     $pedido->save();
+    $pedido->producto()->sync($ids_productos);
     $success = true;
-    $message = "Usuario registrado correctamente";
-}catch(\Illuminate\Database\QueryException $ex){
+    $message = "Pedido registrado correctamente";
+} catch(\Illuminate\Database\QueryException $ex) {
     $success = false;
     $message = $ex->getMessage();
 }
 
-    $response=[
-        'success' => $success,
-        'message' => $message,
-    ];
+$response=[
+    'success' => $success,
+    'message' => $message,
+];
 
-    return response()->json($response);
+return response()->json($response);
+
 
 }
 
