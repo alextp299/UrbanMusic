@@ -8,7 +8,6 @@ import Privacidad from '../components/Privacidad.vue';
 import Cookies from '../components/Cookies.vue';
 import Aviso_Legal from '../components/Aviso_Legal.vue';
 import Merchandising from '../components/Merchandising.vue';
-import Merchandising_Admin from '../components/Merchandising_Admin.vue';
 import Canciones_Rosalia from '../components/Canciones_Rosalia.vue';
 import Canciones_Quevedo from '../components/Canciones_Quevedo.vue';
 import Canciones_EladioCarrión from '../components/Canciones_EladioCarrión.vue';
@@ -68,11 +67,6 @@ export const routes = [{
         name: 'merchandising',
         path: '/merchandising',
         component: Merchandising
-    },
-    {
-        name: 'merchandising_admin',
-        path: '/merchandising/admin',
-        component: Merchandising_Admin
     },
     {
         name: 'canciones_rosalia',
