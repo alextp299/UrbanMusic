@@ -1,12 +1,12 @@
 <template>
   <div class="container-fluid mt-5 mb-5">
     <h3 class="mb-4">Administración de Canciones</h3>
-    <div class="card">
-          <div class="card-body">
+    <div class="card card-default d-flex px-5 py-5">
+          <div class="card-body p-1">
               <div class="d-flex justify-content-between pb-2 mb-2">
-                  <h5 class="card-title">Add New Post Data</h5>
+                  <h5 class="card-title">Añadir </h5>
                   <div>
-                      <router-link :to="{name: 'merchandising'}" class="btn btn-success">Go Back</router-link>
+                      <router-link :to="{name: 'categoria'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                   </div>
               </div>
   
@@ -27,34 +27,36 @@
   
               <form @submit.prevent="addPost" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Nombre</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="name" placeholder="Introduce el nombre de la canción">
+                      <label class="mb-2">Nombre</label><span class="text-danger"> *</span>
+                      <input type="text" class="form-control mb-2" v-model="name" placeholder="Introduce el nombre de la canción">
                   </div>
 
-                  <label for="id_categoria_cancion" name="id_categoria_cancion"></label>
-                  <select name="id_categoria_cancion" v-model="id_categoria">
-                    <option value="1">Quevedo</option>
-                    <option value="2">Bad Bunny</option>
-                    <option value="3">Shakira</option>
-                    <option value="4">Rosalía</option>
-                    <option value="5">Eladio Carrión</option>
-                    <option value="6">Karol G</option>
-                  </select>
+                  <div class="form-group mb-2">
+                    <label class="mb-2" for="id_categoria_cancion" name="id_categoria_cancion">Categoria</label><span class="text-danger"> *</span>
+                    <br>
+                    <select class="form-control mb-2" name="id_categoria_cancion" v-model="id_categoria">
+                        <option value="1">Quevedo</option>
+                        <option value="2">Bad Bunny</option>
+                        <option value="3">Shakira</option>
+                        <option value="4">Rosalía</option>
+                        <option value="5">Eladio Carrión</option>
+                        <option value="6">Karol G</option>
+                    </select>
+                  </div>
   
   
                   <div class="form-gorup mb-2">
-                      <label>Audio</label><span class="text-danger"> *</span>
+                      <label class="mb-2">Audio</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeAudio">
                   </div>
   
   
                   <div class="form-gorup mb-2">
-                      <label>Image</label><span class="text-danger"> *</span>
+                      <label class="mb-2">Image</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
                   </div>
   
-  
-                  <button type="submit" class="btn btn-primary mt-4 mb-4"> Add Post</button>
+                <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Confirmar</button>
   
   
               </form>
