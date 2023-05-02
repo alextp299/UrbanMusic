@@ -65,7 +65,37 @@
   
           </div>
       </div>
-      
+
+      <div class="card mt-5">
+          <div class="card-body">
+              <div class="d-flex justify-content-between pb-2 mb-2">
+                  <h5 class="card-title">Add New Post Data</h5>
+                  <div>
+                      <router-link :to="{name: 'merchandising'}" class="btn btn-success">Go Back</router-link>
+                  </div>
+              </div>
+  
+  
+              <div v-if="strSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <strong>{{strSuccess}}</strong>
+              </div>
+  
+              <div v-if="strError" class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <strong>{{strError}}</strong>
+              </div>
+  
+              <form @submit.prevent="delPost" enctype="multipart/form-data">
+                  <div class="form-group mb-2">
+                      <label>Nombre</label><span class="text-danger"> *</span>
+                      <input type="text" class="form-control" v-model="id" placeholder="Nombre de la canción">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary mt-4 mb-4">Del Post</button>
+              </form>
+          </div>
+      </div>
   </div>
 </template>
 
@@ -74,6 +104,7 @@
 export default {
   data() {
       return {
+          id: '',
           name: '',
           precio: '',
           id_categoria: '',
@@ -98,9 +129,6 @@ export default {
               }
           }
       },
-
-
-
 
       /*Inicio*/
       addPost(e) {
