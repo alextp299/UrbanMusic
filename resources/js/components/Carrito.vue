@@ -116,7 +116,7 @@ export default {
     pedidos(e){
             e.preventDefault()
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.post('api/pedidos', {
+                    this.$axios.post('/api/pedidos', {
 
                         precio: this.precioTotal,
                         id_usuario: this.user.id
