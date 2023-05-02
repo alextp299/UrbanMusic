@@ -161,4 +161,24 @@ public function agregarProductos(Request $request){
 
 }
 
+public function delProductos(Request $request){
+
+    $request->validate([
+        'name' => 'required'
+    ]);
+
+    $productName = $request->input('name');
+
+    $producto = Producto::where('name', $productName)->first();
+
+    if($producto){
+        $producto->delete();
+        return response()->json(['success' => 'Producto eliminado correctamente.']);
+    }else{
+
+        return response()->json(['success' => 'Producto no encontrado.']);
+    }
+
+}
+
 }

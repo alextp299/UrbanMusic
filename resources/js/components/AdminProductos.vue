@@ -63,36 +63,46 @@
           </div>
       </div>
 
-      <div class="card mt-5">
-          <div class="card-body">
+      <div class="card card-default d-flex px-5 py-5 mt-5">
+          <div class="card-body p-1">
               <div class="d-flex justify-content-between pb-2 mb-2">
-                  <h5 class="card-title">Add New Post Data</h5>
+                  <h5 class="card-title">Eliminar Producto</h5>
                   <div>
-                      <router-link :to="{name: 'merchandising'}" class="btn btn-success">Go Back</router-link>
+                      <router-link :to="{name: 'merchandising'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                   </div>
-              </div>
-  
-  
-              <div v-if="strSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  <strong>{{strSuccess}}</strong>
-              </div>
-  
-              <div v-if="strError" class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  <strong>{{strError}}</strong>
               </div>
   
               <form @submit.prevent="delPost" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Nombre</label><span class="text-danger"> *</span>
+                      <label>Nombre</label>
                       <input type="text" class="form-control" v-model="id" placeholder="Nombre de la canción">
                   </div>
 
-                  <button type="submit" class="btn btn-primary mt-4 mb-4">Del Post</button>
+                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Eliminar</button>
               </form>
           </div>
       </div>
+
+      <div class="card card-default d-flex px-5 py-5 mt-5">
+          <div class="card-body p-1">
+              <div class="d-flex justify-content-between pb-2 mb-2">
+                  <h5 class="card-title">Eliminar Producto</h5>
+                  <div>
+                      <router-link :to="{name: 'merchandising'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
+                  </div>
+              </div>
+  
+              <form @submit.prevent="editPost" enctype="multipart/form-data">
+                  <div class="form-group mb-2">
+                      <label>Nombre</label>
+                      <input type="text" class="form-control" v-model="id" placeholder="Nombre de la canción">
+                  </div>
+
+                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Eliminar</button>
+              </form>
+          </div>
+      </div>
+
   </div>
 </template>
 
@@ -137,7 +147,6 @@ export default {
                   }
               }
 
-
               const formData = new FormData();
               formData.append('name', this.name);
               formData.append('precio', this.precio);
@@ -157,9 +166,60 @@ export default {
                       }
                   );
           });
+      },
+      delPost(e) {
+          this.$axios.get('/sanctum/csrf-cookie').then(response => {
+              let existObj = this;
+              const config = {
+                  headers:{
+                      'content-type': 'multipart/form-data'
+                  }
+              }
+              
+              const formData = new FormData();
+              formData.append('name', this.id);
+
+              this.$axios.post('/api/delProducto', formData, config)
+                  .then(response => {
+                      existObj.strError = "";
+                      existObj.strSuccess = response.data.success;
+                      }
+                  )
+                  .catch(function (error){
+                      existObj.strError = error.response.data.message;
+                      existObj.strSuccess = "";
+                      }
+                  );
+          });
+      },delPost(e) {
+          this.$axios.get('/sanctum/csrf-cookie').then(response => {
+              let existObj = this;
+              const config = {
+                  headers:{
+                      'content-type': 'multipart/form-data'
+                  }
+              }
+              
+              const formData = new FormData();
+              formData.append('name', this.id);
+              formData.append('precio', this.editPrecio);
+              formData.append('id_categoria', this.editId_categoria);
+              formData.append('file', this.editImage);
+
+              this.$axios.post('/api/editProducto', formData, config)
+                  .then(response => {
+                      existObj.strError = "";
+                      existObj.strSuccess = response.data.success;
+                      }
+                  )
+                  .catch(function (error){
+                      existObj.strError = error.response.data.message;
+                      existObj.strSuccess = "";
+                      }
+                  );
+          });
       }
       /* FIN*/
-
 
   }
 }

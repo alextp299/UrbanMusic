@@ -59,4 +59,7 @@ Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
 
  Route::post('addCanciones', [QuevedoMusicController::class, 'agregarCanciones']);
 
+ Route::post('delProducto', [ProductosController::class, 'delProductos']);
+
+ Route::post('delCancion', [QuevedoMusicController::class, 'delCanciones']);
  
