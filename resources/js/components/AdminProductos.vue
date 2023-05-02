@@ -1,12 +1,12 @@
 <template>
   <div class="container-fluid mt-5 mb-5">
     <h3 class="mb-4">Administración de Productos</h3>
-      <div class="card">
-          <div class="card-body">
+    <div class="card card-default d-flex px-5 py-5">
+          <div class="card-body p-1">
               <div class="d-flex justify-content-between pb-2 mb-2">
-                  <h5 class="card-title">Add New Post Data</h5>
+                  <h5 class="card-title">Añadir Productos</h5>
                   <div>
-                      <router-link :to="{name: 'merchandising'}" class="btn btn-success">Go Back</router-link>
+                      <router-link :to="{name: 'merchandising'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                   </div>
               </div>
   
@@ -26,38 +26,35 @@
   
   
               <form @submit.prevent="addPost" enctype="multipart/form-data">
-                  <div class="form-group mb-2">
-                      <label>Nombre</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="name" placeholder="Nombre de la canción">
+                  <div class="form-group mb-2 mt-4">
+                      <label class="mb-2">Nombre</label><span class="text-danger"> *</span>
+                      <input type="text" class="form-control mb-2" v-model="name" placeholder="Introduce el nombre del producto">
                   </div>
   
   
-                  <div class="form-group mb-2">
-                      <label>Precio</label><span class="text-danger"> *</span>
-                      <textarea class="form-control" rows="3" v-model="precio" placeholder="Introducir precio"></textarea>
+                  <div class="form-group mb-2 mt-4">
+                      <label class="mb-2">Precio</label><span class="text-danger"> *</span>
+                      <input type="text" class="form-control mb-2" v-model="precio" placeholder="Introduce el precio">
                   </div>
 
-                  <label for="id_categoria" name="id_categoria"></label>
-                  <select name="id_cateogira" v-model="id_categoria">
-                    <option value="1">Eladio Carrión</option>
-                    <option value="2">Bad Bunny</option>
-                    <option value="3">Rosalía</option>
-                  </select>
-
+                  <div class="form-group mb-2 mt-4">
+                    <label class="mb-2" for="id_categoria" name="id_categoria">Categoria</label>
+                    <select class="form-control mb-2" name="id_cateogira" v-model="id_categoria">
+                        <option value="" selected> Seleccionar categoria</option>
+                        <option></option>
+                        <option value="1">Eladio Carrión</option>
+                        <option value="2">Bad Bunny</option>
+                        <option value="3">Rosalía</option>
+                    </select>
+                  </div>  
   
-  
-                  <div class="form-gorup mb-2">
-                      <label>Imagen</label><span class="text-danger"> *</span>
+                  <div class="form-gorup mb-2 mt-4">
+                      <label class="mb-2">Imagen</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
-  
-  
-                      <div v-if="image">
-                          <img v-bind:src="imgPreview" width="100" height="100"/>
-                      </div>
                   </div>
   
   
-                  <button type="submit" class="btn btn-primary mt-4 mb-4"> Add Post</button>
+                <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Confirmar</button>
   
   
               </form>
