@@ -51,7 +51,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 158px;">
                                 <li>
-                                    <p class="mt-1 ms-3">¡Hola {{ user.name }}!</p>
+                                    <p class="mt-1 ms-3" style="margin-right: 5px;">¡Hola {{ user.name }}!</p>
                                 </li>
                                 <li class="divider">
                                     <hr>    
@@ -70,7 +70,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <!-- <router-link to="/" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session" @click="logout">Logout</button></router-link> -->
                         <router-link to="/carrito" class="nav-item nav-link mt-3 me-2">
                             <div class="carrito_hover1 ms-2" aria-label="Carrito" style="position: relative;">
                                 <span class="badge rounded-circle" id="cart_menu_num" >{{ productos.length }}</span>
