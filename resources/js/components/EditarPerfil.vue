@@ -5,10 +5,10 @@
     <div class="card card-default d-flex px-5 py-5">
       <div class="card-body p-1">
         <div class="d-flex justify-content-between pb-2 mb-2">
-          <h5 class="card-title">Mi perfil</h5>
+          <h5 class="card-title">Editar perfil</h5>
           <div>
-            <router-link :to="{name: 'editarperfil'}" class="nav-item nav-link mt-2">
-              <button class="fondo-color tamaño_session2">Editar</button>
+            <router-link :to="{name: 'miperfil'}" class="nav-item nav-link mt-2">
+              <button class="fondo-color tamaño_session2">Mi perfil</button>
             </router-link>
           </div>
         </div>

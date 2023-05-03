@@ -49,7 +49,7 @@
                             <button class="fondo-color-perfil tamaño_session dropdtoggleown despegable2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="position: relative;">
                                 Mi Perfil
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 158px;">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: 200px;">
                                 <li>
                                     <p class="mt-1 ms-3" style="margin-right: 5px;">¡Hola {{ user.name }}!</p>
                                 </li>
