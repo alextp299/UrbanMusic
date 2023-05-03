@@ -28,18 +28,18 @@
 
             <div class="col-md-12">
               <div class="form-group mb-2 mt-4">
-                <label class="mb-2">Nombre Anterior</label>
+                <label class="mb-2">Nombre Anterior</label><span class="text-danger"> *</span>
                 <p class="mt-1 ms-3" style="font-size: 14px;">{{ user.name }}</p>
                 <input type="text" class="form-control" v-model="last_name" placeholder="Introduce el nombre anterior">
               </div>
 
               <div class="form-group mb-2 mt-4">
-                <label class="mb-2">Nombre Nuevo</label>
+                <label class="mb-2">Nombre Nuevo</label><span class="text-danger"> *</span>
                 <input type="text" class="form-control" v-model="new_name" placeholder="Introduce el nuevo nombre">
               </div>
 
               <div class="form-group mb-2 mt-4">
-                <label class="mb-2">Correo electrónico</label>
+                <label class="mb-2">Correo electrónico</label><span class="text-danger"> *</span>
                 <input type="text" class="form-control mb-2" v-model="editEmail" placeholder="Introduce el nuevo correo">
               </div>
 
@@ -101,32 +101,32 @@ export default{
         return new Date(date).toLocaleString('es-ES', options);
       },
       editPost(e) {
-          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-              let existObj = this;
-              const config = {
-                  headers:{
-                      'content-type': 'multipart/form-data'
-                  }
-              }
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+          let existObj = this;
+          const config = {
+            headers:{
+              'content-type': 'multipart/form-data'
+            }
+          }
+                    
+          const formData = new FormData();
+          formData.append('last_name', this.last_name);
+          formData.append('name', this.new_name);
+          formData.append('email', this.editEmail);
               
-              const formData = new FormData();
-              formData.append('last_name', this.last_name);
-              formData.append('name', this.new_name);
-              formData.append('email', this.editEmail);
-        
 
-              this.$axios.post('/api/editUser', formData, config)
-                  .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
-                      }
-                  )
-                  .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
-                      }
-                  );
-          });
+          this.$axios.post('/api/editUser', formData, config)
+            .then(response => {
+              existObj.strError = "";
+              existObj.strSuccess = response.data.success;
+              this.$router.push({ name: 'miperfil' }); // Agregado
+            })
+            .catch(function (error){
+              existObj.strError = error.response.data.message;
+              existObj.strSuccess = "";
+            });
+        });
+
       }
       /* FIN*/
     }

@@ -74,7 +74,7 @@
   
               <form @submit.prevent="delCancion" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Nombre</label>
+                      <label>Nombre</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control" v-model="id" placeholder="Nombre de la canción">
                   </div>
                   <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Eliminar</button>
@@ -93,12 +93,12 @@
   
               <form @submit.prevent="editCancion" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Nombre</label>
+                      <label>Nombre</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control" v-model="last_name" placeholder="Nombre de la canción">
                   </div>
 
                   <div class="form-group mb-2">
-                      <label>Nombre Nuevo</label>
+                      <label>Nombre Nuevo</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control" v-model="new_name" placeholder="Nombre de la canción">
                   </div>
 
@@ -123,7 +123,7 @@
                   </div>
 
                   <div class="form-gorup mb-2 mt-4">
-                      <label class="mb-2">Imagen</label>
+                      <label class="mb-2">Imagen</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeEditImg">
                   </div>
 

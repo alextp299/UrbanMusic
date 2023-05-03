@@ -64,7 +64,8 @@ Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
  Route::post('editProducto', [ProductosController::class, 'editProductos']);
 
  Route::post('delCancion', [QuevedoMusicController::class, 'delCanciones']);
- Route::post('delCancion', [QuevedoMusicController::class, 'delCanciones']);
 
  Route::post('editCancion', [QuevedoMusicController::class, 'editCanciones']);
+ 
+ Route::post('editUser', [UserController::class, 'editUser']);
  
