@@ -78,5 +78,25 @@ class QuevedoMusicController extends Controller
     
     }
 
+    public function delCanciones(Request $request){
+
+        $request->validate([
+            'name' => 'required'
+        ]);
+    
+        $cancionName = $request->input('name');
+    
+        $cancion = Canciones::where('name', $cancionName)->first();
+    
+        if($cancion){
+            $cancion->delete();
+            return response()->json(['success' => 'Cancion eliminada correctamente.']);
+        }else{
+    
+            return response()->json(['success' => 'Cancion no encontrada.']);
+        }
+    
+    }
+
     
 }
