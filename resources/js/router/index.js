@@ -22,6 +22,7 @@ import ConfirmaciónCompra from '../components/ConfirmaciónCompra.vue';
 import AdminCanciones from '../components/AdminCanciones.vue';
 import AdminProductos from '../components/AdminProductos.vue';
 import MiPerfil from '../components/MiPerfil.vue';
+import EditarPerfil from '../components/EditarPerfil.vue';
 
 export const routes = [{
         name: 'home',
@@ -138,6 +139,12 @@ export const routes = [{
         name: 'miperfil',
         path: '/miperfil',
         component: MiPerfil
+    },
+    {
+
+        name: 'editarperfil',
+        path: '/editarperfil',
+        component: EditarPerfil
     },
 
 ];

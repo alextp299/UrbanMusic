@@ -79,4 +79,34 @@ class UserController extends Controller
 
         return response()->json($response);
     }
+
+    public function editUser(Request $request){
+
+
+        $request->validate([
+            'last_name' => 'required',
+            'name'=> 'required',
+            'email' => 'required',
+        ]);
+    
+        $last_name = $request->input('last_name');
+        $name = $request->input('name');
+        $email = $request->input('email');
+    
+        $user = User::where('name', $last_name)->first();
+    
+        if($user){
+            $user->name = $name;
+            $user->email = $email;
+            $user->save();
+    
+            return response()->json(['success' => 'Producto actualizado correctamente.']);
+        }else{
+    
+            return response()->json(['success' => 'Producto no encontrado.']);
+        }
+    
+        
+    
+    }
 }
