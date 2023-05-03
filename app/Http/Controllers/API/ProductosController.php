@@ -204,6 +204,13 @@ public function editProductos(Request $request){
         $producto->precio = $precio;
         $producto->id_categoria = $id_categoria;
 
+        if ($image) {
+            $destinationPath = 'img/Merchandising/';
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $imageName);
+            $producto->image = $imageName;
+        }
+
         $producto->save();
 
         return response()->json(['success' => 'Producto actualizado correctamente.']);
