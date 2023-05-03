@@ -82,7 +82,7 @@
   
               <form @submit.prevent="delPost" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Nombre</label>
+                      <label>Nombre</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control" v-model="id" placeholder="Nombre de la canción">
                   </div>
 
@@ -113,22 +113,22 @@
   
               <form @submit.prevent="editPost" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Nombre Anterior</label>
+                      <label>Nombre Anterior</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control" v-model="last_name" placeholder="Nombre de la canción">
                   </div>
 
                   <div class="form-group mb-2">
-                      <label>Nombre Nuevo</label>
+                      <label>Nombre Nuevo</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control" v-model="new_name" placeholder="Nombre de la canción">
                   </div>
 
                   <div class="form-group mb-2 mt-4">
-                      <label class="mb-2">Precio</label>
+                      <label class="mb-2">Precio</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control mb-2" v-model="editPrecio" placeholder="Introduce el precio">
                   </div>
 
                   <div class="form-group mb-2 mt-4">
-                    <label class="mb-2" for="id_categoria" name="id_categoria">Categoria</label>
+                    <label class="mb-2" for="id_categoria" name="id_categoria">Categoria</label><span class="text-danger"> *</span>
                     <select class="form-control mb-2" name="id_categoria" v-model="editId_categoria">
                         <option value="" selected> Seleccionar categoria</option>
                         <option></option>
@@ -139,7 +139,7 @@
                   </div>
 
                   <div class="form-gorup mb-2 mt-4">
-                      <label class="mb-2">Imagen</label>
+                      <label class="mb-2">Imagen</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeEditImg">
                   </div>
 

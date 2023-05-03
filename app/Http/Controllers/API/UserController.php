@@ -100,10 +100,10 @@ class UserController extends Controller
             $user->email = $email;
             $user->save();
     
-            return response()->json(['success' => 'Producto actualizado correctamente.']);
+            return response()->json(['success' => 'Usuario actualizado correctamente.']);
         }else{
     
-            return response()->json(['success' => 'Producto no encontrado.']);
+            return response()->json(['success' => 'Usuario no encontrado.']);
         }
     
         
