@@ -165,19 +165,20 @@ export default {
               }
           }
       },onChangeEditImg(e) {
-          this.editImage = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.imgEditPreview = reader.result;
-          }.bind(this), false);
+  this.editImage = e.target.files[0];
+  this.editImageName = this.editImage.name; // Agregar esta línea
 
+  let reader = new FileReader();
+  reader.addEventListener("load", function () {
+      this.imgEditPreview = reader.result;
+  }.bind(this), false);
 
-          if (this.editImage) {
-              if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
-                  reader.readAsDataURL( this.editImage );
-              }
-          }
-      },
+  if (this.editImage) {
+      if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
+          reader.readAsDataURL( this.editImage );
+      }
+  }
+},
 
       /*Inicio*/
       addPost(e) {
@@ -247,7 +248,7 @@ export default {
               formData.append('name', this.new_name);
               formData.append('precio', this.editPrecio);
               formData.append('id_categoria', this.editId_categoria);
-              formData.append('file', this.editImage);
+              formData.append('image', this.editImage, this.editImageName);
         
 
               this.$axios.post('/api/editProducto', formData, config)

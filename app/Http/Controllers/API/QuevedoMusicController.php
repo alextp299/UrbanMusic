@@ -98,5 +98,38 @@ class QuevedoMusicController extends Controller
     
     }
 
+    public function editCanciones(Request $request){
+
+
+        $request->validate([
+            'last_name' => 'required',
+            'name'=> 'required',
+            'audio' => 'required',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'id_categoria_cancion' => 'required',
+        ]);
+    
+        $imageName = NULL;
+        $audioName = NULL;
+    
+        $last_name = $request->input('last_name');
+        $name = $request->input('name');
+        $id_categoria_cancion = $request->input('id_categoria_cancion');
+    
+        $cancion = Canciones::where('name', $last_name)->first();
+    
+        if($cancion){
+            $cancion->name = $name;
+            $cancion->id_categoria_cancion = $id_categoria_cancion;
+            $cancion->save();
+    
+            return response()->json(['success' => 'Producto actualizado correctamente.']);
+        }else{
+    
+            return response()->json(['success' => 'Producto no encontrado.']);
+        }
+    
+    }
+
     
 }
