@@ -259,7 +259,8 @@ export default {
                       }
                   );
           });
-      },editPost(e) {
+      },
+      editPost(e) {
           this.$axios.get('/sanctum/csrf-cookie').then(response => {
               let existObj = this;
               const config = {

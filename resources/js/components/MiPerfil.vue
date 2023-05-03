@@ -13,16 +13,6 @@
           </div>
         </div>
 
-        <div v-if="strSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          <strong>{{strSuccess}}</strong>
-        </div>
-
-        <div v-if="strError" class="alert alert-danger alert-dismissible fade show" role="alert">
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          <strong>{{strError}}</strong>
-        </div>
-
         <form @submit.prevent="addPost" enctype="multipart/form-data">
           <div class="row m-5">  
 
