@@ -87,17 +87,20 @@ class UserController extends Controller
             'last_name' => 'required',
             'name'=> 'required',
             'email' => 'required',
+            'password' => 'required',
         ]);
     
         $last_name = $request->input('last_name');
         $name = $request->input('name');
         $email = $request->input('email');
+        $password = $request->input('password');
     
         $user = User::where('name', $last_name)->first();
     
         if($user){
             $user->name = $name;
             $user->email = $email;
+            $user->password = $password;
             $user->save();
     
             return response()->json(['success' => 'Usuario actualizado correctamente.']);

@@ -44,8 +44,8 @@
               </div>
 
               <div class="form-group mb-2 mt-4">
-                <label class="mb-2" for="id_categoria" name="id_categoria">Cliente desde...</label>
-                <p class="mt-1 ms-3" style="font-size: 14px;">{{ formatDate(user.created_at) }}</p>
+                <label class="mb-2" for="password" name="id_categoria">Contraseña Nueva</label>
+                <input id="password" type="password" class="form-control mb-2" v-model="editPassword" placeholder="Introduce la nueva contraseña">
               </div>
 
               <div class="form-group mb-2 mt-4">
@@ -77,9 +77,11 @@ export default{
             user: null,
             name: '',
             email: '',
+            password: '',
             last_name: '',
             new_name: '',
             editEmail: '',
+            editPassword: '',
             strSuccess: '',
             strError: '',
         }
@@ -113,6 +115,7 @@ export default{
           formData.append('last_name', this.last_name);
           formData.append('name', this.new_name);
           formData.append('email', this.editEmail);
+          formData.append('password', this.editPassword);
               
 
           this.$axios.post('/api/editUser', formData, config)
