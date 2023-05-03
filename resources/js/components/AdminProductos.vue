@@ -68,6 +68,17 @@
                       <router-link :to="{name: 'merchandising'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                   </div>
               </div>
+
+              <div v-if="strSuccess2" class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <strong>{{strSuccess2}}</strong>
+              </div>
+  
+  
+              <div v-if="strError2" class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <strong>{{strError2}}</strong>
+              </div>
   
               <form @submit.prevent="delPost" enctype="multipart/form-data">
                   <div class="form-group mb-2">
@@ -83,10 +94,21 @@
       <div class="card card-default d-flex px-5 py-5 mt-5">
           <div class="card-body p-1">
               <div class="d-flex justify-content-between pb-2 mb-2">
-                  <h5 class="card-title">Eliminar Producto</h5>
+                  <h5 class="card-title">Editar Producto</h5>
                   <div>
                       <router-link :to="{name: 'merchandising'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                   </div>
+              </div>
+
+              <div v-if="strSuccess3" class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <strong>{{strSuccess3}}</strong>
+              </div>
+  
+  
+              <div v-if="strError3" class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  <strong>{{strError3}}</strong>
               </div>
   
               <form @submit.prevent="editPost" enctype="multipart/form-data">
@@ -146,6 +168,10 @@ export default {
           editImage: '',
           strSuccess: '',
           strError: '',
+          strSuccess2: '',
+          strError2: '',
+          strSuccess3: '',
+          strError3: '',
           imgPreview: null,
           imgEditPreview: null
       }
@@ -223,13 +249,13 @@ export default {
 
               this.$axios.post('/api/delProducto', formData, config)
                   .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
+                      existObj.strError2 = "";
+                      existObj.strSuccess2 = response.data.success;
                       }
                   )
                   .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
+                      existObj.strError2 = error.response.data.message;
+                      existObj.strSuccess2 = "";
                       }
                   );
           });
@@ -252,13 +278,13 @@ export default {
 
               this.$axios.post('/api/editProducto', formData, config)
                   .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
+                      existObj.strError3 = "";
+                      existObj.strSuccess3 = response.data.success;
                       }
                   )
                   .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
+                      existObj.strError3 = error.response.data.message;
+                      existObj.strSuccess3 = "";
                       }
                   );
           });
