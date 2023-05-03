@@ -181,4 +181,47 @@ public function delProductos(Request $request){
 
 }
 
+public function editProductos(Request $request){
+
+
+    $request->validate([
+        'last_name' => 'required',
+        'name'=> 'required',
+        'precio' => 'required',
+        'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+        'id_categoria' => 'required',
+    ]);
+
+    $imageName = NULL;
+
+    if($image = $request->file('file')){
+        $destinationPath = 'img/Merchandising/';
+        $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $imageName);
+        $input['image'] = $imageName;
+    }
+
+    $last_name = $request->input('last_name');
+    $name = $request->input('name');
+    $precio = $request->input('precio');
+    $id_categoria = $request->input('id_categoria');
+
+    $producto = Producto::where('name', $last_name)->first();
+
+    if($producto){
+        $producto->name = $name;
+        $producto->precio = $precio;
+        $producto->id_categoria = $id_categoria;
+        $producto->save();
+
+        return response()->json(['success' => 'Producto actualizado correctamente.']);
+    }else{
+
+        return response()->json(['success' => 'Producto no encontrado.']);
+    }
+
+    
+
+}
+
 }

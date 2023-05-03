@@ -39,7 +39,7 @@
 
                   <div class="form-group mb-2 mt-4">
                     <label class="mb-2" for="id_categoria" name="id_categoria">Categoria</label>
-                    <select class="form-control mb-2" name="id_cateogira" v-model="id_categoria">
+                    <select class="form-control mb-2" name="id_categoria" v-model="id_categoria">
                         <option value="" selected> Seleccionar categoria</option>
                         <option></option>
                         <option value="1">Eladio Carrión</option>
@@ -52,13 +52,10 @@
                       <label class="mb-2">Imagen</label><span class="text-danger"> *</span>
                       <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
                   </div>
-  
-  
+
                 <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Confirmar</button>
   
-  
               </form>
-  
   
           </div>
       </div>
@@ -94,11 +91,37 @@
   
               <form @submit.prevent="editPost" enctype="multipart/form-data">
                   <div class="form-group mb-2">
-                      <label>Nombre</label>
-                      <input type="text" class="form-control" v-model="id" placeholder="Nombre de la canción">
+                      <label>Nombre Anterior</label>
+                      <input type="text" class="form-control" v-model="last_name" placeholder="Nombre de la canción">
                   </div>
 
-                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Eliminar</button>
+                  <div class="form-group mb-2">
+                      <label>Nombre Nuevo</label>
+                      <input type="text" class="form-control" v-model="new_name" placeholder="Nombre de la canción">
+                  </div>
+
+                  <div class="form-group mb-2 mt-4">
+                      <label class="mb-2">Precio</label>
+                      <input type="text" class="form-control mb-2" v-model="editPrecio" placeholder="Introduce el precio">
+                  </div>
+
+                  <div class="form-group mb-2 mt-4">
+                    <label class="mb-2" for="id_categoria" name="id_categoria">Categoria</label>
+                    <select class="form-control mb-2" name="id_categoria" v-model="editId_categoria">
+                        <option value="" selected> Seleccionar categoria</option>
+                        <option></option>
+                        <option value="1">Eladio Carrión</option>
+                        <option value="2">Bad Bunny</option>
+                        <option value="3">Rosalía</option>
+                    </select>
+                  </div>
+
+                  <div class="form-gorup mb-2 mt-4">
+                      <label class="mb-2">Imagen</label>
+                      <input type="file" class="form-control mb-2" v-on:change="onChangeEditImg">
+                  </div>
+
+                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Editar</button>
               </form>
           </div>
       </div>
@@ -116,9 +139,15 @@ export default {
           precio: '',
           id_categoria: '',
           image: '',
+          last_name: '',
+          new_name: '',
+          editPrecio: '',
+          editId_categoria: '',
+          editImage: '',
           strSuccess: '',
           strError: '',
-          imgPreview: null
+          imgPreview: null,
+          imgEditPreview: null
       }
   },
   methods: {
@@ -133,6 +162,19 @@ export default {
           if (this.image) {
               if ( /\.(jpe?g|png|gif)$/i.test( this.image.name ) ) {
                   reader.readAsDataURL( this.image );
+              }
+          }
+      },onChangeEditImg(e) {
+          this.editImage = e.target.files[0];
+          let reader = new FileReader();
+          reader.addEventListener("load", function () {
+              this.imgEditPreview = reader.result;
+          }.bind(this), false);
+
+
+          if (this.editImage) {
+              if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
+                  reader.readAsDataURL( this.editImage );
               }
           }
       },
@@ -191,7 +233,7 @@ export default {
                       }
                   );
           });
-      },delPost(e) {
+      },editPost(e) {
           this.$axios.get('/sanctum/csrf-cookie').then(response => {
               let existObj = this;
               const config = {
@@ -201,10 +243,12 @@ export default {
               }
               
               const formData = new FormData();
-              formData.append('name', this.id);
+              formData.append('last_name', this.last_name);
+              formData.append('name', this.new_name);
               formData.append('precio', this.editPrecio);
               formData.append('id_categoria', this.editId_categoria);
               formData.append('file', this.editImage);
+        
 
               this.$axios.post('/api/editProducto', formData, config)
                   .then(response => {
@@ -220,7 +264,6 @@ export default {
           });
       }
       /* FIN*/
-
   }
 }
 
