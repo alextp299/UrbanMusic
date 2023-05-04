@@ -23,6 +23,10 @@ import AdminCanciones from '../components/AdminCanciones.vue';
 import AdminProductos from '../components/AdminProductos.vue';
 import MiPerfil from '../components/MiPerfil.vue';
 import EditarPerfil from '../components/EditarPerfil.vue';
+import FormularioAñadirProductos from '../components/FormularioAñadirCanciones.vue';
+import FormularioAñadirCanciones from '../components/FormularioAñadirCanciones.vue';
+import FormularioEditarCanciones from '../components/FormularioEditarCanciones.vue';
+import FormularioEditarProductos from '../components/FormularioEditarProductos.vue';
 
 export const routes = [{
         name: 'home',
@@ -145,6 +149,30 @@ export const routes = [{
         name: 'editarperfil',
         path: '/editarperfil',
         component: EditarPerfil
+    },
+    {
+
+        name: 'formularioañadircanciones',
+        path: '/formularioañadircanciones',
+        component: FormularioAñadirCanciones
+    },
+    {
+
+        name: 'formularioañadirproductos',
+        path: '/formularioañadirproductos',
+        component: FormularioAñadirProductos
+    },
+    {
+
+        name: 'formularioeditarcanciones',
+        path: '/formularioeditarcanciones',
+        component: FormularioEditarCanciones
+    },
+    {
+
+        name: 'formularioeditarproductos',
+        path: '/formularioeditarproductos',
+        component: FormularioEditarProductos
     },
 
 ];
