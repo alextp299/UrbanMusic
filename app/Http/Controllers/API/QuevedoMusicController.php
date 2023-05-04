@@ -105,15 +105,14 @@ class QuevedoMusicController extends Controller
             'last_name' => 'required',
             'name'=> 'required',
             'audio' => 'required',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
             'id_categoria_cancion' => 'required',
         ]);
     
-        $imageName = NULL;
-        $audioName = NULL;
-    
         $last_name = $request->input('last_name');
         $name = $request->input('name');
+        $image = $request->file('audio');
+        $image = $request->file('image');
         $id_categoria_cancion = $request->input('id_categoria_cancion');
     
         $cancion = Canciones::where('name', $last_name)->first();
@@ -121,6 +120,21 @@ class QuevedoMusicController extends Controller
         if($cancion){
             $cancion->name = $name;
             $cancion->id_categoria_cancion = $id_categoria_cancion;
+
+            if ($image) {
+                $destinationPath = 'img/Music_BadBunny/';
+                $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $imageName);
+                $cancion->image = $imageName;
+            }
+
+            if ($audio) {
+                $destinationPath = 'audio/BadBunny/';
+                $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
+                $audio->move($destinationPath, $audioName);
+                $cancion->audio = $audioName;
+            }
+
             $cancion->save();
     
             return response()->json(['success' => 'Producto actualizado correctamente.']);

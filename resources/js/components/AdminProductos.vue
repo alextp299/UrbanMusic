@@ -30,15 +30,65 @@
         strSuccess: '',
         strError: ''
       }
-    },
-    created() {
-      this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        this.$axios.get('/api/rosalia')
-          .then(response => {
-            this.productos = response.data;
-          })
-          .catch(function (error) {
-            console.log(error);
+  },
+  methods: {
+      onChangeImg(e) {
+          this.image = e.target.files[0];
+          let reader = new FileReader();
+          reader.addEventListener("load", function () {
+              this.imgPreview = reader.result;
+          }.bind(this), false);
+
+
+          if (this.image) {
+              if ( /\.(jpe?g|png|gif)$/i.test( this.image.name ) ) {
+                  reader.readAsDataURL( this.image );
+              }
+          }
+      },onChangeEditImg(e) {
+  this.editImage = e.target.files[0];
+  this.editImageName = this.editImage.name; // Agregar esta línea
+
+  let reader = new FileReader();
+  reader.addEventListener("load", function () {
+      this.imgEditPreview = reader.result;
+  }.bind(this), false);
+
+  if (this.editImage) {
+      if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
+          reader.readAsDataURL( this.editImage );
+      }
+  }
+},
+
+      /*Inicio*/
+      addPost(e) {
+          this.$axios.get('/sanctum/csrf-cookie').then(response => {
+              let existObj = this;
+              const config = {
+                  headers:{
+                      'content-type': 'multipart/form-data'
+                  }
+              }
+
+              const formData = new FormData();
+              formData.append('name', this.name);
+              formData.append('precio', this.precio);
+              formData.append('id_categoria', this.id_categoria);
+              formData.append('file', this.image);
+
+
+              this.$axios.post('/api/addProducto', formData, config)
+                  .then(response => {
+                      existObj.strError = "";
+                      existObj.strSuccess = response.data.success;
+                      }
+                  )
+                  .catch(function (error){
+                      existObj.strError = error.response.data.message;
+                      existObj.strSuccess = "";
+                      }
+                  );
           });
       });
     },
