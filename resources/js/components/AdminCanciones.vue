@@ -1,191 +1,102 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
       <h3 class="mb-4">Shakira</h3>
-      <div>
-        <router-link :to="{name: 'formularioañadircanciones'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
-        <router-link :to="{name: 'formularioeditarcanciones'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Editar</button></router-link>
-      </div>
-      <div class="row">
-        <div class="col-md-4" v-for="(cancion, index) in canciones" :key="index">
-          <div class="card mb-5">
-            <img class="card-img-top" v-bind:src="'/img/Music_Shakira/' + cancion.image" alt="Portada de la canción">
-            <div class="card-body">
-              <h5 class="card-title">{{ cancion.name }}</h5>
-              <audio controls class="mb-3">
-                <source v-bind:src="'/audio/Shakira/' + cancion.audio" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-              </audio>
+      
+      <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between pb-2 mb-2">
+                <h5 class="card-title">All Posts Data</h5>
+                
             </div>
-          </div>
-        </div>
+            <div>
+        <router-link :to="{name: 'formularioañadircanciones'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
+        
       </div>
+
+            <table class="table table-hover table-sm">
+                <thead class="bg-dark text-light">
+                <tr>
+                    <th width="50" class="text-center">#</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th class="text-center" width="120">Image</th>
+                    <th class="text-center" width="200">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(cancion, index) in canciones" :key="cancion.id">
+                    <td class="text-center">{{index}}</td>
+                    <td>{{cancion.name}}</td>
+                    <td>{{cancion.audio}}</td>
+                    <td class="text-center">
+                        <div v-if="cancion.image">
+                            <img alt="cancion-img" width="100" v-bind:src="'/img/Music_Imagenes/' + cancion.image">
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <router-link :to="{name: 'formularioeditarcanciones'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Editar</button></router-link>
+                        <button class="btn btn-danger posicion-movil " @click="eliminarProducto(cancion.id)">Eliminar</button>
+                    </td>
+                    
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+     
     </div>
 </template>
 <script>
 export default {
   data() {
       return {
-          id: '',
-          name: '',
-          audio: '',
-          img: '',
-          id_categoria: '',
-          last_name: '',
-          new_name: '',
-          editAudio: '',
-          editId_categoria: '',
-          editImage: '',
+          canciones: [],
           strSuccess: '',
           strError: '',
-          imgPreview: null,
-          imgEditPreview: null,
-          audioPreview: null,
-          audioEditPreview: null
+          
       }
-  },
+  },created() {
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+            this.$axios.get('/api/canciones')
+                .then(response => {
+                    this.canciones = response.data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            }
+        );
+    },
   methods: {
-      onChangeImg(e) {
-          this.img = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.imgPreview = reader.result;
-          }.bind(this), false);
+    eliminarProducto(id) {
+    this.$axios.delete('api/delete/' + id)
+      .then(response => {
 
-
-          if (this.img) {
-              if ( /\.(jpe?g|png|gif|webp)$/i.test( this.img.name ) ) {
-                  reader.readAsDataURL( this.img );
-              }
-          }
-      },onChangeEditImg(e) {
-          this.editImage = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.imgEditPreview = reader.result;
-          }.bind(this), false);
-
-
-          if (this.editImage) {
-              if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
-                  reader.readAsDataURL( this.editImage );
-              }
-          }
-      },
-      onChangeAudio(e) {
-          this.audio = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.audioPreview = reader.result;
-          }.bind(this), false);
-
-
-          if (this.audio) {
-              if ( /\.(mp3)$/i.test( this.audio.name ) ) {
-                  reader.readAsDataURL( this.audio );
-              }
-          }
-      },onChangeEditAudio(e) {
-          this.editAudio = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.audioPreview = reader.result;
-          }.bind(this), false);
-
-
-          if (this.editAudio) {
-              if ( /\.(mp3)$/i.test( this.editAudio.name ) ) {
-                  reader.readAsDataURL( this.editAudio );
-              }
-          }
-      },
-
-      /*Inicio*/
-      addPost(e) {
-          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-              let existObj = this;
-              const config = {
-                  headers:{
-                      'content-type': 'multipart/form-data'
-                  }
-              }
-
-
-              const formData = new FormData();
-              formData.append('name', this.name);
-              formData.append('audio', this.audio);
-              formData.append('file', this.img);
-              formData.append('id_categoria_cancion', this.id_categoria);
-
-
-              this.$axios.post('/api/addCanciones', formData, config)
-                  .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
-                      }
-                  )
-                  .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
-                      }
-                  );
+        this.$axios.get('/api/canciones')
+          .then(response => {
+            this.canciones = response.data;
+          })
+          .catch(function (error) {
+            console.log(error);
           });
-      },delCancion(e) {
-          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-              let existObj = this;
-              const config = {
-                  headers:{
-                      'content-type': 'multipart/form-data'
-                  }
-              }
-              
-              const formData = new FormData();
-              formData.append('name', this.id);
-
-              this.$axios.post('/api/delCancion', formData, config)
-                  .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
-                      }
-                  )
-                  .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
-                      }
-                  );
-          });
-      },editCancion(e) {
-          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-              let existObj = this;
-              const config = {
-                  headers:{
-                      'content-type': 'multipart/form-data'
-                  }
-              }
-              
-              const formData = new FormData();
-              formData.append('last_name', this.last_name);
-              formData.append('name', this.new_name);
-              formData.append('audio', this.editAudio);
-              formData.append('id_categoria_cancion', this.editId_categoria);
-              formData.append('file', this.editImage);
         
+      })
+      .catch(error => {
 
-              this.$axios.post('/api/editCancion', formData, config)
-                  .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
-                      }
-                  )
-                  .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
-                      }
-                  );
+        this.$axios.get('/api/canciones')
+          .then(response => {
+            this.canciones = response.data;
+          })
+          .catch(function (error) {
+            console.log(error);
           });
-      }
-      /* FIN*/
-
+        
+      });
+  }
 
   }
 }
+
 </script>
