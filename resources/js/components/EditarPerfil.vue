@@ -122,7 +122,6 @@ export default{
             .then(response => {
               existObj.strError = "";
               existObj.strSuccess = response.data.success;
-              this.$router.push({ name: 'miperfil' }); // Agregado
             })
             .catch(function (error){
               existObj.strError = error.response.data.message;

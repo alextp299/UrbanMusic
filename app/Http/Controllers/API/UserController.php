@@ -100,7 +100,7 @@ class UserController extends Controller
         if($user){
             $user->name = $name;
             $user->email = $email;
-            $user->password = $password;
+            $user->password = Hash::make($password);
             $user->save();
     
             return response()->json(['success' => 'Usuario actualizado correctamente.']);
