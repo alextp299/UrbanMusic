@@ -173,19 +173,20 @@ export default {
               }
           }
       },onChangeEditImg(e) {
-          this.editImage = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.imgEditPreview = reader.result;
-          }.bind(this), false);
+  this.editImage = e.target.files[0];
+  this.editImageName = this.editImage.name;
 
+  let reader = new FileReader();
+  reader.addEventListener("load", function () {
+      this.imgEditPreview = reader.result;
+  }.bind(this), false);
 
-          if (this.editImage) {
-              if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
-                  reader.readAsDataURL( this.editImage );
-              }
-          }
-      },
+  if (this.editImage) {
+      if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
+          reader.readAsDataURL( this.editImage );
+      }
+  }
+},
       onChangeAudio(e) {
           this.audio = e.target.files[0];
           let reader = new FileReader();
@@ -199,20 +200,21 @@ export default {
                   reader.readAsDataURL( this.audio );
               }
           }
-      },onChangeEditAudio(e) {
-          this.editAudio = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.audioPreview = reader.result;
-          }.bind(this), false);
+      },onChangeEditImg(e) {
+  this.editAudio = e.target.files[0];
+  this.editAudioName = this.editAudio.name;
 
+  let reader = new FileReader();
+  reader.addEventListener("load", function () {
+      this.audioEditPreview = reader.result;
+  }.bind(this), false);
 
-          if (this.editAudio) {
-              if ( /\.(mp3)$/i.test( this.editAudio.name ) ) {
-                  reader.readAsDataURL( this.editAudio );
-              }
-          }
-      },
+  if (this.editAudio) {
+      if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editAudio.name ) ) {
+          reader.readAsDataURL( this.editAudio );
+      }
+  }
+},
 
       /*Inicio*/
       addPost(e) {
@@ -223,7 +225,6 @@ export default {
                       'content-type': 'multipart/form-data'
                   }
               }
-
 
               const formData = new FormData();
               formData.append('name', this.name);
@@ -282,7 +283,8 @@ export default {
               formData.append('name', this.new_name);
               formData.append('audio', this.editAudio);
               formData.append('id_categoria_cancion', this.editId_categoria);
-              formData.append('file', this.editImage);
+              formData.append('image', this.editImage, this.editImageName);
+              formData.append('image', this.editAudio, this.editAudioName);
         
 
               this.$axios.post('/api/editCancion', formData, config)

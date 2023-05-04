@@ -192,7 +192,7 @@ export default {
           }
       },onChangeEditImg(e) {
   this.editImage = e.target.files[0];
-  this.editImageName = this.editImage.name; // Agregar esta línea
+  this.editImageName = this.editImage.name;
 
   let reader = new FileReader();
   reader.addEventListener("load", function () {
