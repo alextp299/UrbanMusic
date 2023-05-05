@@ -69,3 +69,6 @@ Route::group(['prefix' => 'posts', 'middleware' => 'auth:sanctum'], function (){
  
  Route::post('editUser', [UserController::class, 'editUser']);
  
+ Route::get('/categoria', function () {
+    return view('categoria');
+})->middleware('RoleCheck:admin');
