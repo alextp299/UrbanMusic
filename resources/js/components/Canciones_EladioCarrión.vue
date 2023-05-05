@@ -4,11 +4,11 @@
       <div class="row">
         <div class="col-md-4" v-for="(cancion, index) in canciones" :key="index">
           <div class="card mb-5">
-            <img class="card-img-top" v-bind:src="'/img/Music_EladioCarrion/' + cancion.image" alt="Portada de la canción">
+            <img class="card-img-top" v-bind:src="'/img/Music_Imagenes/' + cancion.image" alt="Portada de la canción">
             <div class="card-body">
               <h5 class="card-title">{{ cancion.name }}</h5>
               <audio controls class="mb-3">
-                <source v-bind:src="'/audio/EladioCarrion/' + cancion.audio" type="audio/mp3">
+                <source v-bind:src="'/audio/Music/' + cancion.audio" type="audio/mp3">
                 Tu navegador no soporta el elemento de audio.
               </audio>
             </div>

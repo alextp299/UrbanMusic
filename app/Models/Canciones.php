@@ -15,8 +15,7 @@ class Canciones extends Model
         'image',
         'id_categoria_cancion',
     ];
-
-
+    
     protected $table = 'canciones';
 
 }

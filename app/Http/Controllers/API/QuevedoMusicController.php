@@ -8,6 +8,13 @@ use App\Models\Canciones;
 
 class QuevedoMusicController extends Controller
 {
+
+    public function canciones()
+    {
+        $canciones = Canciones::all()->toArray();
+        return response()->json($canciones);
+    }
+
     public function index()
     {
         $canciones = Canciones::where('id_categoria_cancion', 1)->get();
@@ -59,14 +66,14 @@ class QuevedoMusicController extends Controller
 
     
         if($image = $request->file('file')){
-            $destinationPath = 'img/Music_BadBunny/';
+            $destinationPath = 'img/Music_Imagenes/';
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
             $input['image'] = $imageName;
         }
 
         if($audio = $request->file('audio')){
-            $destinationPath = 'audio/BadBunny/';
+            $destinationPath = 'audio/Music/';
             $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
             $audio->move($destinationPath, $audioName);
             $input['audio'] = $audioName;
@@ -144,6 +151,15 @@ class QuevedoMusicController extends Controller
         }
     
     }
+
+public function delete($id)
+{
+   $cancion = Canciones::find($id);
+   $cancion->delete();
+   unlink('/img/Music_Imagenes/'.$cancion->image);
+   return response()->json(['success'=> 'Post deleted successfully']);
+}
+
 
     
 }
