@@ -12,21 +12,16 @@
                   </div>
               </div>
   
-              <form @submit.prevent="editCancion" enctype="multipart/form-data">
-                  <div class="form-group mb-2">
-                      <label>Nombre</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="last_name" placeholder="Nombre de la canción">
-                  </div>
+              <form @submit.prevent="updatePost" enctype="multipart/form-data">
+               <div class="form-group mb-2">
+                   <label>Name</label><span class="text-danger"> *</span>
+                   <input type="text" class="form-control" v-model="name" placeholder="Enter post name">
+               </div>
 
-                  <div class="form-group mb-2">
-                      <label>Nombre Nuevo</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="new_name" placeholder="Nombre de la canción">
-                  </div>
-
-                  <div class="form-group mb-2 mt-4">
+               <div class="form-group mb-2 mt-4">
                     <label class="mb-2" for="id_categoria_cancion" name="id_categoria_cancion">Categoria</label><span class="text-danger"> *</span>
                     <br>
-                    <select class="form-control mb-2" name="id_categoria_cancion" v-model="editId_categoria">
+                    <select class="form-control mb-2" name="id_categoria_cancion" v-model="id_categoria">
                         <option value="" selected> Seleccionar categoria</option>
                         <option></option>
                         <option value="1">Quevedo</option>
@@ -38,19 +33,20 @@
                     </select>
                   </div>
 
-                  <div class="form-gorup mb-2 mt-4">
-                      <label class="mb-2">Audio</label><span class="text-danger"> *</span>
-                      <input type="file" class="form-control mb-2" v-on:change="onChangeEditAudio">
-                  </div>
-
-                  <div class="form-gorup mb-2 mt-4">
-                      <label class="mb-2">Imagen</label><span class="text-danger"> *</span>
-                      <input type="file" class="form-control mb-2" v-on:change="onChangeEditImg">
-                  </div>
+               <div class="form-gorup mb-2">
+                   <label>Image</label><span class="text-danger"> *</span>
+                   <input type="file" class="form-control mb-2" v-on:change="onChange">
 
 
-                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Editar</button>
-              </form>
+                   <div v-if="img">
+                       <img v-bind:src="imgPreview" width="100" height="100"/>
+                   </div>
+               </div>
+
+               <button type="submit" class="btn btn-primary mt-4 mb-4"> Update Post</button>
+
+           </form>
+
           </div>
       </div>
   </div>
@@ -58,172 +54,79 @@
 </template>
 
 <script>
-export default {
-  data() {
-      return {
-          id: '',
-          name: '',
-          audio: '',
-          img: '',
-          id_categoria: '',
-          last_name: '',
-          new_name: '',
-          editAudio: '',
-          editId_categoria: '',
-          editImage: '',
-          strSuccess: '',
-          strError: '',
-          imgPreview: null,
-          imgEditPreview: null,
-          audioPreview: null,
-          audioEditPreview: null
-      }
-  },
-  methods: {
-      onChangeImg(e) {
-          this.img = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.imgPreview = reader.result;
-          }.bind(this), false);
+export default{
+   data() {
+       return {
+           id:'',
+           name: '',
+           id_categoria: '',
+           img: '',
+           strSuccess: '',
+           strError: '',
+           imgPreview: null
+       }
+   },
 
+   created() {
+       this.$axios.get('/sanctum/csrf-cookie').then(response => {
+           this.$axios.get(`/api/edit/${this.$route.params.id}`)
+               .then(response => {
+                   this.name = response.data['name'];
+                   this.id_categoria = response.data['id_categoria_cancion'];
+                   this.img = "/img/Music_Imagenes/"+response.data['image'];
+                   this.imgPreview = this.img;
+               })
+               .catch(function(error) {
+                   console.log(error);
+               });
+       })
+   },
+   methods: {
+       onChange(e) {
+           this.img = e.target.files[0];
+           let reader = new FileReader();
+           reader.addEventListener("load", function () {
+               this.imgPreview = reader.result;
+           }.bind(this), false);
 
-          if (this.img) {
-              if ( /\.(jpe?g|png|gif|webp)$/i.test( this.img.name ) ) {
-                  reader.readAsDataURL( this.img );
-              }
-          }
-      },onChangeEditImg(e) {
-          this.editImage = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.imgEditPreview = reader.result;
-          }.bind(this), false);
+           if (this.img) {
+               if ( /\.(jpe?g|png|gif)$/i.test( this.img.name ) ) {
+                   reader.readAsDataURL( this.img );
+               }
+           }
+       },
+       updatePost(e) {
+           this.$axios.get('/sanctum/csrf-cookie').then(response => {
+               let existingObj = this;
+               const config = {
+                   headers: {
+                       'content-type': 'multipart/form-data'
+                   }
+               }
 
+               const formData = new FormData();
+               formData.append('name', this.name);
+               formData.append('id_categoria_cancion', this.id_categoria);
+               formData.append('file', this.img);
 
-          if (this.editImage) {
-              if ( /\.(jpe?g|png|gif|webp)$/i.test( this.editImage.name ) ) {
-                  reader.readAsDataURL( this.editImage );
-              }
-          }
-      },
-      onChangeAudio(e) {
-          this.audio = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.audioPreview = reader.result;
-          }.bind(this), false);
-
-
-          if (this.audio) {
-              if ( /\.(mp3)$/i.test( this.audio.name ) ) {
-                  reader.readAsDataURL( this.audio );
-              }
-          }
-      },onChangeEditAudio(e) {
-          this.editAudio = e.target.files[0];
-          let reader = new FileReader();
-          reader.addEventListener("load", function () {
-              this.audioPreview = reader.result;
-          }.bind(this), false);
-
-
-          if (this.editAudio) {
-              if ( /\.(mp3)$/i.test( this.editAudio.name ) ) {
-                  reader.readAsDataURL( this.editAudio );
-              }
-          }
-      },
-
-      /*Inicio*/
-      addPost(e) {
-          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-              let existObj = this;
-              const config = {
-                  headers:{
-                      'content-type': 'multipart/form-data'
-                  }
-              }
-
-
-              const formData = new FormData();
-              formData.append('name', this.name);
-              formData.append('audio', this.audio);
-              formData.append('file', this.img);
-              formData.append('id_categoria_cancion', this.id_categoria);
-
-
-              this.$axios.post('/api/addCanciones', formData, config)
-                  .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
-                      }
-                  )
-                  .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
-                      }
-                  );
-          });
-      },delCancion(e) {
-          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-              let existObj = this;
-              const config = {
-                  headers:{
-                      'content-type': 'multipart/form-data'
-                  }
-              }
-              
-              const formData = new FormData();
-              formData.append('name', this.id);
-
-              this.$axios.post('/api/delCancion', formData, config)
-                  .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
-                      }
-                  )
-                  .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
-                      }
-                  );
-          });
-      },editCancion(e) {
-          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-              let existObj = this;
-              const config = {
-                  headers:{
-                      'content-type': 'multipart/form-data'
-                  }
-              }
-              
-              const formData = new FormData();
-              formData.append('last_name', this.last_name);
-              formData.append('name', this.new_name);
-              formData.append('audio', this.editAudio);
-              formData.append('id_categoria_cancion', this.editId_categoria);
-              formData.append('file', this.editImage);
-        
-
-              this.$axios.post('/api/editCancion', formData, config)
-                  .then(response => {
-                      existObj.strError = "";
-                      existObj.strSuccess = response.data.success;
-                      }
-                  )
-                  .catch(function (error){
-                      existObj.strError = error.response.data.message;
-                      existObj.strSuccess = "";
-                      }
-                  );
-          });
-      }
-      /* FIN*/
-
-
-  }
+               this.$axios.post(`/api/update/${this.$route.params.id}`, formData, config)
+                   .then(response => {
+                       existingObj.strError = "";
+                       existingObj.strSuccess = response.data.success;
+                   })
+                   .catch(function(error) {
+                       existingObj.strSuccess ="";
+                       existingObj.strError = error.response.data.message;
+                   });
+           });
+       }
+   },
+   beforeRouteEnter(to, from, next) {
+       if (!window.Laravel.isLoggedin) {
+           window.location.href = "/";
+       }
+       next();
+   }
 }
-
 
 </script>

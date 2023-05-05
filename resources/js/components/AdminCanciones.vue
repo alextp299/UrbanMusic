@@ -34,7 +34,9 @@
                         </div>
                     </td>
                     <td class="text-center">
-                        <router-link :to="{name: 'formularioeditarcanciones'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Editar</button></router-link>
+                      <router-link :to="{ name: 'formularioeditarcanciones', params: { id: cancion.id } }" class="nav-item nav-link mt-2">
+                        <button class="fondo-color tamaño_session2">Editar</button>
+                      </router-link>
                         <button class="btn btn-danger posicion-movil " @click="eliminarProducto(cancion.id)">Eliminar</button>
                     </td>
                     
@@ -71,7 +73,7 @@ export default {
     },
   methods: {
     eliminarProducto(id) {
-    this.$axios.delete('api/delete/' + id)
+    this.$axios.delete('/api/delete/' + id)
       .then(response => {
 
         this.$axios.get('/api/canciones')
