@@ -1,17 +1,13 @@
 <template>
   <div class="container-fluid mt-5 mb-5">
-    <h3 class="mb-4">Administrador de productos</h3>
     
     <div class="card">
       <div class="card-body">
           <div class="d-flex justify-content-between pb-2 mb-2">
-              <h5 class="card-title">All Posts Data</h5>
-              
+              <h5 class="card-title mt-2">Administrador de productos</h5>
+              <router-link :to="{name: 'formularioañadirproductos'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
+
           </div>
-          <div>
-      <router-link :to="{name: 'formularioañadirproductos'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
-      
-    </div>
 
           <table class="table table-hover table-sm">
               <thead class="bg-dark text-light">
@@ -33,7 +29,8 @@
                   </td>
                   <td class="text-center">
                       <router-link :to="{name: 'formularioeditarproductos'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Editar</button></router-link>
-                      <button class="btn btn-danger posicion-movil" @click="eliminarProducto(producto.id)">Eliminar</button>
+                      <br>
+                      <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(producto.id)">Eliminar</button>
                   </td>
                   
               </tr>
