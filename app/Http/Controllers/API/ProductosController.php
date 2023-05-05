@@ -171,7 +171,6 @@ public function delete($id)
 {
    $producto = Producto::find($id);
    $producto->delete();
-   unlink('/img/Merchandising/'.$producto->image);
    return response()->json(['success'=> 'Post deleted successfully']);
 }
 
