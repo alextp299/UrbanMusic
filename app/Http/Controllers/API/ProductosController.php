@@ -167,24 +167,12 @@ public function agregarProductos(Request $request){
 
 }
 
-public function delProductos(Request $request){
-
-    $request->validate([
-        'name' => 'required'
-    ]);
-
-    $productName = $request->input('name');
-
-    $producto = Producto::where('name', $productName)->first();
-
-    if($producto){
-        $producto->delete();
-        return response()->json(['success' => 'Producto eliminado correctamente.']);
-    }else{
-
-        return response()->json(['success' => 'Producto no encontrado.']);
-    }
-
+public function delete($id)
+{
+   $producto = Producto::find($id);
+   $producto->delete();
+   unlink('/img/Merchandising/'.$producto->image);
+   return response()->json(['success'=> 'Post deleted successfully']);
 }
 
 public function editProductos(Request $request){

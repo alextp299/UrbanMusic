@@ -17,23 +17,23 @@
               <thead class="bg-dark text-light">
               <tr>
                   <th width="50" class="text-center">#</th>
-                  <th>Name</th>
-                  <th class="text-center" width="120">Image</th>
-                  <th class="text-center" width="200">Actions</th>
+                  <th class="text-center" style="width: 25%; bottom: 25%; top: 25%;">Name</th>
+                  <th class="text-center" style="width: 30%">Image</th>
+                  <th class="text-center" style="width: 30%">Actions</th>
               </tr>
               </thead>
               <tbody>
               <tr v-for="(producto, index) in productos" :key="index">
                   <td class="text-center">{{index}}</td>
-                  <td>{{producto.name}}</td>
+                  <td class="text-center">{{producto.name}}</td>
                   <td class="text-center">
                       <div v-if="producto.image">
-                          <img alt="cancion-img" width="100" v-bind:src="'/img/Merchandising/' + producto.image">
+                          <img alt="cancion-img" width="150" v-bind:src="'/img/Merchandising/' + producto.image">
                       </div>
                   </td>
                   <td class="text-center">
                       <router-link :to="{name: 'formularioeditarproductos'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Editar</button></router-link>
-                      <button class="btn btn-danger posicion-movil " @click="eliminarProducto(producto.id)">Eliminar</button>
+                      <button class="btn btn-danger posicion-movil" @click="eliminarProducto(producto.id)">Eliminar</button>
                   </td>
                   
               </tr>
