@@ -12,17 +12,10 @@
                 <thead class="bg-dark text-light">
                 <tr>
                     <th width="50" class="text-center">#</th>
-<<<<<<< HEAD
                     <th class="text-center" style="width: 30%;">Name</th>
                     <th class="text-center" style="width: 20%">Description</th>
                     <th class="text-center" style="width: 20%">Image</th>
                     <th class="text-center" style="width: 30%">Actions</th>
-=======
-                    <th>Name</th>
-                    <th>Audio</th>
-                    <th class="text-center" width="120">Image</th>
-                    <th class="text-center" width="200">Actions</th>
->>>>>>> 91dfa4a4454fcf97dcce78e7f1fabac7e5914f67
                 </tr>
                 </thead>
                 <tbody>
