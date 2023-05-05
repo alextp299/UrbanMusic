@@ -17,7 +17,7 @@
               <thead class="bg-dark text-light">
               <tr>
                   <th width="50" class="text-center">#</th>
-                  <th class="text-center" style="width: 25%; bottom: 25%; top: 25%;">Name</th>
+                  <th class="text-center" style="width: 25%;">Name</th>
                   <th class="text-center" style="width: 30%">Image</th>
                   <th class="text-center" style="width: 30%">Actions</th>
               </tr>
