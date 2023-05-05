@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
-      <h3 class="mb-4">Shakira</h3>
+      <h3 class="mb-4">Administrador de canciones</h3>
       
       <div class="card">
         <div class="card-body">
