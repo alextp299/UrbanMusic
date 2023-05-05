@@ -89,18 +89,41 @@ class QuevedoMusicController extends Controller
 public function delete($id)
 {
    $cancion = Canciones::find($id);
+   
    $cancion->delete();
-   unlink('/img/Music_Imagenes/'.$cancion->image);
+   
    return response()->json(['success'=> 'Post deleted successfully']);
 }
 
 
 public function edit($id)
 {
-   $post = Posts::find($id);
-   return response()->json($post);
+   $cancion = Canciones::find($id);
+   return response()->json($cancion);
 }
 
+public function update($id, Request $request)
+{
+   $cancion = Canciones::find($id);
+   $request->validate([
+       'name' => 'required',
+       'id_categoria_cancion' => 'required'
+   ]);
+
+   $input = $request->all();
+   $imageName = NULL;
+   if ($image = $request->file('file')) {
+       $destinationPath = 'img/';
+       $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+       $image->move($destinationPath, $imageName);
+       $input['image'] = $imageName;
+       
+   }
+   $cancion->update($input);
+
+
+   return response()->json(['success'=> 'Post update successfully']);
+}
 
 
 
