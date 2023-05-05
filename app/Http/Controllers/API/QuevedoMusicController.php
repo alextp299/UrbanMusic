@@ -113,7 +113,7 @@ public function update($id, Request $request)
    $input = $request->all();
    $imageName = NULL;
    if ($image = $request->file('file')) {
-       $destinationPath = 'img/';
+       $destinationPath = 'img/Music_Imagenes';
        $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
        $image->move($destinationPath, $imageName);
        $input['image'] = $imageName;
@@ -124,8 +124,5 @@ public function update($id, Request $request)
 
    return response()->json(['success'=> 'Post update successfully']);
 }
-
-
-
-    
+ 
 }

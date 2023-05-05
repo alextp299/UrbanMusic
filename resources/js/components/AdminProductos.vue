@@ -69,7 +69,7 @@ data() {
   },
 methods: {
   eliminarProducto(id) {
-  this.$axios.delete('api/delete/' + id)
+  this.$axios.delete('/api/deleteProducto/' + id)
     .then(response => {
 
       this.$axios.get('/api/productos')
