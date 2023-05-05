@@ -63,7 +63,6 @@ class QuevedoMusicController extends Controller
         $input = $request->all();
         $imageName = NULL;
         $audioName = NULL;
-
     
         if($image = $request->file('file')){
             $destinationPath = 'img/Music_Imagenes/';
@@ -85,7 +84,6 @@ class QuevedoMusicController extends Controller
     
     }
 
-
 public function delete($id)
 {
    $cancion = Canciones::find($id);
@@ -94,7 +92,6 @@ public function delete($id)
    
    return response()->json(['success'=> 'Post deleted successfully']);
 }
-
 
 public function edit($id)
 {
@@ -113,19 +110,16 @@ public function update($id, Request $request)
    $input = $request->all();
    $imageName = NULL;
    if ($image = $request->file('file')) {
-       $destinationPath = 'img/';
+       $destinationPath = 'img/Music_Imagenes';
        $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
        $image->move($destinationPath, $imageName);
        $input['image'] = $imageName;
        
    }
-   $cancion->update($input);
 
+   $cancion->update($input);
 
    return response()->json(['success'=> 'Post update successfully']);
 }
-
-
-
-    
+ 
 }
