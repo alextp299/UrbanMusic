@@ -22,6 +22,8 @@ Route::post('login',[UserController::class,'login']);
 Route::post('register',[UserController::class,'register']);
 Route::post('logout',[UserController::class,'logout'])->middleware(['auth:sanctum']);
 
+Route::get('productos',[ProductosController::class,'productos']);
+
 Route::post('pedidos',[ProductosController::class,'pedidos']);
 
 Route::get('canciones', [QuevedoMusicController::class, 'canciones']);
@@ -65,6 +67,4 @@ Route::delete('eliminar/{id}', [ProductosController::class, 'eliminarProductos']
  Route::post('editCancion', [QuevedoMusicController::class, 'editCanciones']);
  
  Route::post('editUser', [UserController::class, 'editUser']);
-
- Route::delete('delete/{id}', [QuevedoMusicController::class,'delete']);
  
