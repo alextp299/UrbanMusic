@@ -73,7 +73,7 @@ export default {
     },
   methods: {
     eliminarProducto(id) {
-    this.$axios.delete('api/delete/' + id)
+    this.$axios.delete('/api/delete/' + id)
       .then(response => {
 
         this.$axios.get('/api/canciones')

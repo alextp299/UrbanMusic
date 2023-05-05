@@ -89,7 +89,6 @@ export default{
                this.imgPreview = reader.result;
            }.bind(this), false);
 
-
            if (this.img) {
                if ( /\.(jpe?g|png|gif)$/i.test( this.img.name ) ) {
                    reader.readAsDataURL( this.img );
@@ -107,10 +106,10 @@ export default{
 
                const formData = new FormData();
                formData.append('name', this.name);
-               formData.append('description', this.description);
+               formData.append('id_categoria_cancion', this.id_categoria);
                formData.append('file', this.img);
 
-               this.$axios.post(`/api/posts/update/${this.$route.params.id}`, formData, config)
+               this.$axios.post(`/api/update/${this.$route.params.id}`, formData, config)
                    .then(response => {
                        existingObj.strError = "";
                        existingObj.strSuccess = response.data.success;
