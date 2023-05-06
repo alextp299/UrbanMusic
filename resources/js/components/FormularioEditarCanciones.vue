@@ -43,6 +43,16 @@
                    </div>
                </div>
 
+               <div class="form-gorup mb-2">
+                   <label>Audio</label><span class="text-danger"> *</span>
+                   <input type="file" class="form-control mb-2" v-on:change="onChangeAudio">
+
+
+                   <div v-if="audio">
+                       <img v-bind:src="audioPreview" width="100" height="100"/>
+                   </div>
+               </div>
+
                <button type="submit" class="btn btn-primary mt-4 mb-4"> Update Post</button>
 
            </form>
@@ -60,10 +70,12 @@ export default{
            id:'',
            name: '',
            id_categoria: '',
+           audio: '',
            img: '',
            strSuccess: '',
            strError: '',
-           imgPreview: null
+           imgPreview: null,
+           audioPreview: null
        }
    },
 
@@ -73,7 +85,9 @@ export default{
                .then(response => {
                    this.name = response.data['name'];
                    this.id_categoria = response.data['id_categoria_cancion'];
+                   this.audio = "/audio/Music/"+response.data['audio'];
                    this.img = "/img/Music_Imagenes/"+response.data['image'];
+                   this.audioPreview = this.audio;
                    this.imgPreview = this.img;
                })
                .catch(function(error) {
@@ -90,8 +104,21 @@ export default{
            }.bind(this), false);
 
            if (this.img) {
-               if ( /\.(jpe?g|png|gif)$/i.test( this.img.name ) ) {
+               if ( /\.(jpe?g|png|gif|webp)$/i.test( this.img.name ) ) {
                    reader.readAsDataURL( this.img );
+               }
+           }
+       },
+       onChangeAudio(e) {
+           this.audio = e.target.files[0];
+           let reader = new FileReader();
+           reader.addEventListener("load", function () {
+               this.audioPreview = reader.result;
+           }.bind(this), false);
+
+           if (this.audio) {
+               if ( /\.(mp3)$/i.test( this.audio.name ) ) {
+                   reader.readAsDataURL( this.audio );
                }
            }
        },
@@ -107,8 +134,8 @@ export default{
                const formData = new FormData();
                formData.append('name', this.name);
                formData.append('id_categoria_cancion', this.id_categoria);
+               formData.append('audio', this.audio);
                formData.append('file', this.img);
-
                this.$axios.post(`/api/update/${this.$route.params.id}`, formData, config)
                    .then(response => {
                        existingObj.strError = "";

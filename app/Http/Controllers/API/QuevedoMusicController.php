@@ -109,6 +109,8 @@ public function update($id, Request $request)
 
    $input = $request->all();
    $imageName = NULL;
+   $audioName = NULL;
+
    if ($image = $request->file('file')) {
        $destinationPath = 'img/Music_Imagenes';
        $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
@@ -116,6 +118,14 @@ public function update($id, Request $request)
        $input['image'] = $imageName;
        
    }
+
+   if ($audio = $request->file('audio')) {
+    $destinationPath = 'audio/Music';
+    $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
+    $audio->move($destinationPath, $audioName);
+    $input['audio'] = $audioName;
+    
+}
 
    $cancion->update($input);
 
