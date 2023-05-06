@@ -7,7 +7,7 @@
                 <h5 class="card-title mt-2">Administrador de canciones</h5>
                 <router-link :to="{name: 'formularioañadircanciones'}" class="nav-item nav-link mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
             </div>
-
+            <input type="text" v-model="busqueda" placeholder="Buscar Canciones" class="form-control mb-5">
             <table class="table table-hover table-sm">
                 <thead class="bg-dark text-light">
                 <tr>
@@ -19,7 +19,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="(cancion, index) in canciones" :key="cancion.id">
+                  <tr v-for="(cancion, index) in productosFiltrados" :key="index">
                     <td class="text-center">{{index}}</td>
                     <td class="text-center">{{cancion.name}}</td>
                     <td class="text-center">{{cancion.audio}}</td>
@@ -52,6 +52,7 @@ export default {
           canciones: [],
           strSuccess: '',
           strError: '',
+          busqueda: '',
           
       }
   },created() {
@@ -65,7 +66,17 @@ export default {
                 });
             }
         );
-    },
+    },computed: {
+  productosFiltrados() {
+    if (this.busqueda.trim() === '') {
+      return this.canciones;
+    } else {
+      return this.canciones.filter(cancion =>
+        cancion.name.toLowerCase().includes(this.busqueda.toLowerCase())
+      );
+    }
+  }
+},
   methods: {
     eliminarProducto(id) {
     this.$axios.delete('/api/delete/' + id)

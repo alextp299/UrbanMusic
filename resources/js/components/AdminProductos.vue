@@ -5,10 +5,11 @@
       <div class="card-body">
           <div class="d-flex justify-content-between pb-2 mb-2">
               <h5 class="card-title mt-2">Administrador de productos</h5>
+              
               <router-link :to="{name: 'formularioañadirproductos'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
-
+              
           </div>
-
+          <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
           <table class="table table-hover table-sm">
               <thead class="bg-dark text-light">
               <tr>
@@ -19,7 +20,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr v-for="(producto, index) in productos" :key="index">
+                <tr v-for="(producto, index) in productosFiltrados" :key="index">
                   <td class="text-center">{{index}}</td>
                   <td class="text-center">{{producto.name}}</td>
                   <td class="text-center">
@@ -50,6 +51,7 @@ data() {
         productos: [],
         strSuccess: '',
         strError: '',
+        busqueda: '',
         
     }
 },created() {
@@ -63,7 +65,17 @@ data() {
               });
           }
       );
-  },
+  },computed: {
+  productosFiltrados() {
+    if (this.busqueda.trim() === '') {
+      return this.productos;
+    } else {
+      return this.productos.filter(producto =>
+        producto.name.toLowerCase().includes(this.busqueda.toLowerCase())
+      );
+    }
+  }
+},
 methods: {
   eliminarProducto(id) {
   this.$axios.delete('/api/deleteProducto/' + id)
