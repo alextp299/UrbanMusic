@@ -26,7 +26,7 @@
     </div>
     <div class="col-md-4">
       <div class="card espaciado-foto mb-5 container">
-        <img src="../../img/Artistas/shakira.webp" class="card-img-top3 image" alt="Merchandising Shakira">
+        <img src="../../img/Artistas/shakira.webp" class="card-img-top3 image" alt="Merchandising Shakira" style="height: 350px;">
         <div class="middle2">
           <router-link to="/categoria/Shakira"><div class="play" aria-label="play"></div></router-link>
         </div>
