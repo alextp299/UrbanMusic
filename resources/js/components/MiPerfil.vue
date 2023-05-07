@@ -38,10 +38,12 @@
               </div>
             </div>
           </div>
-
-          <router-link to="/" class="nav-item nav-link mt-2">
-            <button class="fondo-color tamaño_session2">Volver</button>
-          </router-link>
+          <div class="d-flex justify-content-between">
+            <router-link to="/" class="nav-item nav-link">
+              <button class="fondo-color tamaño_session2">Volver</button>
+            </router-link>
+            <button class="fondo-color1 tamaño_session2" @click="eliminarUsuario(user.id)">Eliminar</button>
+          </div>
         </form>
       </div>
       </div>
@@ -77,7 +79,8 @@ export default{
           timeZone: 'UTC'
         };
         return new Date(date).toLocaleString('es-ES', options);
-      }
+      },
+      
     }
 }
 </script>

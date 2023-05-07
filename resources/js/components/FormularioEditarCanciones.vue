@@ -46,11 +46,6 @@
                <div class="form-gorup mb-2">
                    <label>Audio</label><span class="text-danger"> *</span>
                    <input type="file" class="form-control mb-2" v-on:change="onChangeAudio">
-
-
-                   <div v-if="audio">
-                       <img v-bind:src="audioPreview" width="100" height="100"/>
-                   </div>
                </div>
 
                <button type="submit" class="btn btn-primary mt-4 mb-4"> Update Post</button>

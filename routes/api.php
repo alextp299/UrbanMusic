@@ -66,7 +66,9 @@ Route::delete('eliminar/{id}', [ProductosController::class, 'eliminarProductos']
 
  Route::post('editCancion', [QuevedoMusicController::class, 'editCanciones']);
  
- Route::post('editUser', [UserController::class, 'editUser']);
+ Route::post('updateUsuario/{id}', [UserController::class,'update']);
+
+ Route::delete('deleteUsuario/{id}', [UserController::class,'delete']);
 
  Route::post('update/{id}', [QuevedoMusicController::class,'update']);
 

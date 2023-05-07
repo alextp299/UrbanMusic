@@ -80,34 +80,37 @@ class UserController extends Controller
         return response()->json($response);
     }
 
-    public function editUser(Request $request){
+    public function delete($id)
+    {
+       $user = User::find($id);
+       
+       $user->delete();
+       
+       return response()->json(['success'=> 'Usuario eliminado correctamente']);
+    }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return response()->json($user);
+    }
 
 
+    public function update($id, Request $request){
+
+        $user = User::find($id);
         $request->validate([
-            'last_name' => 'required',
             'name'=> 'required',
             'email' => 'required',
             'password' => 'required',
         ]);
     
-        $last_name = $request->input('last_name');
-        $name = $request->input('name');
-        $email = $request->input('email');
-        $password = $request->input('password');
-    
-        $user = User::where('name', $last_name)->first();
-    
-        if($user){
-            $user->name = $name;
-            $user->email = $email;
-            $user->password = Hash::make($password);
-            $user->save();
-    
-            return response()->json(['success' => 'Usuario actualizado correctamente.']);
-        }else{
-    
-            return response()->json(['success' => 'Usuario no encontrado.']);
-        }
+        $input = $request->all();
+        $input['password'] = bcrypt($input['password']);
+        
+        $user->update($input);
+
+        return response()->json(['success'=> 'Usuario actualizado correctamente']);
     
         
     

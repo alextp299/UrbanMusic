@@ -23,29 +23,26 @@
           <strong>{{strError}}</strong>
         </div>
 
-        <form @submit.prevent="editPost" enctype="multipart/form-data">
+        <form @submit.prevent="updatePost" enctype="multipart/form-data">
           <div class="row m-5">  
 
             <div class="col-md-12">
-              <div class="form-group mb-2 mt-4">
-                <label class="mb-2">Nombre Anterior</label><span class="text-danger"> *</span>
-                <p class="mt-1 ms-3" style="font-size: 14px;">{{ user.name }}</p>
-                <input type="text" class="form-control" v-model="last_name" placeholder="Introduce el nombre anterior">
-              </div>
 
               <div class="form-group mb-2 mt-4">
-                <label class="mb-2">Nombre Nuevo</label><span class="text-danger"> *</span>
-                <input type="text" class="form-control" v-model="new_name" placeholder="Introduce el nuevo nombre">
+                <label class="mb-2">Nombre</label><span class="text-danger"> *</span>
+                <p class="mt-1 ms-3" style="font-size: 14px;">{{ user.name }}</p>
+                <input type="text" class="form-control" v-model="name" placeholder="Introduce el nuevo nombre">
               </div>
 
               <div class="form-group mb-2 mt-4">
                 <label class="mb-2">Correo electrónico</label><span class="text-danger"> *</span>
-                <input type="text" class="form-control mb-2" v-model="editEmail" placeholder="Introduce el nuevo correo">
+                <p class="mt-1 ms-3" style="font-size: 14px;">{{ user.email }}</p>
+                <input type="text" class="form-control mb-2" v-model="email" placeholder="Introduce el nuevo correo">
               </div>
 
               <div class="form-group mb-2 mt-4">
                 <label class="mb-2" for="password" name="id_categoria">Contraseña Nueva</label>
-                <input id="password" type="password" class="form-control mb-2" v-model="editPassword" placeholder="Introduce la nueva contraseña">
+                <input id="password" type="password" class="form-control mb-2" v-model="password" placeholder="Introduce la nueva contraseña">
               </div>
 
               <div class="form-group mb-2 mt-4">
@@ -78,10 +75,6 @@ export default{
             name: '',
             email: '',
             password: '',
-            last_name: '',
-            new_name: '',
-            editEmail: '',
-            editPassword: '',
             strSuccess: '',
             strError: '',
         }
@@ -102,35 +95,39 @@ export default{
         };
         return new Date(date).toLocaleString('es-ES', options);
       },
-      editPost(e) {
+      updatePost(e) {
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
-          let existObj = this;
-          const config = {
-            headers:{
-              'content-type': 'multipart/form-data'
-            }
-          }
+               let existingObj = this;
+               const config = {
+                   headers: {
+                       'content-type': 'multipart/form-data'
+                   }
+               }
                     
           const formData = new FormData();
-          formData.append('last_name', this.last_name);
-          formData.append('name', this.new_name);
-          formData.append('email', this.editEmail);
-          formData.append('password', this.editPassword);
+          formData.append('name', this.name);
+          formData.append('email', this.email);
+          formData.append('password', this.password);
               
 
-          this.$axios.post('/api/editUser', formData, config)
-            .then(response => {
-              existObj.strError = "";
-              existObj.strSuccess = response.data.success;
-            })
-            .catch(function (error){
-              existObj.strError = error.response.data.message;
-              existObj.strSuccess = "";
-            });
+          this.$axios.post(`/api/updateUsuario/${this.$route.params.id}`, formData, config)
+          .then(response => {
+                       existingObj.strError = "";
+                       existingObj.strSuccess = response.data.success;
+                   })
+                   .catch(function(error) {
+                       existingObj.strSuccess ="";
+                       existingObj.strError = error.response.data.message;
+                   });
         });
 
-      }
-      /* FIN*/
+      },
+      beforeRouteEnter(to, from, next) {
+       if (!window.Laravel.isLoggedin) {
+           window.location.href = "/";
+       }
+       next();
+    }
     }
 }
 </script>
