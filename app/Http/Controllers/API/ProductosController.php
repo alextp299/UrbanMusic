@@ -139,7 +139,6 @@ $response=[
 
 return response()->json($response);
 
-
 }
 
 public function agregarProductos(Request $request){
@@ -174,42 +173,35 @@ public function delete($id)
    return response()->json(['success'=> 'Post deleted successfully']);
 }
 
-public function editProductos(Request $request){
+public function edit($id)
+{
+   $producto = Producto::find($id);
+   return response()->json($producto);
+}
 
-    $request->validate([
-        'last_name' => 'required',
-        'name'=> 'required',
-        'precio' => 'required',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-        'id_categoria' => 'required',
-    ]);
+public function update($id, Request $request)
+{
+   $producto = Producto::find($id);
+   $request->validate([
+       'name' => 'required',
+       'precio' => 'required',
+       'id_categoria' => 'required'
+   ]);
 
-    $last_name = $request->input('last_name');
-    $name = $request->input('name');
-    $precio = $request->input('precio');
-    $image = $request->file('image');
-    $id_categoria = $request->input('id_categoria');
+   $input = $request->all();
+   $imageName = NULL;
 
-    $producto = Producto::where('name', $last_name)->first();
+   if ($image = $request->file('file')) {
+       $destinationPath = 'img/Merchandising';
+       $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+       $image->move($destinationPath, $imageName);
+       $input['image'] = $imageName;
+       
+   }
 
-    if($producto){
-        $producto->name = $name;
-        $producto->precio = $precio;
-        $producto->id_categoria = $id_categoria;
+   $producto->update($input);
 
-        if ($image) {
-            $destinationPath = 'img/Merchandising/';
-            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $imageName);
-            $producto->image = $imageName;
-        }
-
-        $producto->save();
-
-        return response()->json(['success' => 'Producto actualizado correctamente.']);
-    } else {
-        return response()->json(['success' => 'Producto no encontrado.']);
-    }
+   return response()->json(['success'=> 'Canción actualizada correctamente']);
 }
 
 }
