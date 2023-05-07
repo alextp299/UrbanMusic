@@ -42,7 +42,7 @@
             <router-link to="/" class="nav-item nav-link">
               <button class="fondo-color tamaño_session2">Volver</button>
             </router-link>
-            <button class="fondo-color1 tamaño_session2" @click="eliminarUsuario(user.id)">Eliminar</button>
+            <button class="fondo-color1 tamaño_session2" @click="eliminarUsuario(user.id)" style="height: 30%;">Eliminar</button>
           </div>
         </form>
       </div>

@@ -10,13 +10,13 @@
               
           </div>
           <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
-          <table class="table table-hover table-sm">
+          <table class="table table-hover table-sm table-bordered">
               <thead class="bg-dark text-light">
               <tr>
-                  <th width="50" class="text-center">#</th>
-                  <th class="text-center" style="width: 25%;">Name</th>
-                  <th class="text-center" style="width: 30%">Image</th>
-                  <th class="text-center" style="width: 30%">Actions</th>
+                  <th class="text-center" style="width: 5%;">#</th>
+                  <th class="text-center" style="width: 20%;">Name</th>
+                  <th class="text-center" style="width: 20%">Image</th>
+                  <th class="text-center" style="width: 10%">Actions</th>
               </tr>
               </thead>
               <tbody>
