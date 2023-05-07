@@ -35,7 +35,7 @@
                     <button class="fondo-color tamaño_session2">Editar</button>
                   </router-link>
                   <br>
-                  <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(cancion.id)">Eliminar</button>
+                  <button class="fondo-color1 tamaño_session2" @click="eliminarCancion(cancion.id)">Eliminar</button>
                 </td>
               </tr>
             </tbody>
@@ -79,7 +79,7 @@ export default {
   }
 },
   methods: {
-    eliminarProducto(id) {
+    eliminarCancion(id) {
     this.$axios.delete('/api/delete/' + id)
       .then(response => {
 
@@ -93,14 +93,6 @@ export default {
         
       })
       .catch(error => {
-
-        this.$axios.get('/api/canciones')
-          .then(response => {
-            this.canciones = response.data;
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
         
       });
   }
