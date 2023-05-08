@@ -49,6 +49,8 @@
 export default {
 data() {
     return {
+        isLoggedin: false,
+        user: null,
         productos: [],
         strSuccess: '',
         strError: '',
@@ -56,6 +58,11 @@ data() {
         
     }
 },created() {
+        if(window.Laravel.isLoggedin){
+            this.isLoggedin =true;
+            this.user =window.Laravel.user;
+        }
+
       this.$axios.get('/sanctum/csrf-cookie').then(response => {
           this.$axios.get('/api/productos')
               .then(response => {
@@ -102,7 +109,16 @@ methods: {
         });
       
     });
+},
+beforeRouteEnter(to, from, next) {
+  if (!window.Laravel.isLoggedin || window.Laravel.user.role !== 'cliente') {
+    next('/');
+  } else {
+    next();
+  }
 }
+
+
 
 }
 }

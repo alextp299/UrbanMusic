@@ -120,7 +120,17 @@ export default {
                   );
           });
       },
-      /* FIN*/
+      beforeRouteEnter(to, from, next) {
+        if (!window.Laravel.isLoggedin) {
+          window.location.href = "/";
+        } else {
+          if (window.Laravel.user.role === 'admin') {
+            next();
+          } else {
+            next('/');
+          }
+        }
+    }
   }
 }
 

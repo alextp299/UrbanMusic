@@ -50,13 +50,22 @@
 export default {
   data() {
       return {
+          isLoggedin: false,
+          user: null,
           canciones: [],
           strSuccess: '',
           strError: '',
           busqueda: '',
           
       }
-  },created() {
+  },
+  
+  created() {
+        if(window.Laravel.isLoggedin){
+            this.isLoggedin =true;
+            this.user =window.Laravel.user;
+        }
+        
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
             this.$axios.get('/api/canciones')
                 .then(response => {
@@ -95,7 +104,18 @@ export default {
       .catch(error => {
         
       });
-  }
+  },
+  beforeRouteEnter(to, from, next) {
+        if (!window.Laravel.isLoggedin) {
+          window.location.href = "/";
+        } else {
+          if ((window.Laravel.user.role === 'admin') && (window.Laravel.user.role === 'moderador')) {
+            next();
+          } else {
+            next('/');
+          }
+        }
+    }
 
   }
 }
