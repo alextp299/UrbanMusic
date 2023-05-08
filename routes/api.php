@@ -50,29 +50,27 @@ Route::get('carrito', [ProductosController::class, 'obtenerProductos']);
 
 Route::get('precioTotal', [ProductosController::class, 'obtenerPrecioTotal']);
 
-Route::delete('eliminar/{id}', [ProductosController::class, 'eliminarProductos']);
+Route::post('guardar-productos-en-session', [\App\Http\Controllers\API\ProductosController::class, 'guardarProductosSeleccionados']);
 
- Route::post('guardar-productos-en-session', [\App\Http\Controllers\API\ProductosController::class, 'guardarProductosSeleccionados']);
+Route::post('addProducto', [ProductosController::class, 'agregarProductos']);
 
- Route::post('addProducto', [ProductosController::class, 'agregarProductos']);
+Route::post('addCanciones', [QuevedoMusicController::class, 'agregarCanciones']);
 
- Route::post('addCanciones', [QuevedoMusicController::class, 'agregarCanciones']);
+Route::delete('deleteProducto/{id}', [ProductosController::class,'delete']);
 
- Route::delete('deleteProducto/{id}', [ProductosController::class,'delete']);
+Route::post('updateProducto/{id}', [ProductosController::class,'update']);
 
- Route::post('editProducto', [ProductosController::class, 'editProductos']);
+Route::get('editProducto/{id}', [ProductosController::class,'edit']);
 
- Route::delete('delete/{id}', [QuevedoMusicController::class,'delete']);
-
- Route::post('editCancion', [QuevedoMusicController::class, 'editCanciones']);
+Route::delete('delete/{id}', [QuevedoMusicController::class,'delete']);
  
- Route::post('updateUsuario/{id}', [UserController::class,'update']);
+Route::post('updateUsuario/{id}', [UserController::class,'update']);
 
- Route::delete('deleteUsuario/{id}', [UserController::class,'delete']);
+Route::delete('deleteUsuario/{id}', [UserController::class,'delete']);
 
- Route::post('update/{id}', [QuevedoMusicController::class,'update']);
+Route::post('update/{id}', [QuevedoMusicController::class,'update']);
 
- Route::get('edit/{id}', [QuevedoMusicController::class,'edit']);
+Route::get('edit/{id}', [QuevedoMusicController::class,'edit']);
 
 
  

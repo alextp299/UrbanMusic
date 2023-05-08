@@ -29,7 +29,9 @@
                       </div>
                   </td>
                   <td class="text-center">
-                      <router-link :to="{name: 'formularioeditarproductos'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Editar</button></router-link>
+                    <router-link :to="{ name: 'formularioeditarproductos', params: { id: producto.id } }" class="nav-item nav-link">
+                    <button class="fondo-color tamaño_session2">Editar</button>
+                  </router-link>
                       <br>
                       <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(producto.id)">Eliminar</button>
                   </td>

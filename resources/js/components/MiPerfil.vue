@@ -7,9 +7,9 @@
         <div class="d-flex justify-content-between pb-2 mb-2">
           <h5 class="card-title">Mi perfil</h5>
           <div>
-            <router-link :to="{name: 'editarperfil'}" class="nav-item nav-link mt-2">
-              <button class="fondo-color tamaño_session2">Editar</button>
-            </router-link>
+            <router-link :to="{ name: 'editarperfil', params: { id: user.id } }" class="nav-item nav-link">
+                    <button class="fondo-color tamaño_session2">Editar</button>
+                  </router-link>
           </div>
         </div>
 
@@ -42,7 +42,7 @@
             <router-link to="/" class="nav-item nav-link">
               <button class="fondo-color tamaño_session2">Volver</button>
             </router-link>
-            <button class="fondo-color1 tamaño_session2" @click="eliminarUsuario(user.id)" style="height: 30%;">Eliminar</button>
+            <button class="fondo-color1 tamaño_session2" @click="eliminar(user.id)">Eliminar</button>
           </div>
         </form>
       </div>
@@ -80,8 +80,24 @@ export default{
         };
         return new Date(date).toLocaleString('es-ES', options);
       },
-      
-    }
+      eliminar(id) {
+    this.$axios.delete('/api/deleteUsuario/' + id)
+      .then(response => {
+
+        this.$axios.get('/api/usuarios')
+          .then(response => {
+            this.canciones = response.data;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        
+      })
+      .catch(error => {
+        
+      });
+  }
+}
 }
 </script>
 
