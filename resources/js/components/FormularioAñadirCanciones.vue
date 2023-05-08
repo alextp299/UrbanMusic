@@ -70,6 +70,8 @@
 export default {
   data() {
       return {
+          isLoggedin: false,
+          user: null,
           name: '',
           audio: '',
           img: '',
@@ -81,6 +83,12 @@ export default {
           audioPreview: null,
           
       }
+  },
+  created() {
+        if(window.Laravel.isLoggedin){
+            this.isLoggedin =true;
+            this.user =window.Laravel.user;
+        };
   },
   methods: {
       onChangeImg(e) {
@@ -141,7 +149,17 @@ export default {
                   );
           });
       },
-      /* FIN*/
+      beforeRouteEnter(to, from, next) {
+        if (!window.Laravel.isLoggedin) {
+          window.location.href = "/";
+        } else {
+          if ((window.Laravel.user.role === 'admin') || (window.Laravel.user.role === 'moderador')) {
+            next();
+          } else {
+            next('/');
+          }
+        }
+    }
 
   }
 }
