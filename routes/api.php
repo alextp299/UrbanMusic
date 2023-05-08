@@ -72,5 +72,7 @@ Route::post('update/{id}', [QuevedoMusicController::class,'update']);
 
 Route::get('edit/{id}', [QuevedoMusicController::class,'edit']);
 
+Route::get('usuariosAdmin', [UserController::class,'usuarios']);
+
 
  

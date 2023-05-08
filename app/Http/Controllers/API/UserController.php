@@ -112,7 +112,13 @@ class UserController extends Controller
 
         return response()->json(['success'=> 'Usuario actualizado correctamente']);
     
-        
-    
     }
+
+    public function usuarios()
+    {   
+        //$usuarios = User::has('roles')->get();
+        $usuarios = User::all()->roles()->toArray();
+        return response()->json($usuarios);
+    }
+
 }
