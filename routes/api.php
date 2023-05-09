@@ -74,5 +74,7 @@ Route::get('edit/{id}', [QuevedoMusicController::class,'edit']);
 
 Route::get('usuariosAdmin', [UserController::class,'usuarios']);
 
+Route::delete('deleteUsuarioAdmin/{id}', [UserController::class,'deleteUsuarioAdmin']);
+
 
  

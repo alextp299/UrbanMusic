@@ -115,10 +115,18 @@ class UserController extends Controller
     }
 
     public function usuarios()
-    {   
-        $usuarios = User::has('roles')->get();
-        //$usuarios = User::all()->roles()->toArray();
-        return response()->json($usuarios);
+{   
+    $usuarios = User::with('roles')->get();
+    return response()->json($usuarios);
+}
+
+public function deleteUsuarioAdmin($id)
+    {
+       $user = User::find($id);
+       
+       $user->delete();
+       
+       return response()->json(['success'=> 'Usuario eliminado correctamente']);
     }
 
 }

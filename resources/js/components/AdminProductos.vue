@@ -111,10 +111,12 @@ methods: {
     });
   }
 },beforeRouteEnter(to, from, next) {
+  console.log('Ejemplo: ');
+  console.log(window.Laravel.user.roles[0].rol);
         if (!window.Laravel.isLoggedin) {
           window.location.href = "/";
         } else {
-          if (window.Laravel.user.role === 'admin') {
+          if (window.Laravel.user.roles[0].rol === 'admin') {
             next();
           } else {
             next('/');

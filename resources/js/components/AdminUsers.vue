@@ -25,7 +25,7 @@
                     <td class="text-center">{{index}}</td>
                     <td class="text-center">{{user.name}}</td>
                     <td class="text-center">{{user.email}}</td>
-                    <td class="text-center">{{user.id_rol}}</td>
+                    <td class="text-center">{{ user.roles[0].rol }}</td>
                     <td class="text-center">
                       <router-link :to="{ name: 'formularioeditarproductos', params: { id: user.id } }" class="nav-item nav-link">
                       <button class="fondo-color tamaño_session2">Editar</button>
@@ -78,12 +78,12 @@
   },
   methods: {
     eliminarProducto(id) {
-    this.$axios.delete('/api/deleteProducto/' + id)
+    this.$axios.delete('/api/deleteUsuarioAdmin/' + id)
       .then(response => {
   
-        this.$axios.get('/api/productos')
+        this.$axios.get('/api/usuariosAdmin')
           .then(response => {
-            this.productos = response.data;
+            this.users = response.data;
           })
           .catch(function (error) {
             console.log(error);
@@ -92,9 +92,9 @@
       })
       .catch(error => {
   
-        this.$axios.get('/api/productos')
+        this.$axios.get('/api/usuariosAdmin')
           .then(response => {
-            this.productos = response.data;
+            this.users = response.data;
           })
           .catch(function (error) {
             console.log(error);
@@ -103,17 +103,7 @@
       });
   }
   
-  },beforeRouteEnter(to, from, next) {
-        if (!window.Laravel.isLoggedin) {
-          window.location.href = "/";
-        } else {
-          if (window.Laravel.user.role === 'admin') {
-            next();
-          } else {
-            next('/');
-          }
-        }
-    }
+  }
   }
   
   </script>
