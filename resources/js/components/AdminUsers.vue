@@ -10,7 +10,7 @@
                 
             </div>
             <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
-            <table class="table table-hover table-sm table-bordered">
+            <table class="table table-hover align-middle table-sm table-bordered">
                 <thead class="bg-dark text-light">
                 <tr>
                     <th class="text-center" style="width: 5%;">#</th>
@@ -101,9 +101,20 @@
           });
         
       });
-  }
-  
-  }
+    }
+  },
+  beforeRouteEnter(to, from, next) {
+        if (!window.Laravel.isLoggedin) {
+          window.location.href = "/";
+        } else {
+          if ((window.Laravel.user.roles[0].rol === 'admin') || (window.Laravel.user.roles[0].rol === 'moderador')) {
+            next();
+          } else {
+            next('/');
+          }
+        }
+    }
+
   }
   
   </script>

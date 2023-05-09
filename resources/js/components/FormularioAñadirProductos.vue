@@ -123,7 +123,7 @@ export default {
         if (!window.Laravel.isLoggedin) {
           window.location.href = "/";
         } else {
-          if (window.Laravel.user.role === 'admin') {
+          if ((window.Laravel.user.roles[0].rol === 'admin') || (window.Laravel.user.roles[0].rol === 'moderador')) {
             next();
           } else {
             next('/');
