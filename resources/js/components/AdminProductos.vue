@@ -111,11 +111,15 @@ methods: {
     });
 },
 beforeRouteEnter(to, from, next) {
-  if (!window.Laravel.isLoggedin || window.Laravel.user.role !== 'cliente') {
-    next('/');
-  } else {
-    next();
-  }
+        if (!window.Laravel.isLoggedin) {
+          window.location.href = "/";
+        } else {
+          if (window.Laravel.user.role === 'cliente') {
+            next('/');
+          } else {
+            next();
+          }
+        }
 }
 
 
