@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title mt-2">Administrador de productos</h5>
+                <h5 class="card-title mt-2">Administrador de Usuarios</h5>
                 
                 <router-link :to="{name: 'formularioañadirproductos'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
                 
@@ -15,25 +15,23 @@
                 <tr>
                     <th class="text-center" style="width: 5%;">#</th>
                     <th class="text-center" style="width: 20%;">Name</th>
-                    <th class="text-center" style="width: 20%">Image</th>
+                    <th class="text-center" style="width: 20%">Correo</th>
+                    <th class="text-center" style="width: 20%">Rol</th>
                     <th class="text-center" style="width: 10%">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(producto, index) in productosFiltrados" :key="index">
+                  <tr v-for="(user, index) in users" :key="index">
                     <td class="text-center">{{index}}</td>
-                    <td class="text-center">{{producto.name}}</td>
+                    <td class="text-center">{{user.name}}</td>
+                    <td class="text-center">{{user.email}}</td>
+                    <td class="text-center">{{user.id_rol}}</td>
                     <td class="text-center">
-                        <div v-if="producto.image">
-                            <img alt="cancion-img" width="150" v-bind:src="'/img/Merchandising/' + producto.image">
-                        </div>
-                    </td>
-                    <td class="text-center">
-                      <router-link :to="{ name: 'formularioeditarproductos', params: { id: producto.id } }" class="nav-item nav-link">
+                      <router-link :to="{ name: 'formularioeditarproductos', params: { id: user.id } }" class="nav-item nav-link">
                       <button class="fondo-color tamaño_session2">Editar</button>
                     </router-link>
                         <br>
-                        <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(producto.id)">Eliminar</button>
+                        <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(user.id)">Eliminar</button>
                     </td>
                     
                 </tr>
@@ -57,9 +55,10 @@
       }
   },created() {
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            this.$axios.get('/api/productos')
+            this.$axios.get('/api/usuariosAdmin')
                 .then(response => {
-                    this.productos = response.data;
+                    this.users = response.data;
+                    console.log(response.data);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -69,10 +68,10 @@
     },computed: {
     productosFiltrados() {
       if (this.busqueda.trim() === '') {
-        return this.productos;
+        return this.users;
       } else {
-        return this.productos.filter(producto =>
-          producto.name.toLowerCase().includes(this.busqueda.toLowerCase())
+        return this.users.filter(user =>
+          user.name.toLowerCase().includes(this.busqueda.toLowerCase())
         );
       }
     }
