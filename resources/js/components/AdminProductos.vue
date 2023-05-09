@@ -109,22 +109,18 @@ methods: {
         });
       
     });
-},
-beforeRouteEnter(to, from, next) {
+  }
+},beforeRouteEnter(to, from, next) {
         if (!window.Laravel.isLoggedin) {
           window.location.href = "/";
         } else {
-          if (window.Laravel.user.role === 'cliente') {
-            next('/');
-          } else {
+          if (window.Laravel.user.role === 'admin') {
             next();
+          } else {
+            next('/');
           }
         }
-}
-
-
-
-}
+    }
 }
 
 </script>
