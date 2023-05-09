@@ -105,23 +105,14 @@ export default {
         
       });
   },
+  
+
+  },
   beforeRouteEnter(to, from, next) {
         if (!window.Laravel.isLoggedin) {
           window.location.href = "/";
         } else {
-          if ((window.Laravel.user.role === 'admin') && (window.Laravel.user.role === 'moderador')) {
-            next();
-          } else {
-            next('/');
-          }
-        }
-    }
-
-  },beforeRouteEnter(to, from, next) {
-        if (!window.Laravel.isLoggedin) {
-          window.location.href = "/";
-        } else {
-          if (window.Laravel.user.role === 'admin') {
+          if ((window.Laravel.user.roles[0].rol === 'admin') || (window.Laravel.user.roles[0].rol === 'moderador')) {
             next();
           } else {
             next('/');
