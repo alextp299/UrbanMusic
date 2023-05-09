@@ -95,6 +95,7 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+
     public function update($id, Request $request){
 
         $user = User::find($id);
@@ -115,8 +116,8 @@ class UserController extends Controller
 
     public function usuarios()
     {   
-        //$usuarios = User::has('roles')->get();
-        $usuarios = User::all()->roles()->toArray();
+        $usuarios = User::has('roles')->get();
+        //$usuarios = User::all()->roles()->toArray();
         return response()->json($usuarios);
     }
 
