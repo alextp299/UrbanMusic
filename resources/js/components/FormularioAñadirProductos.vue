@@ -90,7 +90,6 @@ export default {
           }
       },
 
-      /*Inicio*/
       addPost(e) {
           this.$axios.get('/sanctum/csrf-cookie').then(response => {
               let existObj = this;
@@ -119,7 +118,6 @@ export default {
                       }
                   );
           });
-        }
       },
       beforeRouteEnter(to, from, next) {
         if (!window.Laravel.isLoggedin) {
@@ -132,6 +130,7 @@ export default {
           }
         }
     }
+  }
 }
 
 </script>
