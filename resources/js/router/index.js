@@ -27,6 +27,7 @@ import FormularioAñadirProductos from '../components/FormularioAñadirProductos
 import FormularioAñadirCanciones from '../components/FormularioAñadirCanciones.vue';
 import FormularioEditarCanciones from '../components/FormularioEditarCanciones.vue';
 import FormularioEditarProductos from '../components/FormularioEditarProductos.vue';
+import FormularioAñadirUsuarios from '../components/FormularioAñadirUsuarios.vue';
 import AdminUsers from '../components/AdminUsers.vue';
 
 export const routes = [{
@@ -180,6 +181,13 @@ export const routes = [{
         name: 'adminusers',
         path: '/adminusers',
         component: AdminUsers
+    },
+
+    {
+
+        name: 'formularioañadirusuarios',
+        path: '/formularioaddusuarios',
+        component: FormularioAñadirUsuarios
     },
 
 ];

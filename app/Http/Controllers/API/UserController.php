@@ -129,4 +129,24 @@ public function deleteUsuarioAdmin($id)
        return response()->json(['success'=> 'Usuario eliminado correctamente']);
     }
 
+    public function agregarUsuariosAdmin(Request $request){
+
+        try{
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->roles();
+            $user->save();
+            $success = true;
+            $message = "Usuario registrado correctamente";
+        }catch(\Illuminate\Database\QueryException $ex){
+            $success = false;
+            $message = $ex->getMessage();
+        }
+
+        return response()->json(['success'=> 'Usuario añadido correctamente']);
+
+    }
+
 }

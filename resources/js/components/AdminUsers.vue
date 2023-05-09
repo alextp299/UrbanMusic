@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-between pb-2 mb-2">
                 <h5 class="card-title mt-2">Administrador de Usuarios</h5>
                 
-                <router-link :to="{name: 'formularioañadirproductos'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
+                <router-link :to="{name: 'formularioañadirusuarios'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
                 
             </div>
             <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
@@ -21,7 +21,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(user, index) in users" :key="index">
+                  <tr v-for="(user, index) in usuariosFiltrados" :key="index">
                     <td class="text-center">{{index}}</td>
                     <td class="text-center">{{user.name}}</td>
                     <td class="text-center">{{user.email}}</td>
@@ -66,7 +66,7 @@
             }
         );
     },computed: {
-    productosFiltrados() {
+    usuariosFiltrados() {
       if (this.busqueda.trim() === '') {
         return this.users;
       } else {

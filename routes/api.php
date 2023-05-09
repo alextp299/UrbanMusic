@@ -56,6 +56,8 @@ Route::post('addProducto', [ProductosController::class, 'agregarProductos']);
 
 Route::post('addCanciones', [QuevedoMusicController::class, 'agregarCanciones']);
 
+Route::delete('eliminar/{id}', [ProductosController::class,'eliminarProductos']);
+
 Route::delete('deleteProducto/{id}', [ProductosController::class,'delete']);
 
 Route::post('updateProducto/{id}', [ProductosController::class,'update']);
@@ -75,6 +77,8 @@ Route::get('edit/{id}', [QuevedoMusicController::class,'edit']);
 Route::get('usuariosAdmin', [UserController::class,'usuarios']);
 
 Route::delete('deleteUsuarioAdmin/{id}', [UserController::class,'deleteUsuarioAdmin']);
+
+Route::post('addUsuarioAdmin', [UserController::class, 'agregarUsuariosAdmin']);
 
 
  
