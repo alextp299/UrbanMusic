@@ -119,6 +119,7 @@ export default {
                       }
                   );
           });
+        }
       },
       beforeRouteEnter(to, from, next) {
         if (!window.Laravel.isLoggedin) {
@@ -131,7 +132,6 @@ export default {
           }
         }
     }
-  }
 }
 
 </script>
