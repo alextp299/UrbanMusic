@@ -39,15 +39,28 @@
                     </div>
   
                     <div class="form-group mb-2 mt-4">
-                      <label class="mb-2" for="rol" name="id_categoria">Rol</label>
-                      <select class="form-control mb-2" name="id_categoria" v-model="rol">
-                          <option value="" selected> Seleccionar rol</option>
-                          <option></option>
-                          <option value="1">Admin</option>
-                          <option value="2">Moderador</option>
-                          <option value="3">Cliente</option>
-                      </select>
-                    </div>  
+        <label class="mb-2" for="rol">Rol</label>
+        <div>
+          <label>
+            <input type="checkbox" name="rol" value="1" v-model="selectedRoles"> Acceder
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" name="rol" value="2" v-model="selectedRoles"> Añadir
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" name="rol" value="3" v-model="selectedRoles"> Eliminar
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" name="rol" value="4" v-model="selectedRoles"> Editar
+          </label>
+        </div>
+      </div> 
   
                   <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Confirmar</button>
     
@@ -70,6 +83,7 @@
             rol: '',
             strSuccess: '',
             strError: '',
+            selectedRoles: []
         }
     },
     methods: {
@@ -86,8 +100,9 @@
                 formData.append('name', this.name);
                 formData.append('email', this.email);
                 formData.append('password', this.password);
-                formData.append('rol', this.rol);
-  
+                this.selectedRoles.forEach(role => {
+                    formData.append('roles[]', role);
+                });
   
                 this.$axios.post('/api/addUsuarioAdmin', formData, config)
                     .then(response => {

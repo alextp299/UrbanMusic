@@ -42,7 +42,7 @@ class UserController extends Controller
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();
-            $user->roles()->attach('3');
+            $user->roles()->attach('1');
             $success = true;
             $message = "Usuario registrado correctamente";
         }catch(\Illuminate\Database\QueryException $ex){
@@ -136,8 +136,9 @@ public function deleteUsuarioAdmin($id)
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
-            $user->roles();
             $user->save();
+            $roles = $request->input('roles', []);
+            $user->roles()->attach($roles);
             $success = true;
             $message = "Usuario registrado correctamente";
         }catch(\Illuminate\Database\QueryException $ex){
