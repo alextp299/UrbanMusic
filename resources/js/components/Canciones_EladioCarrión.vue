@@ -7,7 +7,7 @@
             <img class="card-img-top" v-bind:src="'/img/Music_Imagenes/' + cancion.image" alt="Portada de la canción">
             <div class="card-body">
               <h5 class="card-title">{{ cancion.name }}</h5>
-              <audio controls class="mb-3">
+              <audio controls>
                 <source v-bind:src="'/audio/Music/' + cancion.audio" type="audio/mp3">
                 Tu navegador no soporta el elemento de audio.
               </audio>
