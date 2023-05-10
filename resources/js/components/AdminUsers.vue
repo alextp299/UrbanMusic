@@ -16,7 +16,7 @@
                     <th class="text-center" style="width: 5%;">#</th>
                     <th class="text-center" style="width: 20%;">Name</th>
                     <th class="text-center" style="width: 20%">Correo</th>
-                    <th class="text-center" style="width: 20%">Rol</th>
+                    <th class="text-center" style="width: 20%">Permisos</th>
                     <th class="text-center" style="width: 10%">Actions</th>
                 </tr>
                 </thead>
@@ -25,7 +25,9 @@
                     <td class="text-center">{{index}}</td>
                     <td class="text-center">{{user.name}}</td>
                     <td class="text-center">{{user.email}}</td>
-                    <td class="text-center">{{ user.roles[0].rol }}</td>
+                    <td class="text-center">
+                      {{ user.roles.map(role => role.rol).join(', ') }}
+                    </td>
                     <td class="text-center">
                       <router-link :to="{ name: 'formularioeditarproductos', params: { id: user.id } }" class="nav-item nav-link">
                       <button class="fondo-color tamaño_session2">Editar</button>
@@ -104,16 +106,34 @@
     }
   },
   beforeRouteEnter(to, from, next) {
-        if (!window.Laravel.isLoggedin) {
-          window.location.href = "/";
-        } else {
-          if ((window.Laravel.user.roles[0].rol === 'admin') || (window.Laravel.user.roles[0].rol === 'moderador')) {
-            next();
-          } else {
-            next('/');
-          }
-        }
+  if (!window.Laravel.isLoggedin) {
+    window.location.href = "/";
+  } else {
+    let canEdit = false;
+    let canDelete = false;
+    let canAdd = false;
+
+
+    // Bucle para comprobar si existe el rol 'editar' 'eliminar' o 'añadir'
+    for (let role of window.Laravel.user.roles) {
+      if (role.rol === 'editar') {
+        canEdit = true;
+      }
+      if (role.rol === 'eliminar') {
+        canDelete = true;
+      }
+      if (role.rol === 'añadir') {
+        canAdd = true;
+      }
     }
+
+    if (canEdit || canDelete || canAdd) {
+      next();
+    } else {
+      next('/');
+    }
+  }
+}
 
   }
   

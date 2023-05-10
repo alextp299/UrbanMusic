@@ -13,9 +13,10 @@ class RolesSeeder extends Seeder
     public function run(): void
     {
         $roles = [
-            ['id'=>'1','rol'=>'admin','created_at'=>null,'updated_at'=>null],
-            ['id'=>'2','rol'=>'moderador','created_at'=>null,'updated_at'=>null],
-            ['id'=>'3','rol'=>'cliente','created_at'=>null,'updated_at'=>null],
+            ['id'=>'1','rol'=>'acceder','created_at'=>null,'updated_at'=>null],
+            ['id'=>'2','rol'=>'añadir','created_at'=>null,'updated_at'=>null],
+            ['id'=>'3','rol'=>'eliminar','created_at'=>null,'updated_at'=>null],
+            ['id'=>'4','rol'=>'editar','created_at'=>null,'updated_at'=>null],
         ];
 
         Roles::insert($roles);
