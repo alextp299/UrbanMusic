@@ -29,6 +29,7 @@ import FormularioEditarCanciones from '../components/FormularioEditarCanciones.v
 import FormularioEditarProductos from '../components/FormularioEditarProductos.vue';
 import FormularioAñadirUsuarios from '../components/FormularioAñadirUsuarios.vue';
 import AdminUsers from '../components/AdminUsers.vue';
+import FormularioEditarUsuarios from '../components/FormularioEditarUsuarios.vue';
 
 export const routes = [{
         name: 'home',
@@ -188,6 +189,13 @@ export const routes = [{
         name: 'formularioañadirusuarios',
         path: '/formularioaddusuarios',
         component: FormularioAñadirUsuarios
+    },
+
+    {
+
+        name: 'formularioeditarusuarios',
+        path: '/formularioeditarusuarios',
+        component: FormularioEditarUsuarios
     },
 
 ];
