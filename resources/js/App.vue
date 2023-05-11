@@ -54,7 +54,7 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 220px; position: absolute; left: -90px; height: auto; padding: 0;">
                                 <li>
-                                    <p class="mt-1 ms-3" style="margin-right: 5px;">¡Hola {{ user.name }}!</p>
+                                    <p class="mt-3 ms-3" style="margin-right: 5px;">¡Hola {{ user.name }}!</p>
                                 </li>
                                 <li class="divider">
                                     <hr>    
