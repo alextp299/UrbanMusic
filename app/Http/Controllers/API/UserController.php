@@ -151,4 +151,29 @@ public function deleteUsuarioAdmin($id)
 
     }
 
+    public function editarUsuariosAdmin($id, Request $request)
+{
+    $user = User::find($id);
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+    ]);
+
+    $input = $request->all();
+    $input['password'] = bcrypt($input['password']);
+    $user->update($input);
+
+    $user->roles()->sync($request->roles);
+    $user->roles()->attach('1');
+
+    return response()->json(['success' => 'Usuario actualizado correctamente']);
+}
+
+    public function editUserAdmin($id)
+    {
+        $user = User::find($id);
+        return response()->json($user);
+    }
+
 }

@@ -118,19 +118,28 @@ export default {
                       }
                   );
           });
-      },
-      beforeRouteEnter(to, from, next) {
-        if (!window.Laravel.isLoggedin) {
-          window.location.href = "/";
-        } else {
-          if ((window.Laravel.user.roles[0].rol === 'admin') || (window.Laravel.user.roles[0].rol === 'moderador')) {
-            next();
-          } else {
-            next('/');
-          }
-        }
+      }
+  },beforeRouteEnter(to, from, next) {
+  if (!window.Laravel.isLoggedin) {
+    window.location.href = "/";
+  } else {
+    let canAdd = false;
+
+    // Bucle para comprobar si existe el rol 'editar' 'eliminar' o 'añadir'
+    for (let role of window.Laravel.user.roles) {
+      if (role.rol === 'añadir') {
+        canAdd = true;
+      }
+
+    }
+
+    if (canAdd) {
+      next();
+    } else {
+      next('/');
     }
   }
+}
 }
 
 </script>

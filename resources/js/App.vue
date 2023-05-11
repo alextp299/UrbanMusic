@@ -63,13 +63,13 @@
                                     <router-link to="/miperfil" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Ver Mi Perfil</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/admincanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra" v-if="user.roles[0].rol === 'admin'">Administrador Canciones</router-link>
+                                    <router-link to="/admincanciones" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra" v-if="user.roles[0].rol === 'accederAdmin'">Administrador Canciones</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/adminproductos" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Productos</router-link>
+                                    <router-link to="/adminproductos" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra" v-if="user.roles[0].rol === 'accederAdmin'">Administrador Productos</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link to="/adminusers" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra">Administrador Usuarios</router-link>
+                                    <router-link to="/adminusers" class="nav-item nav-link mt-1 ms-3 fw-bold tamaño_letra" v-if="user.roles[0].rol === 'accederUserAdmin'">Administrador Usuarios</router-link>
                                 </li>
                                 <li class="nav-item fondo-color-logout">
                                     <router-link to="/" class="nav-item nav-link mt-1 ms-3 tamaño_session4" @click="logout">Logout</router-link>

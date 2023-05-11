@@ -80,5 +80,9 @@ Route::delete('deleteUsuarioAdmin/{id}', [UserController::class,'deleteUsuarioAd
 
 Route::post('addUsuarioAdmin', [UserController::class, 'agregarUsuariosAdmin']);
 
+Route::post('updateUserAdmin/{id}', [UserController::class, 'editarUsuariosAdmin']);
+
+Route::get('editUser/{id}', [UserController::class, 'editUserAdmin']);
+
 
  
