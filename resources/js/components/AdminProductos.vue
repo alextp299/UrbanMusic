@@ -10,41 +10,44 @@
               
           </div>
           <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
-          <table class="table table-hover align-middle table-sm table-bordered">
-              <thead class="bg-dark text-light">
-              <tr>
-                  <th class="text-center" style="width: 5%;">#</th>
-                  <th class="text-center" style="width: 20%;">Name</th>
-                  <th class="text-center" style="width: 20%">Image</th>
-                  <th class="text-center" style="width: 10%">Actions</th>
-              </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(producto, index) in productosFiltrados" :key="index">
-                  <td class="text-center">{{index}}</td>
-                  <td class="text-center">{{producto.name}}</td>
-                  <td class="text-center">
-                      <div v-if="producto.image">
-                          <img alt="cancion-img" width="150" v-bind:src="'/img/Merchandising/' + producto.image">
-                      </div>
-                  </td>
-                  <td class="text-center">
-                    <router-link :to="{ name: 'formularioeditarproductos', params: { id: producto.id } }" class="nav-item nav-link">
-                    <button class="fondo-color tamaño_session2" v-if="hasUserRole('editar')">Editar</button>
-                  </router-link>
-                      <br>
-                      <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(producto.id)" v-if="hasUserRole('eliminar')">Eliminar</button>
-                  </td>
-                  
-              </tr>
-              </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-hover align-middle table-sm table-bordered">
+                <thead class="bg-dark text-light">
+                <tr>
+                    <th class="text-center" style="width: 5%;">#</th>
+                    <th class="text-center" style="width: 20%;">Name</th>
+                    <th class="text-center" style="width: 20%">Image</th>
+                    <th class="text-center" style="width: 10%">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(producto, index) in productosFiltrados" :key="index">
+                    <td class="text-center">{{index}}</td>
+                    <td class="text-center">{{producto.name}}</td>
+                    <td class="text-center">
+                        <div v-if="producto.image">
+                            <img alt="cancion-img" width="150" v-bind:src="'/img/Merchandising/' + producto.image">
+                        </div>
+                    </td>
+                    <td class="text-center">
+                      <router-link :to="{ name: 'formularioeditarproductos', params: { id: producto.id } }" class="nav-item nav-link">
+                      <button class="fondo-color tamaño_session2" v-if="hasUserRole('editar')">Editar</button>
+                    </router-link>
+                        <br>
+                        <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(producto.id)" v-if="hasUserRole('eliminar')">Eliminar</button>
+                    </td>
+                    
+                </tr>
+                </tbody>
+            </table>
+          </div>
 
       </div>
   </div>
    
   </div>
 </template>
+
 <script>
 export default {
 data() {

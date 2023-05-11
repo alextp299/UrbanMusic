@@ -10,6 +10,7 @@
                 
             </div>
             <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
+            <div class="table-responsive">
             <table class="table table-hover align-middle table-sm table-bordered">
                 <thead class="bg-dark text-light">
                 <tr>
@@ -38,6 +39,7 @@
                 </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
   </div>
