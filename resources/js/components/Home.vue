@@ -82,7 +82,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="card mb-5 container">
-          <router-link to="/merchandising/BadBunny"><img src="../../img/Merchandising_BadBunny/1.webp" class="card-img-top2 image" alt="Merchandising Bad Bunny"></router-link>
+          <router-link to="/merchandising/BadBunny"><img src="../../img/Merchandising_BadBunny/1.webp" class="card-img-top image" alt="Merchandising Bad Bunny"></router-link>
           <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Bad Bunny</h5>
             <router-link to="/merchandising/BadBunny" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
@@ -91,7 +91,7 @@
       </div>
       <div class="col-md-4">
         <div class="card espaciado-foto mb-5 container">
-          <router-link to="/merchandising/Rosalia"><img src="../../img/Merchandising_Rosalia/2.webp" class="card-img-top2 image" alt="Merchandising Rosalia"></router-link>
+          <router-link to="/merchandising/Rosalia"><img src="../../img/Merchandising_Rosalia/2.webp" class="card-img-top image" alt="Merchandising Rosalia"></router-link>
           <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Rosalia</h5>
             <router-link to="/merchandising/Rosalia" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
@@ -100,10 +100,10 @@
       </div>
       <div class="col-md-4">
         <div class="card espaciado-foto mb-5 container">
-          <router-link to="/merchandising/Rosalia"><img src="../../img/Merchandising_EladioCarrion/3.webp" class="card-img-top2 image" alt="Merchandising Rosalia"></router-link>
+          <router-link to="/merchandising/EladioCarrion"><img src="../../img/Merchandising_EladioCarrion/3.webp" class="card-img-top image" alt="Merchandising Rosalia"></router-link>
           <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Eladio Carrión </h5>
-            <router-link to="/merchandising/Rosalia" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
+            <router-link to="/merchandising/EladioCarrion" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
         </div>
       </div>

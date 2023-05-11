@@ -24,7 +24,7 @@
                 <div class="card espaciado-foto mb-5 container">
                     <router-link to="/merchandising/EladioCarrion"><img src="../../img/Artistas/eladio.webp" class="card-img-top3 image" alt="Merchandising Eladio Carrión"></router-link>
                     <div class="card-body d-flex justify-content-between">
-                        <h5 class="card-title">Eladio Carrión</h5>
+                        <h5 class="card-title p-2">Eladio Carrión</h5>
                         <router-link to="/merchandising/EladioCarrion" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
                     </div>
                 </div>
