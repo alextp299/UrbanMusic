@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-between pb-2 mb-2">
           <h5 class="card-title mt-2">Administrador de canciones</h5>
           <router-link :to="{name: 'formularioañadircanciones'}" class="nav-item nav-link mb-4">
-            <button class="fondo-color tamaño_session2">Añadir</button>
+            <button class="fondo-color tamaño_session2" v-if="hasUserRole('añadir')">Añadir</button>
           </router-link>
         </div>
         <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
@@ -32,10 +32,10 @@
                 </td>
                 <td>
                   <router-link :to="{ name: 'formularioeditarcanciones', params: { id: cancion.id } }" class="nav-item nav-link">
-                    <button class="fondo-color tamaño_session2">Editar</button>
+                    <button class="fondo-color tamaño_session2" v-if="hasUserRole('editar')">Editar</button>
                   </router-link>
                   <br>
-                  <button class="fondo-color1 tamaño_session2" @click="eliminarCancion(cancion.id)">Eliminar</button>
+                  <button class="fondo-color1 tamaño_session2" @click="eliminarCancion(cancion.id)" v-if="hasUserRole('eliminar')">Eliminar</button>
                 </td>
               </tr>
             </tbody>
@@ -105,7 +105,12 @@ export default {
       .catch(error => {
         
       });
-  },
+  },hasUserRole(role) {
+    if (this.user && this.user.roles) {
+      return this.user.roles.some(userRole => userRole.rol === role);
+    }
+    return false;
+  }
   
 
   },

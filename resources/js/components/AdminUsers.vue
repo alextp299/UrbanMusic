@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-between pb-2 mb-2">
                 <h5 class="card-title mt-2">Administrador de Usuarios</h5>
                 
-                <router-link :to="{name: 'formularioañadirusuarios'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2">Añadir</button></router-link>
+                <router-link :to="{name: 'formularioañadirusuarios'}" class="nav-item nav-link mt-2 mb-4 " v-if="hasUserRole('añadir')"><button class="fondo-color tamaño_session2" > Añadir</button></router-link>
                 
             </div>
             <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
@@ -30,10 +30,10 @@
                     </td>
                     <td class="text-center">
                       <router-link :to="{ name: 'formularioeditarusuarios', params: { id: user.id } }" class="nav-item nav-link">
-                      <button class="fondo-color tamaño_session2">Editar</button>
+                      <button class="fondo-color tamaño_session2" v-if="hasUserRole('editar')">Editar</button>
                     </router-link>
                         <br>
-                        <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(user.id)">Eliminar</button>
+                        <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(user.id)" v-if="hasUserRole('eliminar')">Eliminar</button>
                     </td>    
                 </tr>
                 </tbody>
@@ -53,6 +53,12 @@
           
       }
   },created() {
+
+    if(window.Laravel.isLoggedin){
+            this.isLoggedin =true;
+            this.user =window.Laravel.user;
+        }
+
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
             this.$axios.get('/api/usuariosAdmin')
                 .then(response => {
@@ -100,7 +106,12 @@
           });
         
       });
+    },hasUserRole(role) {
+    if (this.user && this.user.roles) {
+      return this.user.roles.some(userRole => userRole.rol === role);
     }
+    return false;
+  }
   },
   beforeRouteEnter(to, from, next) {
   if (!window.Laravel.isLoggedin) {
