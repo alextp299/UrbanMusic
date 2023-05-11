@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid mt-5 mb-5">
+  <div class="container mt-5 mb-5">
     <div class="card">
       <div class="card-body">
         <div class="d-flex justify-content-between pb-2 mb-2">
@@ -9,7 +9,7 @@
           </router-link>
         </div>
         <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
-        <div class="table-responsive text-center">
+        <div class="table-responsive">
           <table class="table table-hover align-middle table-sm table-bordered">
             <thead class="bg-dark text-light">
               <tr>
@@ -45,6 +45,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
