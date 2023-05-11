@@ -137,6 +137,7 @@ public function deleteUsuarioAdmin($id)
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();
+            $user->roles()->attach('1');
             $roles = $request->input('roles', []);
             $user->roles()->attach($roles);
             $success = true;

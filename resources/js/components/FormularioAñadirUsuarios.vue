@@ -42,22 +42,22 @@
         <label class="mb-2" for="rol">Rol</label>
         <div>
           <label>
-            <input type="checkbox" name="rol" value="1" v-model="selectedRoles"> Acceder
+            <input type="checkbox" name="rol" value="2" v-model="selectedRoles"> Acceder
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" name="rol" value="2" v-model="selectedRoles"> Añadir
+            <input type="checkbox" name="rol" value="3" v-model="selectedRoles"> Añadir
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" name="rol" value="3" v-model="selectedRoles"> Eliminar
+            <input type="checkbox" name="rol" value="4" v-model="selectedRoles"> Eliminar
           </label>
         </div>
         <div>
           <label>
-            <input type="checkbox" name="rol" value="4" v-model="selectedRoles"> Editar
+            <input type="checkbox" name="rol" value="5" v-model="selectedRoles"> Editar
           </label>
         </div>
       </div> 

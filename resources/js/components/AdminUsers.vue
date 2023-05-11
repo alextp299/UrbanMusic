@@ -34,16 +34,13 @@
                     </router-link>
                         <br>
                         <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(user.id)">Eliminar</button>
-                    </td>
-                    
+                    </td>    
                 </tr>
                 </tbody>
             </table>
-  
         </div>
     </div>
-     
-    </div>
+  </div>
   </template>
   <script>
   export default {
