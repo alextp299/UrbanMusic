@@ -6,7 +6,7 @@
               <div class="d-flex justify-content-between pb-2 mb-2">
                   <h5 class="card-title">Añadir Productos</h5>
                   <div>
-                      <router-link :to="{name: 'merchandising'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
+                      <router-link :to="{name: 'adminproductos'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                   </div>
               </div>
   

@@ -85,7 +85,7 @@
           <router-link to="/merchandising/BadBunny"><img src="../../img/Merchandising_BadBunny/1.webp" class="card-img-top image" alt="Merchandising Bad Bunny"></router-link>
           <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Bad Bunny</h5>
-            <router-link to="/merchandising/BadBunny" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
+            <router-link to="/merchandising/BadBunny" class="nav-item nav-link"><button class="fondo-color tamaño_session">Acceder</button></router-link>
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@
           <router-link to="/merchandising/Rosalia"><img src="../../img/Merchandising_Rosalia/2.webp" class="card-img-top image" alt="Merchandising Rosalia"></router-link>
           <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Rosalia</h5>
-            <router-link to="/merchandising/Rosalia" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
+            <router-link to="/merchandising/Rosalia" class="nav-item nav-link"><button class="fondo-color tamaño_session">Acceder</button></router-link>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@
           <router-link to="/merchandising/EladioCarrion"><img src="../../img/Merchandising_EladioCarrion/3.webp" class="card-img-top image" alt="Merchandising Rosalia"></router-link>
           <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Eladio Carrión </h5>
-            <router-link to="/merchandising/EladioCarrion" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
+            <router-link to="/merchandising/EladioCarrion" class="nav-item nav-link"><button class="fondo-color tamaño_session">Acceder</button></router-link>
           </div>
         </div>
       </div>
