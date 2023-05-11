@@ -144,16 +144,26 @@ export default{
        }
    },
    beforeRouteEnter(to, from, next) {
-        if (!window.Laravel.isLoggedin) {
-          window.location.href = "/";
-        } else {
-          if (window.Laravel.user.role === 'admin') {
-            next();
-          } else {
-            next('/');
-          }
-        }
+  if (!window.Laravel.isLoggedin) {
+    window.location.href = "/";
+  } else {
+    let canAdd = false;
+
+    // Bucle para comprobar si existe el rol 'editar' 'eliminar' o 'añadir'
+    for (let role of window.Laravel.user.roles) {
+      if (role.rol === 'editar') {
+        canAdd = true;
+      }
+
     }
+
+    if (canAdd) {
+      next();
+    } else {
+      next('/');
+    }
+  }
+}
 }
 
 </script>

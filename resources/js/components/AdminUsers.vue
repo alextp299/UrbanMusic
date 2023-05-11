@@ -106,25 +106,17 @@
   if (!window.Laravel.isLoggedin) {
     window.location.href = "/";
   } else {
-    let canEdit = false;
-    let canDelete = false;
-    let canAdd = false;
-
+    let canAccesUser = false;
 
     // Bucle para comprobar si existe el rol 'editar' 'eliminar' o 'añadir'
     for (let role of window.Laravel.user.roles) {
-      if (role.rol === 'editar') {
-        canEdit = true;
+      if (role.rol === 'accederUserAdmin') {
+        canAccesUser = true;
       }
-      if (role.rol === 'eliminar') {
-        canDelete = true;
-      }
-      if (role.rol === 'añadir') {
-        canAdd = true;
-      }
+
     }
 
-    if (canEdit || canDelete || canAdd) {
+    if (canAccesUser) {
       next();
     } else {
       next('/');

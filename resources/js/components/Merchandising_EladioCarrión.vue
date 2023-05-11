@@ -1,6 +1,10 @@
 <template>
   <div class="container-fluid mt-5 mb-5">
     <h3 class="mb-4">Eladio Carrión</h3>
+    <div v-if="strSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <strong>{{ strSuccess }}</strong>
+    </div>
     <div class="row">
       <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
         <div class="card mb-5 container">
@@ -43,6 +47,7 @@
       agregarProducto(id) {
         this.productosSeleccionados.push(id);
         this.guardarProductosSeleccionados();
+        this.strSuccess = 'Producto añadido al carrito';
       },
       guardarProductosSeleccionados() {
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
