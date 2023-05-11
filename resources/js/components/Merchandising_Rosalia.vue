@@ -9,12 +9,12 @@
       <div class="col-md-4" v-for="(producto, index) in productos" :key="index">
         <div class="card mb-5 container">
           <img class="card-img-top2 image" v-bind:src="'/img/Merchandising/' + producto.image" alt="Imagen del producto">
-          <div class="middle">
-            <button @click="agregarProducto(producto)" class="fondo-color tamaño_session">Añadir al carrito</button>
-          </div>
           <div class="card-body">
             <h5 class="card-title">{{ producto.name }}</h5>
-            <p class="card-text">{{ producto.precio }} €</p>
+            <div class="d-flex justify-content-between">
+              <p class="card-text p-2">{{ producto.precio }} €</p>
+              <button @click="agregarProducto(producto)" class="fondo-color tamaño_session5">Añadir al carrito</button>            
+            </div>
           </div>
         </div>
       </div>
