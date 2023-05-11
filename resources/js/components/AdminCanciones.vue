@@ -30,7 +30,7 @@
                     <img alt="cancion-img" width="100" v-bind:src="'/img/Music_Imagenes/' + cancion.image">
                   </div>
                 </td>
-                <td>
+                <td class="text-center">
                   <router-link :to="{ name: 'formularioeditarcanciones', params: { id: cancion.id } }" class="nav-item nav-link">
                     <button class="fondo-color tamaño_session2" v-if="hasUserRole('editar')">Editar</button>
                   </router-link>

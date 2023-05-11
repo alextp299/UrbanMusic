@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="form-group mb-2 mt-4">
-    <label class="mb-2" for="rol">Rol</label>
+    <label class="mb-2" for="rol">Rol</label><span class="text-danger"> *</span>
     <div>
       <label>
         <input type="checkbox" name="rol" value="2" v-model="selectedRoles"> AccederAdmin
