@@ -109,6 +109,14 @@
     color: white;
 }
 
+.tamaño_session5 {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
+    height: 40px;
+    margin-top: -20px;
+}
+
 .fondo-web {
     background-color: var(--color3);
 }
@@ -290,39 +298,8 @@
     backface-visibility: hidden;
 }
 
-.middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    bottom: 14%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-}
-
-.middle2 {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 78%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-}
-
 .container:hover .image {
     opacity: 0.8;
-}
-
-.container:hover .middle {
-    opacity: 1;
-}
-
-.container:hover .middle2 {
-    opacity: 1;
 }
 
 .play {
@@ -338,22 +315,6 @@
 .play:hover {
     background-image: url('../icons/play2.svg');
     transform: scale(1.2);
-}
-
-
-/* VERSION MOVIL HOME */
-
-@media (max-width: 992px) {
-    .middle2 {
-        transition: .5s ease;
-        opacity: 0;
-        position: absolute;
-        top: 75%;
-        left: 92%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        text-align: center;
-    }
 }
 
 
@@ -450,38 +411,6 @@ audio::-webkit-media-controls-mute-button {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     width: 100%;
-}
-
-.middle3 {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    bottom: 9%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-}
-
-.middle4 {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    bottom: 7%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-}
-
-.container:hover .middle3 {
-    opacity: 1;
-}
-
-.container:hover .middle4 {
-    opacity: 1;
 }
 
 .espaciado-foto {
