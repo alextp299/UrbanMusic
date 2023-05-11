@@ -39,28 +39,33 @@
                     </div>
   
                     <div class="form-group mb-2 mt-4">
-        <label class="mb-2" for="rol">Rol</label>
-        <div>
-          <label>
-            <input type="checkbox" name="rol" value="2" v-model="selectedRoles"> Acceder
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="checkbox" name="rol" value="3" v-model="selectedRoles"> Añadir
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="checkbox" name="rol" value="4" v-model="selectedRoles"> Eliminar
-          </label>
-        </div>
-        <div>
-          <label>
-            <input type="checkbox" name="rol" value="5" v-model="selectedRoles"> Editar
-          </label>
-        </div>
-      </div> 
+    <label class="mb-2" for="rol">Rol</label>
+    <div>
+      <label>
+        <input type="checkbox" name="rol" value="2" v-model="selectedRoles"> AccederAdmin
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" name="rol" value="3" v-model="selectedRoles"> AccederUserAdmin
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" name="rol" value="4" v-model="selectedRoles"> Añadir
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" name="rol" value="5" v-model="selectedRoles"> Eliminar
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" name="rol" value="6" v-model="selectedRoles"> Editar
+      </label>
+    </div>
+  </div>
   
                   <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Confirmar</button>
     

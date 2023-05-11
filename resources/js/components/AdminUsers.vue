@@ -29,7 +29,7 @@
                       {{ user.roles.map(role => role.rol).join(', ') }}
                     </td>
                     <td class="text-center">
-                      <router-link :to="{ name: 'formularioeditarproductos', params: { id: user.id } }" class="nav-item nav-link">
+                      <router-link :to="{ name: 'formularioeditarusuarios', params: { id: user.id } }" class="nav-item nav-link">
                       <button class="fondo-color tamaño_session2">Editar</button>
                     </router-link>
                         <br>
