@@ -42,40 +42,38 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card espaciado-foto mb-5 container">
-        <img src="../../img/Artistas/quevedo.webp" class="card-img-top3 image" alt="Merchandising Quevedo">
-        <div class="middle2">
+        <router-link to="/categoria/Quevedo"><img src="../../img/Artistas/quevedo.webp" class="card-img-top3 image" alt="Merchandising Quevedo"></router-link>
+        <div class="card-body d-flex justify-content-between">
+          <h5 class="card-title p-2">Quevedo</h5>
           <router-link to="/categoria/Quevedo"><div class="play" aria-label="play"></div></router-link>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Quevedo</h5>
-        </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card espaciado-foto mb-5 container">
-        <img src="../../img/Artistas/badbunny.webp" class="card-img-top3 image" alt="Merchandising Bad Bunny">
-        <div class="middle2">
+        <router-link to="/categoria/BadBunny"><img src="../../img/Artistas/badbunny.webp" class="card-img-top3 image" alt="Merchandising Bad Bunny"></router-link>
+        <div class="card-body d-flex justify-content-between">
+          <h5 class="card-title p-2">Bad Bunny</h5>
           <router-link to="/categoria/BadBunny"><div class="play" aria-label="play"></div></router-link>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Bad Bunny</h5>
-        </div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card espaciado-foto mb-5 container">
-        <img src="../../img/Artistas/shakira.webp" class="card-img-top3 image" alt="Merchandising Shakira" style="height: 350px;">
-        <div class="middle2">
+        <router-link to="/categoria/Shakira"><img src="../../img/Artistas/shakira.webp" class="card-img-top3 image" alt="Merchandising Shakira" style="height: 350px;"></router-link>
+        <div class="card-body d-flex justify-content-between">
+          <h5 class="card-title p-2">Shakira</h5>
           <router-link to="/categoria/Shakira"><div class="play" aria-label="play"></div></router-link>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">Shakira</h5>
         </div>
       </div>
     </div>
-    <hr>
-    <div class="mb-5 justify-content-center">
-      <router-link to="/categoria" class="nav-item nav-link mt-2 text-center"><button class="fondo-color tamaño_session3">Ver más</button></router-link>
+    <div class="hr-container">
+      <hr>
+      <div class="button-container">
+        <router-link to="/categoria" class="nav-item nav-link mt-2 text-center">
+          <button class="fondo-color tamaño_session">Ver más</button>
+        </router-link>
+      </div>
     </div>
   </div>
   </div>
@@ -84,40 +82,38 @@
     <div class="row">
       <div class="col-md-4">
         <div class="card mb-5 container">
-          <img src="../../img/Merchandising_BadBunny/1.webp" class="card-img-top2 image" alt="Merchandising Bad Bunny">
-          <div class="middle4">
-            <router-link to="/merchandising/BadBunny" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
-          </div>
-          <div class="card-body">
+          <router-link to="/merchandising/BadBunny"><img src="../../img/Merchandising_BadBunny/1.webp" class="card-img-top2 image" alt="Merchandising Bad Bunny"></router-link>
+          <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Bad Bunny</h5>
+            <router-link to="/merchandising/BadBunny" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card espaciado-foto mb-5 container">
-          <img src="../../img/Merchandising_Rosalia/2.webp" class="card-img-top2 image" alt="Merchandising Rosalia">
-          <div class="middle4">
-            <router-link to="/merchandising/Rosalia" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
-          </div>
-          <div class="card-body">
+          <router-link to="/merchandising/Rosalia"><img src="../../img/Merchandising_Rosalia/2.webp" class="card-img-top2 image" alt="Merchandising Rosalia"></router-link>
+          <div class="card-body d-flex justify-content-between">
             <h5 class="card-title">Rosalia</h5>
+            <router-link to="/merchandising/Rosalia" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card espaciado-foto mb-5 container">
-          <img src="../../img/Merchandising_EladioCarrion/3.webp" class="card-img-top2 image" alt="Merchandising Eladio Carrión">
-          <div class="middle4">
-            <router-link to="/merchandising/EladioCarrion" class="nav-item nav-link mt-3"><button class="fondo-color tamaño_session">Entrar</button></router-link>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Eladio Carrión</h5>
+          <router-link to="/merchandising/Rosalia"><img src="../../img/Merchandising_EladioCarrion/3.webp" class="card-img-top2 image" alt="Merchandising Rosalia"></router-link>
+          <div class="card-body d-flex justify-content-between">
+            <h5 class="card-title">Eladio Carrión </h5>
+            <router-link to="/merchandising/Rosalia" class="nav-item nav-link"><button class="fondo-color tamaño_session">Entrar</button></router-link>
           </div>
         </div>
       </div>
-      <hr>
-      <div class="mb-5 justify-content-center">
-        <router-link to="/merchandising" class="nav-item nav-link mt-2 text-center"><button class="fondo-color tamaño_session3">Ver más</button></router-link>
+      <div class="hr-container mb-5">
+        <hr>
+        <div class="button-container">
+          <router-link to="/merchandising" class="nav-item nav-link mt-2 text-center">
+            <button class="fondo-color tamaño_session">Ver más</button>
+          </router-link>
+        </div>
       </div>
     </div>
 </div>
