@@ -20,7 +20,7 @@
 /* COLORES */
 
 :root {
-    --color1: rgb(176, 125, 252);
+    --color1: rgb(176, 126, 252);
     --color2: rgb(131, 90, 192);
     --color3: rgb(226, 226, 226);
 }
@@ -152,16 +152,18 @@
 }
 
 .carrito_hover1 {
-    width: 40px;
-    height: 40px;
-    background-image: url('../icons/carrito.svg');
+    width: 45px;
+    height: 45px;
+    background-image: url('../icons/carrito1.svg');
     background-size: cover;
+    transition: all 0.5s ease;
 }
 
 .carrito_hover1:hover {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     background-image: url('../icons/carrito2.svg');
+    transform: scale(1.2);
 }
 
 .despegable {
@@ -212,7 +214,7 @@
 .redes_hover1 {
     width: 30px;
     height: 30px;
-    background-image: url('../icons/insta.svg');
+    background-image: url('../icons/instagram1.svg');
     background-size: cover;
     transition: all 0.5s ease;
 }
@@ -220,7 +222,7 @@
 .redes_hover2 {
     width: 30px;
     height: 30px;
-    background-image: url('../icons/facebook.svg');
+    background-image: url('../icons/facebook1.svg');
     background-size: cover;
     transition: all 0.5s ease;
 }
@@ -228,7 +230,7 @@
 .redes_hover3 {
     width: 30px;
     height: 30px;
-    background-image: url('../icons/twitter.svg');
+    background-image: url('../icons/twitter1.svg');
     background-size: cover;
     transition: all 0.5s ease;
 }
@@ -236,13 +238,13 @@
 .redes_hover4 {
     width: 30px;
     height: 30px;
-    background-image: url('../icons/youtube.svg');
+    background-image: url('../icons/youtube1.svg');
     background-size: cover;
     transition: all 0.5s ease;
 }
 
 .redes_hover1:hover {
-    background-image: url('../icons/insta2.svg');
+    background-image: url('../icons/instagram2.svg');
     transform: scale(1.2);
 }
 
@@ -305,7 +307,7 @@
 .play {
     width: 40px;
     height: 40px;
-    background-image: url('../icons/play.svg');
+    background-image: url('../icons/play1.svg');
     background-size: cover;
     transition: all 0.5s ease;
     border-radius: 50%;
