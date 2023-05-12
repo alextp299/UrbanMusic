@@ -470,3 +470,49 @@ audio::-webkit-media-controls-mute-button {
         width: 90%;
     }
 }
+
+
+/* ADMIN */
+
+.editar {
+    width: 25px;
+    height: 25px;
+    background-image: url('../icons/editar1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.editar:hover {
+    background-image: url('../icons/editar2.svg');
+    transform: scale(1.2);
+}
+
+.eliminar {
+    width: 25px;
+    height: 25px;
+    background-image: url('../icons/basura1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.eliminar:hover {
+    background-image: url('../icons/basura2.svg');
+    transform: scale(1.2);
+}
+
+.añadir {
+    width: 25px;
+    height: 25px;
+    background-image: url('../icons/mas1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.añadir:hover {
+    background-image: url('../icons/mas2.svg');
+    transform: scale(1.2);
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #f5f5f5;
+}

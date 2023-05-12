@@ -26,7 +26,7 @@
 
                   <div class="form-group mb-2">
                       <label>Nombre Nuevo</label><span class="text-danger"> *</span>
-                      <input type="text" class="form-control" v-model="name" placeholder="Nombre de la canción">
+                      <input type="text" class="form-control" v-model="name" placeholder="Nombre del producto">
                   </div>
 
                   <div class="form-group mb-2 mt-4">
@@ -50,7 +50,7 @@
                       <input type="file" class="form-control mb-2" v-on:change="onChange">
                   </div>
 
-                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Editar</button>
+                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Guardar cambios</button>
               </form>
           </div>
       </div>

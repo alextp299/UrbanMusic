@@ -6,7 +6,9 @@
             <div class="d-flex justify-content-between pb-2 mb-2">
                 <h5 class="card-title mt-2">Administrador de Usuarios</h5>
                 
-                <router-link :to="{name: 'formularioañadirusuarios'}" class="nav-item nav-link mt-2 mb-4 " v-if="hasUserRole('añadir')"><button class="fondo-color tamaño_session2" > Añadir</button></router-link>
+                <router-link :to="{name: 'formularioañadirusuarios'}" class="nav-item nav-link mt-2 mb-4 ">
+                  <div class="añadir mt-2" aria-label="añadir" v-if="hasUserRole('añadir')"></div>
+                </router-link>
                 
             </div>
             <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
@@ -15,10 +17,10 @@
                 <thead class="bg-dark text-light">
                 <tr>
                     <th class="text-center" style="width: 5%;">#</th>
-                    <th class="text-center" style="width: 20%;">Name</th>
+                    <th class="text-center" style="width: 20%;">Nombre Usuario</th>
                     <th class="text-center" style="width: 20%">Correo</th>
                     <th class="text-center" style="width: 20%">Permisos</th>
-                    <th class="text-center" style="width: 10%">Actions</th>
+                    <th class="text-center" style="width: 8%">Acción</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,16 +28,21 @@
                     <td class="text-center">{{index}}</td>
                     <td class="text-center">{{user.name}}</td>
                     <td class="text-center">{{user.email}}</td>
-                    <td class="text-center">
+                    <td class="text-center p-3">
                       {{ user.roles.map(role => role.rol).join(', ') }}
                     </td>
                     <td class="text-center">
-                      <router-link :to="{ name: 'formularioeditarusuarios', params: { id: user.id } }" class="nav-item nav-link">
-                      <button class="fondo-color tamaño_session2" v-if="hasUserRole('editar')">Editar</button>
-                    </router-link>
-                        <br>
-                        <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(user.id)" v-if="hasUserRole('eliminar')">Eliminar</button>
-                    </td>    
+                      <div class="d-flex justify-content-center">
+                        <div v-if="hasUserRole('editar')" class="d-flex align-items-center">
+                          <router-link :to="{ name: 'formularioeditarusuarios', params: { id: user.id } }" class="mx-2">
+                            <div class="editar" aria-label="editar"></div>
+                          </router-link>
+                        </div>
+                        <div v-if="hasUserRole('eliminar')" class="d-flex align-items-center">
+                          <div class="eliminar mx-2" @click="eliminarUsuario(user.id)"></div>
+                        </div>
+                      </div>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -84,7 +91,7 @@
     }
   },
   methods: {
-    eliminarProducto(id) {
+    eliminarUsuario(id) {
     this.$axios.delete('/api/deleteUsuarioAdmin/' + id)
       .then(response => {
   

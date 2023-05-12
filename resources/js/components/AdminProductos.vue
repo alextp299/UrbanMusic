@@ -6,7 +6,9 @@
           <div class="d-flex justify-content-between pb-2 mb-2">
               <h5 class="card-title mt-2">Administrador de productos</h5>
               
-              <router-link :to="{name: 'formularioañadirproductos'}" class="nav-item nav-link mt-2 mb-4"><button class="fondo-color tamaño_session2" v-if="hasUserRole('añadir')">Añadir</button></router-link>
+              <router-link :to="{name: 'formularioañadirproductos'}" class="nav-item nav-link mt-2 mb-4">
+                <div class="añadir mt-2" aria-label="añadir" v-if="hasUserRole('añadir')"></div>
+              </router-link>
               
           </div>
           <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
@@ -15,9 +17,9 @@
                 <thead class="bg-dark text-light">
                 <tr>
                     <th class="text-center" style="width: 5%;">#</th>
-                    <th class="text-center" style="width: 20%;">Name</th>
-                    <th class="text-center" style="width: 20%">Image</th>
-                    <th class="text-center" style="width: 10%">Actions</th>
+                    <th class="text-center" style="width: 20%;">Nombre Producto</th>
+                    <th class="text-center" style="width: 20%">Imagen</th>
+                    <th class="text-center" style="width: 8%">Acción</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,13 +32,17 @@
                         </div>
                     </td>
                     <td class="text-center">
-                      <router-link :to="{ name: 'formularioeditarproductos', params: { id: producto.id } }" class="nav-item nav-link">
-                      <button class="fondo-color tamaño_session2" v-if="hasUserRole('editar')">Editar</button>
-                    </router-link>
-                        <br>
-                        <button class="fondo-color1 tamaño_session2" @click="eliminarProducto(producto.id)" v-if="hasUserRole('eliminar')">Eliminar</button>
+                      <div class="d-flex justify-content-center">
+                        <div v-if="hasUserRole('editar')" class="d-flex align-items-center">
+                          <router-link :to="{ name: 'formularioeditarproductos', params: { id: producto.id } }" class="mx-2">
+                            <div class="editar" aria-label="editar"></div>
+                          </router-link>
+                        </div>
+                        <div v-if="hasUserRole('eliminar')" class="d-flex align-items-center">
+                          <div class="eliminar mx-2" @click="eliminarProducto(producto.id)"></div>
+                        </div>
+                      </div>
                     </td>
-                    
                 </tr>
                 </tbody>
             </table>

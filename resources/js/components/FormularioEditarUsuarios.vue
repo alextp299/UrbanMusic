@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
-      <h3 class="mb-4">Administración de Productos</h3>
+      <h3 class="mb-4">Administración de Usuarios</h3>
   
         <div class="card card-default d-flex px-5 py-5 mt-5">
             <div class="card-body p-1">
@@ -36,19 +36,21 @@
 
                     <div class="form-group mb-2 mt-4">
                         <label class="mb-2">Password</label><span class="text-danger"> *</span>
-                        <input type="text" class="form-control mb-2" v-model="password" placeholder="Introduce el nombre del producto">
+                        <input type="password" class="form-control mb-2" v-model="password" placeholder="Introduce el nombre del producto">
                     </div>
 
                     <div class="form-group mb-2 mt-4">
-    <label class="mb-2" for="rol">Rol</label><span class="text-danger"> *</span>
-    <div v-for="role in roles" :key="role.id">
-      <label>
-        <input type="checkbox" :value="role.id" v-model="selectedRoles"> {{ role.rol }}
-      </label>
-    </div>
-  </div>       
+                      <label class="mb-2" for="rol">Rol</label><span class="text-danger"> *</span>
+                      <div class="mt-1">
+                        <div v-for="role in roles" :key="role.id" class="d-inline-block ms-5">
+                          <label class="mt-2">
+                            <input type="checkbox" :value="role.id" v-model="selectedRoles"> {{ role.rol }}
+                          </label>
+                        </div>
+                      </div>
+                    </div>       
   
-                    <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Editar</button>
+                    <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Guardar cambios</button>
                 </form>
             </div>
         </div>

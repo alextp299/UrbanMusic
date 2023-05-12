@@ -24,30 +24,33 @@
                 <form @submit.prevent="addPost" enctype="multipart/form-data">
                     <div class="form-group mb-2 mt-4">
                         <label class="mb-2">Nombre</label><span class="text-danger"> *</span>
-                        <input type="text" class="form-control mb-2" v-model="name" placeholder="Introduce el nombre del producto">
+                        <input type="text" class="form-control mb-2" v-model="name" placeholder="Introduce el nombre del nuevo usuario">
                     </div>
     
     
                     <div class="form-group mb-2 mt-4">
                         <label class="mb-2">Email</label><span class="text-danger"> *</span>
-                        <input type="text" class="form-control mb-2" v-model="email" placeholder="Introduce el precio">
+                        <input type="text" class="form-control mb-2" v-model="email" placeholder="Introduce el correo">
                     </div>
 
                     <div class="form-group mb-2 mt-4">
                         <label class="mb-2">Password</label><span class="text-danger"> *</span>
-                        <input type="text" class="form-control mb-2" v-model="password" placeholder="Introduce el nombre del producto">
+                        <input type="password" class="form-control mb-2" v-model="password" placeholder="Introduce la contraseña">
                     </div>
   
-  <div class="form-group mb-2 mt-4">
-    <label class="mb-2" for="rol">Rol</label><span class="text-danger"> *</span>
-    <div v-for="role in roles" :key="role.id">
-      <label>
-        <input type="checkbox" :value="role.id" v-model="selectedRoles"> {{ role.rol }}
-      </label>
-    </div>
-  </div>
+                    <div class="form-group mb-2 mt-4">
+                      <label class="mb-2" for="rol">Rol</label><span class="text-danger"> *</span>
+                      <div class="mt-1">
+                        <div v-for="role in roles" :key="role.id" class="d-inline-block ms-5">
+                          <label class="mt-2">
+                            <input type="checkbox" :value="role.id" v-model="selectedRoles"> {{ role.rol }}
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
   
-                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Confirmar</button>
+                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Añadir usuario</button>
     
                 </form>
     
