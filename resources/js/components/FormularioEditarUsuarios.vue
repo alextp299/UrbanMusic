@@ -41,29 +41,9 @@
 
                     <div class="form-group mb-2 mt-4">
     <label class="mb-2" for="rol">Rol</label><span class="text-danger"> *</span>
-    <div>
+    <div v-for="role in roles" :key="role.id">
       <label>
-        <input type="checkbox" name="rol" value="2" v-model="selectedRoles"> AccederAdmin
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" name="rol" value="3" v-model="selectedRoles"> AccederUserAdmin
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" name="rol" value="4" v-model="selectedRoles"> Añadir
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" name="rol" value="5" v-model="selectedRoles"> Eliminar
-      </label>
-    </div>
-    <div>
-      <label>
-        <input type="checkbox" name="rol" value="6" v-model="selectedRoles"> Editar
+        <input type="checkbox" :value="role.id" v-model="selectedRoles"> {{ role.rol }}
       </label>
     </div>
   </div>       
@@ -87,7 +67,8 @@
             password: '',
             strSuccess: '',
             strError: '',
-            selectedRoles: []
+            selectedRoles: [],
+            roles: [],
         }
     },created() {
          this.$axios.get('/sanctum/csrf-cookie').then(response => {
@@ -102,6 +83,14 @@
                      console.log(error);
                  });
          })
+        // Obtén los roles de la base de datos y asígnalos a la propiedad "roles"
+    this.$axios.get('/api/roles')
+      .then(response => {
+        this.roles = response.data;
+      })
+      .catch(error => {
+        console.error(error);
+      });
      },
      methods: {
          updatePost(e) {

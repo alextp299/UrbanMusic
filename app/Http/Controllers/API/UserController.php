@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -175,5 +176,13 @@ public function deleteUsuarioAdmin($id)
         $user = User::find($id);
         return response()->json($user);
     }
+
+    public function getRoles()
+    {
+        $roles = Roles::where('rol', '!=', 'normal')->get();
+        return response()->json($roles);
+    }
+
+    
 
 }
