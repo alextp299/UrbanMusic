@@ -39,8 +39,6 @@
 </div>
 <div class="container-fluid mt-5">
   <h3 class="mb-4">Artistas más escuchados</h3>
-  <!-- Button trigger modal -->
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -54,8 +52,7 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="fondo-color-perfil tamaño_session" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
