@@ -8,7 +8,7 @@
           <h5 class="card-title">Mi perfil</h5>
           <div>
             <router-link :to="{ name: 'editarperfil', params: { id: user.id } }" class="nav-item nav-link">
-                    <button class="fondo-color tamaño_session2">Editar</button>
+                    <div class="editar" aria-label="editar"></div>
                   </router-link>
           </div>
         </div>
@@ -42,7 +42,7 @@
             <router-link to="/" class="nav-item nav-link">
               <button class="fondo-color tamaño_session2">Volver</button>
             </router-link>
-            <button class="fondo-color1 tamaño_session2" @click="eliminar(user.id)">Eliminar</button>
+            <div class="eliminar mx-2" @click="eliminar(user.id)"></div>
           </div>
         </form>
       </div>
@@ -91,6 +91,7 @@ export default{
           .catch(function (error) {
             console.log(error);
           });
+          window.location.href = '/';
         
       })
       .catch(error => {
