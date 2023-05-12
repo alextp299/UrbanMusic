@@ -80,7 +80,7 @@ class QuevedoMusicController extends Controller
     
         Canciones::create($input);
     
-        return response()->json(['success' => 'Producto creado correctamente']);
+        return response()->json(['success' => 'Canción creada correctamente']);
     
     }
 

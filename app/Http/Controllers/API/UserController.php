@@ -47,7 +47,7 @@ class UserController extends Controller
             $message = "Usuario registrado correctamente";
         }catch(\Illuminate\Database\QueryException $ex){
             $success = false;
-            $message = $ex->getMessage();
+            $message = "Usuario ya existente";
         }
 
 
@@ -144,7 +144,7 @@ public function deleteUsuarioAdmin($id)
             $message = "Usuario registrado correctamente";
         }catch(\Illuminate\Database\QueryException $ex){
             $success = false;
-            $message = $ex->getMessage();
+            $message = "Usuario ya existente";
         }
 
         return response()->json(['success'=> 'Usuario añadido correctamente']);

@@ -170,7 +170,7 @@ public function delete($id)
 {
    $producto = Producto::find($id);
    $producto->delete();
-   return response()->json(['success'=> 'Post deleted successfully']);
+   return response()->json(['success'=> 'Producto eliminado correctamente.']);
 }
 
 public function edit($id)
