@@ -158,12 +158,24 @@
         }
     },
     created() {
+            this.$axios.get('/sanctum/csrf-cookie').then(response => {
+            this.$axios.get('/api/carrito')
+                .then(response => {
+                    this.productos = response.data;
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            })
+
         if(window.Laravel.isLoggedin){
             this.isLoggedin =true;
             this.user =window.Laravel.user;
         }
     },
     methods: {
+        
         logout(e) {
             e.preventDefault()
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
@@ -186,7 +198,7 @@
       return this.user.roles.some(userRole => userRole.rol === role);
     }
     return false;
-  }
+  },
 }
     }
 
