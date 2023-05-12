@@ -2,24 +2,25 @@
   <div class="container-fluid mt-5 mb-5" style="min-height: 400px;">
     <h3 class="mb-4">Tu carrito</h3>
     <div class="compra-ver">
-      <div class="row">
+      <div class="row bottom-cards-carrito">
         <div class="col-md-5 me-4" v-for="(producto, index) in productos" :key="index">
           <div class="card mb-5 container" id="tamaño-card">
             <img class="card-img-top2 image" v-bind:src="'/img/Merchandising/' + producto.image" alt="Imagen del producto">
-            <div class="card-body">
+            <div class="card-body mb-2">
               <h5 class="card-title">{{ producto.name }}</h5>
               <p class="card-text">{{ producto.precio }} €</p>
-              <div class="form-group row">
+              <div class="form-group row align-items-center">
                 <label for="cantidad" class="col-sm-4 col-form-label">Cantidad:</label>
-                <div class="col-sm-5">
-                  <div class="input-group">
-                    <button class="btn btn-outline-secondary" type="button" @click="decrementarCantidad(producto)">-</button>
-                    <input type="number" class="form-control text-center" id="cantidad" v-model.number="producto.cantidad" min="1">
-                    <button class="btn btn-outline-secondary" type="button" @click="incrementarCantidad(producto)">+</button>
+                <div class="col-sm-7 d-flex ml-auto">
+                  <div class="input-group" style="position: relative; right: 10px;">
+                    <button class="btn btn-outline-secondary mt-1" type="button" @click="decrementarCantidad(producto)" style="height: 40px;">-</button>
+                    <input type="number" class="form-control text-center mt-1" id="cantidad" v-model.number="producto.cantidad" min="1" style="height: 40px;">
+                    <button class="btn btn-outline-secondary mt-1" type="button" @click="incrementarCantidad(producto)" style="height: 40px;">+</button>
                   </div>
+                  <div class="eliminar m-2 p-3" @click="eliminarProducto(producto.id)" style="position: relative; left: 20px;"></div>
                 </div>
               </div>
-              <button class="btn btn-danger posicion-movil" @click="eliminarProducto(producto.id)">Eliminar</button>
+
             </div>
           </div>
         </div>

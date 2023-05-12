@@ -449,6 +449,12 @@ audio::-webkit-media-controls-mute-button {
     width: 80%;
 }
 
+.bottom-cards-carrito {
+    position: relative;
+    bottom: 45px;
+    padding: 3rem;
+}
+
 
 /* VERSION MOVIL CARRITO */
 
@@ -468,6 +474,11 @@ audio::-webkit-media-controls-mute-button {
         margin-left: 5%;
         margin-right: 5%;
         width: 90%;
+    }
+    .bottom-cards-carrito {
+        position: relative;
+        bottom: 0;
+        padding: 0;
     }
 }
 
