@@ -15,7 +15,7 @@
               <tr>
                 <th class="text-center" style="width: 5%;">#</th>
                 <th class="text-center" style="width: 20%;">Name</th>
-                <th class="text-center" style="width: 20%">Description</th>
+                <th class="text-center" style="width: 20%">Audio</th>
                 <th class="text-center" style="width: 5%">Image</th>
                 <th class="text-center" style="width: 10%">Actions</th>
               </tr>
