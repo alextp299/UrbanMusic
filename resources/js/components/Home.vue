@@ -45,14 +45,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        ...
+      <div class="modal-body text-center">
+        <p>Aquí tienes tu código promocional:</p>
+        <h1>40% DESCUENTO</h1>
+        <p>7M34M-VKHF</p>
+        <router-link to="/merchandising" class="nav-item nav-link mt-2 text-center">
+            <button class="fondo-color tamaño_session2">Ver más</button>
+          </router-link>
       </div>
       <div class="modal-footer">
-        <button type="button" class="fondo-color-perfil tamaño_session" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="fondo-color tamaño_session2" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
