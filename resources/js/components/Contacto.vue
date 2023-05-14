@@ -22,7 +22,7 @@
                     <div class="form-gorup mb-2 mt-4">
                         <label for="asunto" class="mb-2">Asunto</label>
                         <input type="text" class="form-control mb-2" id="asunto" placeholder="Introduce el asunto" required>
-                        <div id="asuntoHelp" class="form-text">Ejemplo: Solicitud de Compra</div>
+                        <div id="asuntoHelp" class="form-text">Ejemplo: Reproducción incorrecta de la música</div>
                     </div>
     
                     <div class="form-gorup mb-2 mt-4">

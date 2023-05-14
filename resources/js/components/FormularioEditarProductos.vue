@@ -25,7 +25,7 @@
               <form @submit.prevent="updatePost" enctype="multipart/form-data">
 
                   <div class="form-group mb-2">
-                      <label>Nombre Nuevo</label><span class="text-danger"> *</span>
+                      <label class="mb-2">Nombre Nuevo</label><span class="text-danger"> *</span>
                       <input type="text" class="form-control" v-model="name" placeholder="Nombre del producto">
                   </div>
 

@@ -14,7 +14,7 @@
   
               <form @submit.prevent="updatePost" enctype="multipart/form-data">
                <div class="form-group mb-2">
-                   <label>Nombre de la canción</label><span class="text-danger"> *</span>
+                   <label class="mb-2">Nombre de la canción</label><span class="text-danger"> *</span>
                    <input type="text" class="form-control" v-model="name" placeholder="Introduce el nombre de la canción">
                </div>
 
@@ -34,17 +34,15 @@
                   </div>
 
                <div class="form-gorup mb-2">
-                   <label>Imagen</label><span class="text-danger"> *</span>
+                   <label class="mb-2">Imagen</label><span class="text-danger"> *</span>
                    <input type="file" class="form-control mb-2" v-on:change="onChange">
-
-
                    <div v-if="img">
-                       <img v-bind:src="imgPreview" width="100" height="100"/>
+                       <img class="mb-2" v-bind:src="imgPreview" width="100" height="100"/>
                    </div>
                </div>
 
                <div class="form-gorup mb-2">
-                   <label>Audio</label><span class="text-danger"> *</span>
+                   <label class="mb-2">Audio</label><span class="text-danger"> *</span>
                    <input type="file" class="form-control mb-2" v-on:change="onChangeAudio">
                </div>
 
