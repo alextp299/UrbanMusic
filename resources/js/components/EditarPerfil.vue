@@ -8,7 +8,7 @@
           <h5 class="card-title">Editar perfil</h5>
           <div>
             <router-link :to="{name: 'miperfil'}" class="nav-item nav-link mt-2">
-              <button class="fondo-color tamaño_session2">Mi perfil</button>
+              <button class="fondo-color tamaño_session2">Volver</button>
             </router-link>
           </div>
         </div>

@@ -40,7 +40,7 @@
           </div>
           <div class="d-flex justify-content-between">
             <router-link to="/" class="nav-item nav-link">
-              <button class="fondo-color tamaño_session2">Volver</button>
+              <button class="fondo-color tamaño_session2">Volver al Inicio</button>
             </router-link>
             <div class="eliminar mx-2" @click="eliminar(user.id)"></div>
           </div>

@@ -12,42 +12,46 @@
         <input type="text" v-model="busqueda" placeholder="Buscar productos" class="form-control mb-5">
         <div class="table-responsive">
           <table class="table table-hover align-middle table-sm table-bordered">
-  <thead class="bg-dark text-light">
-    <tr>
-      <th class="text-center" style="width: 5%;">#</th>
-      <th class="text-center" style="width: 20%;">Nombre Canción</th>
-      <th class="text-center" style="width: 20%">Canción</th>
-      <th class="text-center" style="width: 5%">Imagen</th>
-      <th class="text-center" style="width: 8%">Acción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="(cancion, index) in productosFiltrados" :key="index">
-      <td class="text-center">{{index}}</td>
-      <td class="text-center">{{cancion.name}}</td>
-      <td class="text-center">{{cancion.audio}}</td>
-      <td class="text-center">
-        <div v-if="cancion.image">
-          <img alt="cancion-img" width="100" v-bind:src="'/img/Music_Imagenes/' + cancion.image">
+            <thead class="bg-dark text-light">
+              <tr>
+                <th class="text-center" style="width: 5%;">#</th>
+                <th class="text-center" style="width: 20%;">Nombre Canción</th>
+                <th class="text-center" style="width: 20%">Canción</th>
+                <th class="text-center" style="width: 5%">Imagen</th>
+                <th class="text-center" style="width: 8%">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(cancion, index) in productosFiltrados" :key="index">
+                <td class="text-center">{{index}}</td>
+                <td class="text-center">{{cancion.name}}</td>
+                <td class="text-center">{{cancion.audio}}</td>
+                <td class="text-center">
+                  <div v-if="cancion.image">
+                    <img alt="cancion-img" width="100" v-bind:src="'/img/Music_Imagenes/' + cancion.image">
+                  </div>
+                </td>
+                <td class="text-center">
+                  <div class="d-flex justify-content-center">
+                    <div v-if="hasUserRole('editar')" class="d-flex align-items-center">
+                      <router-link :to="{ name: 'formularioeditarcanciones', params: { id: cancion.id } }" class="mx-2">
+                        <div class="editar" aria-label="editar"></div>
+                      </router-link>
+                    </div>
+                    <div v-if="hasUserRole('eliminar')" class="d-flex align-items-center">
+                      <div class="eliminar mx-2" @click="eliminarCancion(cancion.id)"></div>
+                    </div>
+                  </div>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </td>
-      <td class="text-center">
-        <div class="d-flex justify-content-center">
-          <div v-if="hasUserRole('editar')" class="d-flex align-items-center">
-            <router-link :to="{ name: 'formularioeditarcanciones', params: { id: cancion.id } }" class="mx-2">
-              <div class="editar" aria-label="editar"></div>
+        <div class="mt-3">
+            <router-link to="/" class="nav-item nav-link">
+              <button class="fondo-color tamaño_session2">Volver al Inicio</button>
             </router-link>
-          </div>
-          <div v-if="hasUserRole('eliminar')" class="d-flex align-items-center">
-            <div class="eliminar mx-2" @click="eliminarCancion(cancion.id)"></div>
-          </div>
-        </div>
-      </td>
-
-    </tr>
-  </tbody>
-</table>
-
         </div>
       </div>
     </div>

@@ -47,7 +47,11 @@
                 </tbody>
             </table>
           </div>
-
+          <div class="mt-3">
+            <router-link to="/" class="nav-item nav-link">
+              <button class="fondo-color tamaño_session2">Volver al Inicio</button>
+            </router-link>
+        </div>
       </div>
   </div>
    
