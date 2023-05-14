@@ -3,7 +3,7 @@ import Home from '../components/Home.vue';
 import Register from '../components/Register.vue';
 import Login from '../components/Login.vue';
 import Categoria from '../components/Categoria.vue';
-import TopCanciones from '../components/TopCanciones.vue';
+import Contacto from '../components/Contacto.vue';
 import Privacidad from '../components/Privacidad.vue';
 import Cookies from '../components/Cookies.vue';
 import Aviso_Legal from '../components/Aviso_Legal.vue';
@@ -52,9 +52,9 @@ export const routes = [{
         component: Categoria
     },
     {
-        name: 'topcanciones',
-        path: '/topcanciones',
-        component: TopCanciones
+        name: 'contacto',
+        path: '/contacto',
+        component: Contacto
     },
     {
         name: 'politica_de_privacidad',

@@ -14,10 +14,10 @@
                                 <router-link to="/categoria" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Categorias</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/topcanciones" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Top Canciones</router-link>
+                                <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
+                                <router-link to="/contacto" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Contacto</router-link>
                             </li>
                         </ul>
                         <div class="dropdown mt-3 me-1">
@@ -88,10 +88,10 @@
                                 <router-link to="/categoria" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Categorias</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/topcanciones" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Top Canciones</router-link>
+                                <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link to="/merchandising" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Merchandising Artistas</router-link>
+                                <router-link to="/contacto" class="nav-item nav-link mt-3 ms-5 fw-bold tamaño_letra">Contacto</router-link>
                             </li>
                         </ul>
                         <router-link to="/login" class="nav-item nav-link mt-3 me-3"><button class="fondo-color tamaño_session">Iniciar Sesión</button></router-link>

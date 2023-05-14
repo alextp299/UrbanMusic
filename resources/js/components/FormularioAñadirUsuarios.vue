@@ -29,12 +29,12 @@
     
     
                     <div class="form-group mb-2 mt-4">
-                        <label class="mb-2">Email</label><span class="text-danger"> *</span>
-                        <input type="text" class="form-control mb-2" v-model="email" placeholder="Introduce el correo">
+                        <label class="mb-2">Correo Electrónico</label><span class="text-danger"> *</span>
+                        <input type="email" class="form-control mb-2" v-model="email" placeholder="Introduce el correo">
                     </div>
 
                     <div class="form-group mb-2 mt-4">
-                        <label class="mb-2">Password</label><span class="text-danger"> *</span>
+                        <label class="mb-2">Contraseña</label><span class="text-danger"> *</span>
                         <input type="password" class="form-control mb-2" v-model="password" placeholder="Introduce la contraseña">
                     </div>
   

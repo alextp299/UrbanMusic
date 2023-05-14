@@ -1,10 +1,10 @@
 <template>
     <div class="container-fluid mt-5 mb-5">
-      
-      <div class="card">
-        <div class="card-body">
-            <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title mt-2">Administrador de Usuarios</h5>
+    <h3 class="mb-4">Administrador de Usuarios</h3>
+    <div class="card card-default d-flex px-5 py-5">
+      <div class="card-body p-1">
+        <div class="d-flex justify-content-between pb-2 mb-2">
+          <h5 class="card-title mt-2">Listado Usuarios Existentes</h5>
                 
                 <router-link :to="{name: 'formularioañadirusuarios'}" class="nav-item nav-link mt-2 mb-4 ">
                   <div class="añadir mt-2" aria-label="añadir" v-if="hasUserRole('añadir')"></div>
