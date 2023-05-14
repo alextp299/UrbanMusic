@@ -527,3 +527,14 @@ audio::-webkit-media-controls-mute-button {
 .table-hover tbody tr:hover td {
     background-color: #f5f5f5;
 }
+
+
+/* POLITICAS */
+
+.texto-h5 {
+    font-size: 16px;
+}
+
+.texto-p {
+    font-size: 14px;
+}
