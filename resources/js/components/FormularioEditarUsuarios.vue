@@ -30,7 +30,7 @@
                     </div>
   
                     <div class="form-group mb-2 mt-4">
-                        <label class="mb-2">Correo Electrónico</label><span class="text-danger"> *</span>
+                        <label class="mb-2">Correo Electrónico</label><span class="text-danger">*</span>
                         <input type="email" class="form-control mb-2" v-model="email" placeholder="Introduce el correo">
                     </div>
 
