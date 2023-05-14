@@ -6,7 +6,7 @@
                 <div class="d-flex justify-content-between pb-2 mb-2">
                     <h5 class="card-title">Formulario</h5>
                 </div>
-                <form  action="mailto:info@urbanfood.com"> 
+                <form  action="mailto:infomerchandising@urbanmusic.com"> 
                     <div class="form-group mb-2 mt-4">
                         <label for="nya" class="mb-2">Nombres y Apellidos</label><span class="text-danger"> *</span>
                         <input type="text" class="form-control mb-2" id="nya" placeholder="Introduce tu nombre y apellidos" required>
