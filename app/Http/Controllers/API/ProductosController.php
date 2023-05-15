@@ -201,7 +201,7 @@ public function update($id, Request $request)
 
    $producto->update($input);
 
-   return response()->json(['success'=> 'Canción actualizada correctamente']);
+   return response()->json(['success'=> 'Producto actualizado correctamente']);
 }
 
 }
