@@ -2,11 +2,11 @@
     <div class="container-fluid mt-5 mb-5">
       <h3 class="mb-4">Administración de Usuarios</h3>
       <div class="card card-default d-flex px-5 py-5">
-            <div class="card-body p-1">
+            <div class="p-1">
                 <div class="d-flex justify-content-between pb-2 mb-2">
                     <h5 class="card-title">Añadir Usuarios</h5>
                     <div>
-                        <router-link :to="{name: 'adminusers'}" class="nav-item nav-link mt-2"><button class="fondo-color tamaño_session2">Volver</button></router-link>
+                        <router-link :to="{name: 'adminusers'}" class="nav-item nav-link"><button class="fondo-color tamaño_session2">Volver</button></router-link>
                     </div>
                 </div>
     
@@ -33,13 +33,13 @@
                         <input type="email" class="form-control mb-2" v-model="email" placeholder="Introduce el correo">
                     </div>
 
-                    <div class="form-group mb-2 mt-4">
+                    <div class="form-group mb-2">
                         <label class="mb-2">Contraseña</label><span class="text-danger"> *</span>
                         <input type="password" class="form-control mb-2" v-model="password" placeholder="Introduce la contraseña">
                     </div>
   
-                    <div class="form-group mb-2 mt-4">
-                      <label class="mb-2" for="rol">Rol</label><span class="text-danger"> *</span>
+                    <div class="form-group mb-2">
+                      <label class="mb-2 mt-4" for="rol">Rol</label><span class="text-danger"> *</span>
                       <div class="mt-1">
                         <div v-for="role in roles" :key="role.id" class="d-inline-block ms-5">
                           <label class="mt-2">
