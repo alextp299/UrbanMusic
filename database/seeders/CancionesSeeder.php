@@ -37,7 +37,7 @@ class CancionesSeeder extends Seeder
             ['id'=>'22','name'=>'Shakira - Whenever, Wherever','audio'=>'Shakira - Whenever, Wherever.mp3','image'=>'Shakira - Whenever, Wherever.webp','id_categoria_cancion'=>'3','created_at'=>null,'updated_at'=>null],
             ['id'=>'23','name'=>'Shakira, Ozuna - Monotonía','audio'=>'Shakira, Ozuna - Monotonía.mp3','image'=>'Shakira, Ozuna - Monotonía.webp','id_categoria_cancion'=>'3','created_at'=>null,'updated_at'=>null],
             ['id'=>'24','name'=>'Shakira, Rauw Alejandro - Te Felicito','audio'=>'Shakira, Rauw Alejandro - Te Felicito.mp3','image'=>'Shakira, Rauw Alejandro - Te Felicito.webp','id_categoria_cancion'=>'3','created_at'=>null,'updated_at'=>null],
-            ['id'=>'25','name'=>'Rosalía  - Juro Que','audio'=>'Rosalia  - Juro Que.mp3','image'=>'Rosalía  - Juro Que.webp','id_categoria_cancion'=>'4','created_at'=>null,'updated_at'=>null],
+            ['id'=>'25','name'=>'Rosalía  - Juro Que','audio'=>'Rosalía  - Juro Que.mp3','image'=>'Rosalía  - Juro Que.webp','id_categoria_cancion'=>'4','created_at'=>null,'updated_at'=>null],
             ['id'=>'26','name'=>'Rosalía  - LLYLM','audio'=>'Rosalía  - LLYLM.mp3','image'=>'Rosalía  - LLYLM.webp','id_categoria_cancion'=>'4','created_at'=>null,'updated_at'=>null],
             ['id'=>'27','name'=>'Rosalía - Bagdad','audio'=>'Rosalía - Bagdad.mp3','image'=>'Rosalía - Bagdad.webp','id_categoria_cancion'=>'4','created_at'=>null,'updated_at'=>null],
             ['id'=>'28','name'=>'Rosalía - Despechá','audio'=>'Rosalía - Despechá.mp3','image'=>'Rosalía - Despechá.webp','id_categoria_cancion'=>'4','created_at'=>null,'updated_at'=>null],
