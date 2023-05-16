@@ -13,7 +13,7 @@
             <h5 class="card-title p-2">{{ producto.name }}</h5>
             <div class="d-flex justify-content-between">
               <p class="card-text p-2">{{ producto.precio }} €</p>
-              <button @click="agregarProducto(producto)" class="fondo-color tamaño_session5">Añadir al carrito</button>            
+              <button @click="agregarProducto(producto)" class="fondo-color tamaño_session5 mt-1">Añadir al carrito</button>            
             </div>
           </div>
         </div>
