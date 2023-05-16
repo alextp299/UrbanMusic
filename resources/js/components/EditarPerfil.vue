@@ -7,7 +7,7 @@
         <div class="d-flex justify-content-between pb-2 mb-2">
           <h5 class="card-title">Editar perfil</h5>
           <div>
-            <router-link :to="{name: 'miperfil'}" class="nav-item nav-link mt-2">
+            <router-link :to="{name: 'miperfil'}" class="nav-item nav-link">
               <button class="fondo-color tamaño_session2">Volver</button>
             </router-link>
           </div>
