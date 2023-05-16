@@ -3,7 +3,7 @@
         <div class="container-s">
             <header>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid pb-3">
+                <div class="container-fluid pb-3 margenes-header-footer3 margenes-header-footer2">
                     <router-link to="/" class="nav-item text-color1 fs-5" style="font-family: twitch-logo;">URBAN <br>MUSICS</router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -102,11 +102,11 @@
                 </nav>
             </header>
         
-            <router-view></router-view>
+            <router-view class="margenes"></router-view>
 
             <footer>
                 <nav class="navbar-light bg-light">
-                <div class="container-fluid row mb-4 ocultar_div">
+                <div class="container-fluid row mb-4 ocultar_div margenes-header-footer">
                     <div class="col-lg-4 col-md-4 mb-md-0">
                         <router-link to="/politica_de_privacidad" class="nav-item nav-link conf_priv mt-3 fw-bold tamaño_letra">Política de Privacidad</router-link>
                     </div>
@@ -120,19 +120,19 @@
                 <!-- Section: Social media -->
                 <div class="container-fluid mb-4 text-center">
                     <!-- Instagram -->
-                    <a class="btn btn-link btn-floating btn-lg mx-2" href="https://www.instagram.com/" target="_blank">
+                    <a class="btn btn-link btn-floating btn-lg mx-2 margen-superior-footer-redes" href="https://www.instagram.com/" target="_blank">
                         <div class="redes_hover1" aria-label="Instagram"></div>
                     </a>
                     <!-- Facebook -->
-                    <a class="btn btn-link btn-floating btn-lg mx-2" href="https://es-es.facebook.com/" target="_blank">
+                    <a class="btn btn-link btn-floating btn-lg mx-2 margen-superior-footer-redes" href="https://es-es.facebook.com/" target="_blank">
                         <div class="redes_hover2" aria-label="Facebook"></div>
                     </a>
                     <!-- Twitter -->
-                    <a class="btn btn-link btn-floating btn-lg mx-2" href="https://twitter.com/?lang=ES" target="_blank">
+                    <a class="btn btn-link btn-floating btn-lg mx-2 margen-superior-footer-redes" href="https://twitter.com/?lang=ES" target="_blank">
                         <div class="redes_hover3" aria-label="Twitter"></div>
                     </a>
                     <!-- YouTube -->
-                    <a class="btn btn-link btn-floating btn-lg me-3" href="https://www.youtube.com/" target="_blank">
+                    <a class="btn btn-link btn-floating btn-lg me-3 margen-superior-footer-redes" href="https://www.youtube.com/" target="_blank">
                         <div class="redes_hover4" aria-label="YouTube"></div>
                     </a>
                 </div>

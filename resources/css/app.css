@@ -121,6 +121,41 @@
     background-color: var(--color3);
 }
 
+.margenes {
+    width: 90%;
+}
+
+.margenes-header-footer {
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* MRGENES ESPECIFICOS EN MOVIL */
+
+@media (max-width: 992px) {
+    .margen-superior-footer-redes {
+        margin-top: 20px;
+    }
+    .margenes-header-footer3 {
+        width: 90%;
+    }
+}
+
+
+/* SOLO DEKSPTOP */
+
+@media (min-width: 992px) {
+    .margenes-header-footer2 {
+        text-align: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 
 /* HEADER */
 
@@ -360,7 +395,7 @@ audio {
 audio::-webkit-media-controls-panel {
     background-color: white;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
 audio::-webkit-media-controls-play-button {
@@ -377,12 +412,11 @@ audio::-webkit-media-controls-time-remaining-display {
     border: none;
     color: #444;
     font-size: 0.8rem;
-    margin-right: 10px;
 }
 
 audio::-webkit-media-controls-volume-slider {
     height: 5px;
-    width: 50px;
+    width: 40px;
     margin-right: 3px;
 }
 
@@ -447,12 +481,6 @@ audio::-webkit-media-controls-mute-button {
 
 .compra-ver {
     width: 80%;
-}
-
-.bottom-cards-carrito {
-    position: relative;
-    bottom: 45px;
-    padding: 3rem;
 }
 
 

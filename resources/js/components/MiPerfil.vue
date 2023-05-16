@@ -14,7 +14,7 @@
         </div>
 
         <form @submit.prevent="addPost" enctype="multipart/form-data">
-          <div class="row m-5">  
+          <div class="row">  
 
             <div class="col-md-12">
               <div class="form-group mb-2 mt-4">

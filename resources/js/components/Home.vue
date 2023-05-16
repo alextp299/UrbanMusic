@@ -37,7 +37,7 @@
     <span class="visually-hidden">Siguiente</span>
   </button>
 </div>
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 margenes">
   <h3 class="mb-4">Artistas más escuchados</h3>
 
 <!-- Modal -->
@@ -99,7 +99,7 @@
     </div>
   </div>
   </div>
-  <div class="container-fluid mt-5">
+  <div class="container-fluid mt-5 margenes">
   <h3 class="mb-4">Merchandising más solicitado</h3>
     <div class="row">
       <div class="col-md-4">
