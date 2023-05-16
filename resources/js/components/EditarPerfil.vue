@@ -52,7 +52,7 @@
             </div>
           </div>
 
-          <button type="submit" class="fondo-color tamaño_session2 mb-4">Guardar cambios</button>
+          <button type="submit" class="fondo-color tamaño_session2 mt-4">Guardar cambios</button>
 
         </form>
       </div>

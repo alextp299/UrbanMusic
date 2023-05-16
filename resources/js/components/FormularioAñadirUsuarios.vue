@@ -50,7 +50,7 @@
                     </div>
 
   
-                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Añadir usuario</button>
+                  <button type="submit" class="fondo-color tamaño_session2 mt-4">Añadir usuario</button>
     
                 </form>
     

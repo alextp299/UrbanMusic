@@ -38,7 +38,7 @@
               </div>
             </div>
           </div>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between mt-4">
             <router-link to="/" class="nav-item nav-link">
               <button class="fondo-color tamaño_session2">Volver al Inicio</button>
             </router-link>

@@ -30,8 +30,8 @@
                         <textarea class="form-control" id="mensaje" rows="3" placeholder="Introduce el contenido de tu motivo para contactarnos" required></textarea>
                     </div>
     
-                  <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Enviar</button>
-                  <button type="reset" class="fondo-color tamaño_session2 mt-4 mb-4 mx-4">Limpiar</button>
+                  <button type="submit" class="fondo-color tamaño_session2 mt-4">Enviar</button>
+                  <button type="reset" class="fondo-color tamaño_session2 mt-4 mx-4">Limpiar</button>
     
                 </form>
     

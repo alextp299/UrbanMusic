@@ -50,7 +50,7 @@
                       <input type="file" class="form-control mb-2" v-on:change="onChangeImg">
                   </div>
 
-                <button type="submit" class="fondo-color tamaño_session2 mt-4 mb-4">Añadir producto</button>
+                <button type="submit" class="fondo-color tamaño_session2 mt-4">Añadir producto</button>
   
               </form>
   
