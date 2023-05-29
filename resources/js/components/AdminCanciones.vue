@@ -17,7 +17,7 @@
             <thead class="bg-dark text-light">
               <tr>
                 <th class="text-center" style="width: 5%;">#</th>
-                <th class="text-center" style="width: 20%;">Nombre Canción</th>
+                <th class="text-center" style="width: 20%;">Nombre Canción</th>hola
                 <th class="text-center" style="width: 20%">Canción</th>
                 <th class="text-center" style="width: 5%">Imagen</th>
                 <th class="text-center" style="width: 8%">Acción</th>
