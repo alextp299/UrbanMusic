@@ -30,6 +30,7 @@ import FormularioEditarProductos from '../components/FormularioEditarProductos.v
 import FormularioAñadirUsuarios from '../components/FormularioAñadirUsuarios.vue';
 import AdminUsers from '../components/AdminUsers.vue';
 import FormularioEditarUsuarios from '../components/FormularioEditarUsuarios.vue';
+import Canciones from '../components/Canciones.vue';
 
 export const routes = [{
         name: 'home',
@@ -196,6 +197,13 @@ export const routes = [{
         name: 'formularioeditarusuarios',
         path: '/formularioeditarusuarios',
         component: FormularioEditarUsuarios
+    },
+
+    {
+
+        name: 'canciones',
+        path: '/categoria/canciones',
+        component: Canciones
     },
 
 ];

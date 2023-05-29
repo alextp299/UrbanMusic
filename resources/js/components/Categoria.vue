@@ -4,10 +4,10 @@
   <div class="row">
     <div class="col-md-4">
       <div class="card espaciado-foto mb-5 container">
-        <router-link to="/categoria/Quevedo"><img src="../../img/Artistas/quevedo.webp" class="card-img-top3 image" alt="Merchandising Quevedo"></router-link>
+        <router-link to="/categoria/Canciones"><img src="../../img/Artistas/quevedo.webp" class="card-img-top3 image" alt="Merchandising Quevedo"></router-link>
         <div class="card-body d-flex justify-content-between">
           <h5 class="card-title p-2">Quevedo</h5>
-          <router-link to="/categoria/Quevedo"><div class="play" aria-label="play"></div></router-link>
+          <router-link to="/categoria/Canciones"><div class="play" aria-label="play"></div></router-link>
         </div>
       </div>
     </div>
