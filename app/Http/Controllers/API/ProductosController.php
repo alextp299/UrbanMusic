@@ -11,6 +11,13 @@ use Illuminate\Support\Carbon;
 
 class ProductosController extends Controller
 {
+
+    public function productos()
+    {
+        $productos = Producto::all()->toArray();
+        return response()->json($productos);
+    }
+    
     public function productos_categoria()
     {
         $categoria = Categorias_Productos::all()->toArray();

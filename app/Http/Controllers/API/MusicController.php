@@ -10,6 +10,12 @@ use App\Models\Categoria_Canciones;
 class MusicController extends Controller
 {
 
+    public function canciones()
+    {
+        $canciones = Canciones::all()->toArray();
+        return response()->json($canciones);
+    }
+    
     public function canciones_categoria()
     {
         $canciones_categoria = Categoria_Canciones::all()->toArray();

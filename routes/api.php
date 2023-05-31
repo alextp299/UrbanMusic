@@ -23,6 +23,11 @@ Route::post('logout',[UserController::class,'logout'])->middleware(['auth:sanctu
 
 Route::post('pedidos',[ProductosController::class,'pedidos']);
 
+Route::get('canciones', [MusicController::class, 'canciones']);
+
+Route::get('productos',[ProductosController::class,'productos']);
+
+
 Route::get('canciones_categoria', [MusicController::class, 'canciones_categoria']);
 
 Route::get('/canciones_categoria/{id_categoria}', [MusicController::class, 'getCancionesCategoria']);
