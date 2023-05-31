@@ -5,49 +5,20 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Canciones;
+use App\Models\Categoria_Canciones;
 
-class QuevedoMusicController extends Controller
+class MusicController extends Controller
 {
 
-    public function canciones()
+    public function canciones_categoria()
     {
-        $canciones = Canciones::all()->toArray();
-        return response()->json($canciones);
+        $canciones_categoria = Categoria_Canciones::all()->toArray();
+        return response()->json($canciones_categoria);
     }
 
-    public function index()
+    public function getCancionesCategoria($id_categoria)
     {
-        $canciones = Canciones::where('id_categoria_cancion', 1)->get();
-        return response()->json($canciones);
-    }
-
-    public function badbunny()
-    {
-        $canciones = Canciones::where('id_categoria_cancion', 2)->get();
-        return response()->json($canciones);
-    }
-
-    public function shakira()
-    {
-        $canciones = Canciones::where('id_categoria_cancion', 3)->get();
-        return response()->json($canciones);
-    }
-
-    public function rosalia()
-    {
-        $canciones = Canciones::where('id_categoria_cancion', 4)->get();
-        return response()->json($canciones);
-    }
-
-    public function eladio()
-    {
-        $canciones = Canciones::where('id_categoria_cancion', 5)->get();
-        return response()->json($canciones);
-    }
-
-    public function karol()
-    {
-        $canciones = Canciones::where('id_categoria_cancion', 6)->get();
+        $canciones = Canciones::where('id_categoria_cancion', $id_categoria)->get();
         return response()->json($canciones);
     }
     

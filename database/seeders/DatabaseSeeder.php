@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            Categoria_CancionesSeeder::class
+            CategoriaCancionesSeeder::class
         ]);
         $this->call([
-            CategoriasSeeder::class
+            CategoriasProductosSeeder::class
         ]);
         $this->call([
             CancionesSeeder::class

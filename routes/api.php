@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\UserController;
-use App\Http\Controllers\API\PostController;
-use App\Http\Controllers\API\QuevedoMusicController;
+use App\Http\Controllers\API\MusicController;
 use App\Http\Controllers\API\ProductosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,29 +21,15 @@ Route::post('login',[UserController::class,'login']);
 Route::post('register',[UserController::class,'register']);
 Route::post('logout',[UserController::class,'logout'])->middleware(['auth:sanctum']);
 
-Route::get('productos',[ProductosController::class,'productos']);
-
 Route::post('pedidos',[ProductosController::class,'pedidos']);
 
-Route::get('canciones', [QuevedoMusicController::class, 'canciones']);
+Route::get('canciones_categoria', [MusicController::class, 'canciones_categoria']);
 
-Route::get('Quevedo', [QuevedoMusicController::class, 'index']);
+Route::get('/canciones_categoria/{id_categoria}', [MusicController::class, 'getCancionesCategoria']);
 
-Route::get('Bad Bunny', [QuevedoMusicController::class, 'badbunny']);
+Route::get('productos_categoria', [ProductosController::class, 'productos_categoria']);
 
-Route::get('Shakira', [QuevedoMusicController::class, 'shakira']);
-
-Route::get('Rosalia', [QuevedoMusicController::class, 'rosalia']);
-
-Route::get('Eladio', [QuevedoMusicController::class, 'eladio']);
-
-Route::get('Karol', [QuevedoMusicController::class, 'karol']);
-    
-Route::get('badbunny', [ProductosController::class, 'index']);
-
-Route::get('rosalia', [ProductosController::class, 'rosalia']);
-
-Route::get('eladio', [ProductosController::class, 'eladio']);
+Route::get('/productos_categoria/{id_categoria}', [ProductosController::class, 'getProductosCategoria']);
 
 Route::get('carrito', [ProductosController::class, 'obtenerProductos']);
 
@@ -54,7 +39,7 @@ Route::post('guardar-productos-en-session', [\App\Http\Controllers\API\Productos
 
 Route::post('addProducto', [ProductosController::class, 'agregarProductos']);
 
-Route::post('addCanciones', [QuevedoMusicController::class, 'agregarCanciones']);
+Route::post('addCanciones', [MusicController::class, 'agregarCanciones']);
 
 Route::delete('eliminar/{id}', [ProductosController::class,'eliminarProductos']);
 
@@ -64,15 +49,15 @@ Route::post('updateProducto/{id}', [ProductosController::class,'update']);
 
 Route::get('editProducto/{id}', [ProductosController::class,'edit']);
 
-Route::delete('delete/{id}', [QuevedoMusicController::class,'delete']);
+Route::delete('delete/{id}', [MusicController::class,'delete']);
  
 Route::post('updateUsuario/{id}', [UserController::class,'update']);
 
 Route::delete('deleteUsuario/{id}', [UserController::class,'delete']);
 
-Route::post('update/{id}', [QuevedoMusicController::class,'update']);
+Route::post('update/{id}', [MusicController::class,'update']);
 
-Route::get('edit/{id}', [QuevedoMusicController::class,'edit']);
+Route::get('edit/{id}', [MusicController::class,'edit']);
 
 Route::get('usuariosAdmin', [UserController::class,'usuarios']);
 
@@ -85,8 +70,4 @@ Route::post('updateUserAdmin/{id}', [UserController::class, 'editarUsuariosAdmin
 Route::get('editUser/{id}', [UserController::class, 'editUserAdmin']);
 
 Route::get('roles', [UserController::class, 'getRoles']);
-
-
-
-
  

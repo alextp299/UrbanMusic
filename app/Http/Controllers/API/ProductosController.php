@@ -6,31 +6,20 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Pedido;
+use App\Models\Categorias_Productos;
 use Illuminate\Support\Carbon;
 
 class ProductosController extends Controller
 {
-    public function productos()
+    public function productos_categoria()
     {
-        $productos = Producto::all()->toArray();
-        return response()->json($productos);
+        $categoria = Categorias_Productos::all()->toArray();
+        return response()->json($categoria);
     }
 
-    public function index()
+    public function getProductosCategoria($id_categoria)
     {
-        $productos = Producto::where('id_categoria', 2)->get();
-        return response()->json($productos);
-    }
-
-    public function rosalia()
-    {
-        $productos = Producto::where('id_categoria', 3)->get();
-        return response()->json($productos);
-    }
-
-    public function eladio()
-    {
-        $productos = Producto::where('id_categoria', 1)->get();
+        $productos = Producto::where('id_categoria', $id_categoria)->get();
         return response()->json($productos);
     }
 
