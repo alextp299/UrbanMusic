@@ -1,0 +1,571 @@
+@charset "utf-8";
+
+/* FONTS */
+
+@font-face {
+    font-family: 'twitch-logo';
+    src: url(../fonts/Twitch/Twitchy.TV.otf);
+}
+
+@font-face {
+    font-family: 'helvetica';
+    src: url(../fonts/helvetica_neue/HelveticaNeueLTStdBd.otf);
+}
+
+* {
+    font-family: 'helvetica';
+}
+
+
+/* COLORES */
+
+:root {
+    --color1: rgb(176, 126, 252);
+    --color2: rgb(131, 90, 192);
+    --color3: rgb(226, 226, 226);
+}
+
+.text-color1 {
+    color: var(--color1);
+    text-decoration: none;
+}
+
+.text-color1:hover {
+    color: var(--color2);
+}
+
+.fondo-color {
+    background-color: var(--color1);
+    border: none;
+    border-radius: 4px;
+}
+
+.fondo-color1 {
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+}
+
+.fondo-color:hover {
+    background-color: var(--color2);
+    border: none;
+    border-radius: 4px;
+}
+
+.fondo-color1:hover {
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+}
+
+.fondo-color-perfil {
+    background-color: var(--color1);
+    border: none;
+    border-radius: 4px;
+}
+
+.fondo-color-perfil:hover {
+    background-color: var(--color2);
+    border: none;
+    border-radius: 4px;
+}
+
+.fondo-color-logout {
+    background-color: var(--color1);
+}
+
+.fondo-color-logout:hover {
+    background-color: var(--color2);
+}
+
+.tamaño_session {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+.tamaño_session2 {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
+}
+
+.tamaño_session3 {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
+    width: 50%;
+}
+
+.tamaño_session4 {
+    font-size: 15px;
+    color: white;
+    padding: 2px 4px;
+}
+
+.tamaño_session4:hover {
+    font-size: 15px;
+    color: white;
+}
+
+.tamaño_session5 {
+    font-size: 15px;
+    color: white;
+    padding: 4px 8px;
+    height: 30px;
+    margin-top: -5px;
+}
+
+.fondo-web {
+    background-color: var(--color3);
+}
+
+.margenes {
+    width: 90%;
+}
+
+.margenes-header-footer {
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* MRGENES ESPECIFICOS EN MOVIL */
+
+@media (max-width: 992px) {
+    .margen-superior-footer-redes {
+        margin-top: 20px;
+    }
+    .margenes-header-footer3 {
+        width: 90%;
+    }
+    .margenes2 {
+        margin-left: -7%;
+    }
+}
+
+
+/* SOLO DEKSPTOP */
+
+@media (min-width: 992px) {
+    .margenes-header-footer2 {
+        text-align: center;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* HEADER */
+
+#cart_menu_num {
+    position: absolute;
+    background: var(--color1);
+    right: 1px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+}
+
+#cart_menu_num:hover {
+    position: absolute;
+    right: 1px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px;
+}
+
+.carrito_hover1 {
+    width: 45px;
+    height: 45px;
+    background-image: url('../icons/carrito1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.carrito_hover1:hover {
+    width: 45px;
+    height: 45px;
+    background-image: url('../icons/carrito2.svg');
+    transform: scale(1.2);
+}
+
+.despegable {
+    visibility: hidden;
+}
+
+.despegable2 {
+    visibility: visible;
+}
+
+@media (max-width: 992px) {
+    .despegable {
+        visibility: visible;
+    }
+    .despegable2 {
+        visibility: hidden;
+    }
+}
+
+
+/* FOOTER */
+
+
+/* POLITICAS */
+
+.tamaño_letra {
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.tamaño_letra:hover {
+    color: var(--color2);
+}
+
+.conf_priv {
+    text-align: left;
+}
+
+.conf_cookies {
+    text-align: center;
+}
+
+.conf_avis {
+    text-align: right;
+}
+
+.redes_hover1 {
+    width: 30px;
+    height: 30px;
+    background-image: url('../icons/instagram1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.redes_hover2 {
+    width: 30px;
+    height: 30px;
+    background-image: url('../icons/facebook1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.redes_hover3 {
+    width: 30px;
+    height: 30px;
+    background-image: url('../icons/twitter1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.redes_hover4 {
+    width: 30px;
+    height: 30px;
+    background-image: url('../icons/youtube1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.redes_hover1:hover {
+    background-image: url('../icons/instagram2.svg');
+    transform: scale(1.2);
+}
+
+.redes_hover2:hover {
+    background-image: url('../icons/facebook2.svg');
+    transform: scale(1.2);
+}
+
+.redes_hover3:hover {
+    background-image: url('../icons/twitter2.svg');
+    transform: scale(1.2);
+}
+
+.redes_hover4:hover {
+    background-image: url('../icons/youtube2.svg');
+    transform: scale(1.2);
+}
+
+
+/* TEXTO COPYRIGHT */
+
+.texto {
+    font-size: 10pt;
+}
+
+
+/* VERSION MOVIL FOOTER */
+
+@media (max-width: 992px) {
+    /* CONTENIDO A OCULTAR */
+    .ocultar_div {
+        display: none;
+    }
+}
+
+
+/* HOME */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+.container {
+    position: relative;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.container:hover .image {
+    opacity: 0.8;
+}
+
+.play {
+    width: 40px;
+    height: 40px;
+    background-image: url('../icons/play1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.play:hover {
+    background-image: url('../icons/play2.svg');
+    transform: scale(1.2);
+}
+
+.hr-container {
+    position: relative;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* CANCIONES */
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    max-height: 350px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+audio {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 0.8rem;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    height: 5px;
+    width: 40px;
+    margin-right: 3px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+
+/* VERSION MOVIL FOOTER */
+
+@media (max-width: 992px) {
+    audio::-webkit-media-controls-volume-slider {
+        height: 0px;
+        width: 0px;
+        margin-right: 5px;
+    }
+}
+
+
+/* PRODUCTOS */
+
+.card-img-top2 {
+    max-height: 350px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* MERCHANDISING ARTISTAS */
+
+.card-img-top3 {
+    max-height: 350px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+}
+
+.espaciado-foto {
+    padding: 0;
+}
+
+
+/* CARRITO */
+
+.card#tamaño-card {
+    width: 400px;
+}
+
+.posicion-card {
+    position: fixed;
+    top: 200px;
+    right: 100px;
+    z-index: 5;
+    width: 300px;
+}
+
+.compra-ver {
+    width: 80%;
+}
+
+
+/* VERSION MOVIL CARRITO */
+
+@media (max-width: 992px) {
+    .card#tamaño-card {
+        width: 350px;
+    }
+    .posicion-movil {
+        margin-top: 5%;
+    }
+    .compra-ver {
+        width: 100%;
+    }
+    .posicion-card {
+        position: static;
+        margin-bottom: 40px;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+    .bottom-cards-carrito {
+        position: relative;
+        bottom: 0;
+        padding: 0;
+    }
+}
+
+
+/* ADMIN */
+
+.editar {
+    width: 25px;
+    height: 25px;
+    background-image: url('../icons/editar1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.editar:hover {
+    background-image: url('../icons/editar2.svg');
+    transform: scale(1.2);
+}
+
+.eliminar {
+    width: 25px;
+    height: 25px;
+    background-image: url('../icons/basura1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.eliminar:hover {
+    background-image: url('../icons/basura2.svg');
+    transform: scale(1.2);
+}
+
+.añadir {
+    width: 25px;
+    height: 25px;
+    background-image: url('../icons/mas1.svg');
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+
+.añadir:hover {
+    background-image: url('../icons/mas2.svg');
+    transform: scale(1.2);
+}
+
+.table-hover tbody tr:hover td {
+    background-color: #f5f5f5;
+}
+
+
+/* POLITICAS */
+
+.texto-h5 {
+    font-size: 16px;
+}
+
+.texto-p {
+    font-size: 14px;
+}
