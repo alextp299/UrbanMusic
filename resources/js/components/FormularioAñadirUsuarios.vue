@@ -76,7 +76,7 @@
         }
     },created() {
     // Obtén los roles de la base de datos y asígnalos a la propiedad "roles"
-    this.$axios.get('/api/roles')
+    this.$axios.get('/api/adminusers/roles')
       .then(response => {
         this.roles = response.data;
       })
@@ -102,7 +102,7 @@
                     formData.append('roles[]', role);
                 });
   
-                this.$axios.post('/api/addUsuarioAdmin', formData, config)
+                this.$axios.post('/api/adminusers/add', formData, config)
                     .then(response => {
                         existObj.strError = "";
                         existObj.strSuccess = response.data.success;

@@ -136,7 +136,7 @@ export default {
               formData.append('id_categoria_cancion', this.id_categoria);
 
 
-              this.$axios.post('/api/addCanciones', formData, config)
+              this.$axios.post('/api/admincanciones/add', formData, config)
                   .then(response => {
                       existObj.strError = "";
                       existObj.strSuccess = response.data.success;

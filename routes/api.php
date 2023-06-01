@@ -31,7 +31,7 @@ Route::get('productos_categoria', [ProductosController::class, 'productos_catego
 Route::get('/productos_categoria/{id_categoria}', [ProductosController::class, 'getProductosCategoria']);
 
 //Carrito
-Route::group(['prefix' => '/', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'carrito', 'middleware' => 'auth:sanctum'], function () {
 
     Route::post('pedidos',[ProductosController::class,'pedidos']);
     Route::get('carrito', [ProductosController::class, 'obtenerProductos']);
@@ -42,21 +42,21 @@ Route::group(['prefix' => '/', 'middleware' => 'auth:sanctum'], function () {
 });
 
 //Admin Producto
-Route::group(['prefix' => '/', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'adminproductos', 'middleware' => 'auth:sanctum'], function () {
 
     Route::get('productos',[ProductosController::class,'productos']);
-    Route::post('addProducto', [ProductosController::class, 'agregarProductos']);
-    Route::delete('deleteProducto/{id}', [ProductosController::class,'delete']);
-    Route::post('updateProducto/{id}', [ProductosController::class,'update']);
-    Route::get('editProducto/{id}', [ProductosController::class,'edit']);
+    Route::post('add', [ProductosController::class, 'agregarProductos']);
+    Route::delete('delete/{id}', [ProductosController::class,'delete']);
+    Route::post('update/{id}', [ProductosController::class,'update']);
+    Route::get('edit/{id}', [ProductosController::class,'edit']);
 
 });
 
 //Admin Canciones
-Route::group(['prefix' => '/', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'admincanciones', 'middleware' => 'auth:sanctum'], function () {
 
     Route::get('canciones', [MusicController::class, 'canciones']);
-    Route::post('addCanciones', [MusicController::class, 'agregarCanciones']);
+    Route::post('add', [MusicController::class, 'agregarCanciones']);
     Route::delete('delete/{id}', [MusicController::class,'delete']);
     Route::post('update/{id}', [MusicController::class,'update']);
     Route::get('edit/{id}', [MusicController::class,'edit']);
@@ -64,22 +64,22 @@ Route::group(['prefix' => '/', 'middleware' => 'auth:sanctum'], function () {
 });
 
 //Admin Users
-Route::group(['prefix' => '/', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'adminusers', 'middleware' => 'auth:sanctum'], function () {
 
     Route::get('usuariosAdmin', [UserController::class,'usuarios']);
-    Route::delete('deleteUsuarioAdmin/{id}', [UserController::class,'deleteUsuarioAdmin']);
-    Route::post('addUsuarioAdmin', [UserController::class, 'agregarUsuariosAdmin']);
-    Route::post('updateUserAdmin/{id}', [UserController::class, 'editarUsuariosAdmin']);
-    Route::get('editUser/{id}', [UserController::class, 'editUserAdmin']);
+    Route::delete('delete/{id}', [UserController::class,'deleteUsuarioAdmin']);
+    Route::post('add', [UserController::class, 'agregarUsuariosAdmin']);
+    Route::post('update/{id}', [UserController::class, 'editarUsuariosAdmin']);
+    Route::get('edit/{id}', [UserController::class, 'editUserAdmin']);
     Route::get('roles', [UserController::class, 'getRoles']);
 
 });
 
 
 //User
-Route::group(['prefix' => '/', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'miperfil', 'middleware' => 'auth:sanctum'], function () {
 
-    Route::post('updateUsuario/{id}', [UserController::class,'update']);
-    Route::delete('deleteUsuario/{id}', [UserController::class,'delete']);
+    Route::post('update/{id}', [UserController::class,'update']);
+    Route::delete('delete/{id}', [UserController::class,'delete']);
 
 });

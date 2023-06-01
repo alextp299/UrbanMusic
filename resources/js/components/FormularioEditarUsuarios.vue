@@ -74,7 +74,7 @@
         }
     },created() {
          this.$axios.get('/sanctum/csrf-cookie').then(response => {
-             this.$axios.get(`/api/editUser/${this.$route.params.id}`)
+             this.$axios.get(`/api/adminusers/edit/${this.$route.params.id}`)
                  .then(response => {
                      this.name = response.data['name'];
                      this.precio = response.data['email'];
@@ -86,7 +86,7 @@
                  });
          })
         // Obtén los roles de la base de datos y asígnalos a la propiedad "roles"
-    this.$axios.get('/api/roles')
+    this.$axios.get('/api/adminusers/roles')
       .then(response => {
         this.roles = response.data;
       })
@@ -111,7 +111,7 @@
                  this.selectedRoles.forEach(role => {
                     formData.append('roles[]', role);
                 });
-                 this.$axios.post(`/api/updateUserAdmin/${this.$route.params.id}`, formData, config)
+                 this.$axios.post(`/api/adminusers/update/${this.$route.params.id}`, formData, config)
                      .then(response => {
                          existingObj.strError = "";
                          existingObj.strSuccess = response.data.success;

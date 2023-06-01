@@ -110,7 +110,7 @@ export default{
           formData.append('password', this.password);
               
 
-          this.$axios.post(`/api/updateUsuario/${this.$route.params.id}`, formData, config)
+          this.$axios.post(`/api/miperfil/update/${this.$route.params.id}`, formData, config)
           .then(response => {
                        existingObj.strError = "";
                        existingObj.strSuccess = response.data.success;

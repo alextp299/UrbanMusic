@@ -99,31 +99,31 @@ export const routes = [{
     {
 
         name: 'editarperfil',
-        path: '/editarperfil',
+        path: '/miperfil/editar',
         component: EditarPerfil
     },
     {
 
         name: 'formularioañadircanciones',
-        path: '/formularioaddcanciones',
+        path: '/admincanciones/add',
         component: FormularioAñadirCanciones
     },
     {
 
         name: 'formularioañadirproductos',
-        path: '/formularioaddproductos',
+        path: '/adminproductos/add',
         component: FormularioAñadirProductos
     },
     {
 
         name: 'formularioeditarcanciones',
-        path: '/formularioeditarcanciones',
+        path: '/admincanciones/edit',
         component: FormularioEditarCanciones
     },
     {
 
         name: 'formularioeditarproductos',
-        path: '/formularioeditarproductos',
+        path: '/adminproductos/edit',
         component: FormularioEditarProductos
     },
     {
@@ -135,14 +135,14 @@ export const routes = [{
 
     {
         name: 'formularioañadirusuarios',
-        path: '/formularioaddusuarios',
+        path: '/adminusers/add',
         component: FormularioAñadirUsuarios
     },
 
     {
 
         name: 'formularioeditarusuarios',
-        path: '/formularioeditarusuarios',
+        path: '/adminusers/edit',
         component: FormularioEditarUsuarios
     },
 

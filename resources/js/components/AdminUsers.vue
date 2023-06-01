@@ -74,7 +74,7 @@
         }
 
         this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            this.$axios.get('/api/usuariosAdmin')
+            this.$axios.get('/api/adminusers/usuariosAdmin')
                 .then(response => {
                     this.users = response.data;
                     console.log(response.data);
@@ -97,10 +97,10 @@
   },
   methods: {
     eliminarUsuario(id) {
-    this.$axios.delete('/api/deleteUsuarioAdmin/' + id)
+    this.$axios.delete('/api/adminusers/delete/' + id)
       .then(response => {
   
-        this.$axios.get('/api/usuariosAdmin')
+        this.$axios.get('/api/adminusers/usuariosAdmin')
           .then(response => {
             this.users = response.data;
           })
@@ -111,7 +111,7 @@
       })
       .catch(error => {
   
-        this.$axios.get('/api/usuariosAdmin')
+        this.$axios.get('/api/adminusers/usuariosAdmin')
           .then(response => {
             this.users = response.data;
           })

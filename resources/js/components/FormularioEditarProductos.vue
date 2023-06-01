@@ -74,7 +74,7 @@ export default {
       }
   },created() {
        this.$axios.get('/sanctum/csrf-cookie').then(response => {
-           this.$axios.get(`/api/editProducto/${this.$route.params.id}`)
+           this.$axios.get(`/api/adminproductos/edit/${this.$route.params.id}`)
                .then(response => {
                    this.name = response.data['name'];
                    this.precio = response.data['precio'];
@@ -115,7 +115,7 @@ export default {
                formData.append('precio', this.precio);
                formData.append('id_categoria', this.id_categoria);
                formData.append('file', this.img);
-               this.$axios.post(`/api/updateProducto/${this.$route.params.id}`, formData, config)
+               this.$axios.post(`/api/adminproductos/update/${this.$route.params.id}`, formData, config)
                    .then(response => {
                        existingObj.strError = "";
                        existingObj.strSuccess = response.data.success;

@@ -106,7 +106,7 @@ export default {
               formData.append('file', this.image);
 
 
-              this.$axios.post('/api/addProducto', formData, config)
+              this.$axios.post('/api/adminproductos/add', formData, config)
                   .then(response => {
                       existObj.strError = "";
                       existObj.strSuccess = response.data.success;

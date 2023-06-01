@@ -85,7 +85,7 @@ export default{
 
    created() {
        this.$axios.get('/sanctum/csrf-cookie').then(response => {
-           this.$axios.get(`/api/edit/${this.$route.params.id}`)
+           this.$axios.get(`/api/admincanciones/edit/${this.$route.params.id}`)
                .then(response => {
                    this.name = response.data['name'];
                    this.id_categoria = response.data['id_categoria_cancion'];
@@ -140,7 +140,7 @@ export default{
                formData.append('id_categoria_cancion', this.id_categoria);
                formData.append('audio', this.audio);
                formData.append('file', this.img);
-               this.$axios.post(`/api/update/${this.$route.params.id}`, formData, config)
+               this.$axios.post(`/api/admincanciones/update/${this.$route.params.id}`, formData, config)
                    .then(response => {
                        existingObj.strError = "";
                        existingObj.strSuccess = response.data.success;
