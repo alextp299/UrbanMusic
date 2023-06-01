@@ -79,7 +79,7 @@ export default {
   
   methods: {
     obtenerProductosCarrito() {
-  axios.get('/api/carrito/carrito')
+  axios.get('/api/pedido/carrito')
     .then(response => {
       // Maneja la respuesta de la API
       this.productos = Array.from(response.data);
@@ -103,7 +103,7 @@ export default {
     pedidos(e) {
       e.preventDefault();
       this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        this.$axios.post('/api/carrito/pedidos', {
+        this.$axios.post('/api/pedido/pedidos', {
           precio: this.precioTotal,
           id_usuario: this.user.id
         })
@@ -139,7 +139,7 @@ export default {
       this.actualizarPrecioTotal();
     }
   }, eliminarProducto(id) {
-  axios.post('/api/carrito/eliminar/' + id, {
+  axios.post('/api/pedido/eliminar/' + id, {
       _method: 'DELETE'
     })
     .then(response => {

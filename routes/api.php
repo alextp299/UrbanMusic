@@ -31,7 +31,7 @@ Route::get('productos_categoria', [ProductosController::class, 'productos_catego
 Route::get('/productos_categoria/{id_categoria}', [ProductosController::class, 'getProductosCategoria']);
 
 //Carrito
-Route::group(['prefix' => 'carrito', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'pedido', 'middleware' => 'auth:sanctum'], function () {
 
     Route::post('pedidos',[ProductosController::class,'pedidos']);
     Route::get('carrito', [ProductosController::class, 'obtenerProductos']);

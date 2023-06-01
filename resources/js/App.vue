@@ -159,7 +159,7 @@
     },
     created() {
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            this.$axios.get('/api/carrito')
+            this.$axios.get('/api/pedido/carrito')
                 .then(response => {
                     this.productos = response.data;
                     console.log(response.data);

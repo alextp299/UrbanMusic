@@ -53,7 +53,7 @@
     },
     guardarProductosSeleccionados() {
       this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        this.$axios.post('/api/guardar-productos-en-session', { productos: this.productosSeleccionados })
+        this.$axios.post('/api/pedido/guardar-productos-en-session', { productos: this.productosSeleccionados })
           .then(response => {
             console.log(response.data);
           })
@@ -64,7 +64,7 @@
     },
     obtenerPrecioTotal() {
       this.$axios.get('/sanctum/csrf-cookie').then(response => {
-        this.$axios.post('/api/precioTotal') 
+        this.$axios.post('/api/pedido/precioTotal') 
           .then(response => {
             console.log(response.data);
           })
