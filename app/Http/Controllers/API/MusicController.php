@@ -11,10 +11,18 @@ class MusicController extends Controller
 {
 
     public function canciones()
-    {
-        $canciones = Canciones::all()->toArray();
-        return response()->json($canciones);
+{
+    $user = auth()->user();
+    foreach ($user->roles as $role) {
+        if ($role->rol === 'accederAdmin') {
+            $canciones = Canciones::all()->toArray();
+            return response()->json($canciones);
+        }
     }
+
+    return response()->json(['error' => 'No tienes permiso para ver las canciones'], 403);
+}
+
     
     public function canciones_categoria()
     {
@@ -28,85 +36,116 @@ class MusicController extends Controller
         return response()->json($canciones);
     }
     
-    public function agregarCanciones(Request $request){
+    public function agregarCanciones(Request $request)
+{
+    $request->validate([
+        'name'=> 'required',
+        'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
+        'audio' => 'required',
+        'id_categoria_cancion' => 'required',
+    ]);
 
-        $request->validate([
-            'name'=> 'required',
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
-            'audio' => 'required',
-            'id_categoria_cancion' => 'required',
-        ]);
-    
-        $input = $request->all();
-        $imageName = NULL;
-        $audioName = NULL;
-    
-        if($image = $request->file('file')){
-            $destinationPath = 'img/Music_Imagenes/';
-            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $imageName);
-            $input['image'] = $imageName;
-        }
+    $user = auth()->user();
 
-        if($audio = $request->file('audio')){
-            $destinationPath = 'audio/Music/';
-            $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
-            $audio->move($destinationPath, $audioName);
-            $input['audio'] = $audioName;
+    foreach ($user->roles as $role) {
+        if ($role->rol === 'añadir') {
+            $input = $request->all();
+            $imageName = NULL;
+            $audioName = NULL;
+
+            if($image = $request->file('file')){
+                $destinationPath = 'img/Music_Imagenes/';
+                $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                $image->move($destinationPath, $imageName);
+                $input['image'] = $imageName;
+            }
+
+            if($audio = $request->file('audio')){
+                $destinationPath = 'audio/Music/';
+                $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
+                $audio->move($destinationPath, $audioName);
+                $input['audio'] = $audioName;
+            }
+
+            Canciones::create($input);
+
+            return response()->json(['success' => 'Canción creada correctamente']);
         }
-    
-        Canciones::create($input);
-    
-        return response()->json(['success' => 'Canción creada correctamente']);
-    
     }
 
-public function delete($id)
-{
-   $cancion = Canciones::find($id);
-   
-   $cancion->delete();
-   
-   return response()->json(['success'=> 'Canción eliminada correctamente']);
+    return response()->json(['error' => 'No tienes permiso para agregar canciones'], 403);
 }
 
-public function edit($id)
-{
-   $cancion = Canciones::find($id);
-   return response()->json($cancion);
-}
 
-public function update($id, Request $request)
-{
-   $cancion = Canciones::find($id);
-   $request->validate([
-       'name' => 'required',
-       'id_categoria_cancion' => 'required'
-   ]);
+    public function delete($id)
+    {
+        $user = auth()->user();
 
-   $input = $request->all();
-   $imageName = NULL;
-   $audioName = NULL;
+        foreach ($user->roles as $role) {
+            if ($role->rol === 'eliminar') {
+                $cancion = Canciones::find($id);
 
-   if ($image = $request->file('file')) {
-       $destinationPath = 'img/Music_Imagenes';
-       $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
-       $image->move($destinationPath, $imageName);
-       $input['image'] = $imageName;
-       
-   }
+                if ($cancion) {
+                    $cancion->delete();
+                    return response()->json(['success' => 'Canción eliminada correctamente']);
+                }
+            }
+        }
 
-   if ($audio = $request->file('audio')) {
-    $destinationPath = 'audio/Music';
-    $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
-    $audio->move($destinationPath, $audioName);
-    $input['audio'] = $audioName;
+        return response()->json(['error' => 'No tienes permiso para eliminar la canción'], 403);
+    }
+
+    public function edit($id)
+    {
+        $cancion = Canciones::find($id);
+        
+        $user = auth()->user();
+        foreach ($user->roles as $role) {
+            if ($role->rol === 'editar') {
+                return response()->json($cancion);
+            }
+        }
     
-}
-
-   $cancion->update($input);
-
-   return response()->json(['success'=> 'Canción actualizada correctamente']);
-}
- 
+        return response()->json(['error' => 'No tienes permiso para editar la canción'], 403);
+    }
+    
+    public function update($id, Request $request)
+    {
+        $cancion = Canciones::find($id);
+        
+        $user = auth()->user();
+        foreach ($user->roles as $role) {
+            if ($role->rol === 'editar') {
+                $request->validate([
+                    'name' => 'required',
+                    'id_categoria_cancion' => 'required'
+                ]);
+    
+                $input = $request->all();
+                $imageName = NULL;
+                $audioName = NULL;
+    
+                if ($image = $request->file('file')) {
+                    $destinationPath = 'img/Music_Imagenes';
+                    $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+                    $image->move($destinationPath, $imageName);
+                    $input['image'] = $imageName;
+                }
+    
+                if ($audio = $request->file('audio')) {
+                    $destinationPath = 'audio/Music';
+                    $audioName = date('YmdHis') . "." . $audio->getClientOriginalExtension();
+                    $audio->move($destinationPath, $audioName);
+                    $input['audio'] = $audioName;
+                }
+    
+                $cancion->update($input);
+    
+                return response()->json(['success'=> 'Canción actualizada correctamente']);
+            }
+        }
+    
+        return response()->json(['error' => 'No tienes permiso para editar la canción'], 403);
+    }
+    
 }
