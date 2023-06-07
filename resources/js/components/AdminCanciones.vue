@@ -3,6 +3,7 @@
     <h3 class="mb-4">Administrador de Canciones</h3>
     <div class="card card-default d-flex px-5 py-5">
       <div class=" p-1">
+        <div v-if="strError" class="alert alert-danger">{{ strError }}</div>
         <div class="d-flex justify-content-between pb-2 mb-2">
           <h5 class="card-title mt-2">Listado Canciones Disponibles</h5>
           <div>
@@ -76,22 +77,33 @@ export default {
   },
   
   created() {
-        if(window.Laravel.isLoggedin){
-            this.isLoggedin =true;
-            this.user =window.Laravel.user;
-        }
-        
-        this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            this.$axios.get('/api/admincanciones/canciones')
-                .then(response => {
-                    this.canciones = response.data;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+    if (window.Laravel.isLoggedin) {
+      this.isLoggedin = true;
+      this.user = window.Laravel.user;
+    }
+
+    this.$axios
+      .get('/sanctum/csrf-cookie')
+      .then(() => {
+        this.$axios
+          .get('/api/admincanciones/canciones')
+          .then(response => {
+            this.canciones = response.data;
+          })
+          .catch(error => {
+            if (error.response && error.response.status === 403) {
+              this.strError = 'No tienes permiso para ver las canciones';
+            } else {
+              this.strError = 'Ocurrió un error al cargar las canciones';
             }
-        );
-    },computed: {
+            console.log(error);
+          });
+      })
+      .catch(error => {
+        this.strError = 'Error al obtener el token CSRF';
+        console.log(error);
+      });
+  },computed: {
   productosFiltrados() {
     if (this.busqueda.trim() === '') {
       return this.canciones;
